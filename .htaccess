@@ -1,0 +1,20 @@
+Options -Indexes
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive on
+ExpiresByType image/jpg "access plus 12 month"
+ExpiresByType image/gif "access plus 12 month"
+ExpiresByType image/jpg "access plus 12 month"
+ExpiresByType image/jpeg "access plus 12 month"
+ExpiresByType image/png "access plus 12 month"
+ExpiresByType text/css "access plus 12 month"
+ExpiresByType application/x-javascript "access plus 12 month"
+ExpiresByType text/javascript "access plus 12 month"
+ExpiresByType application/javascript "access plus 12 month"
+ExpiresByType image/x-icon "access plus 12 month"
+ExpiresByType image/icon "access plus 12 month"
+ExpiresByType application/x-ico "access plus 12 month"
+ExpiresByType application/ico "access plus 12 month"
+</IfModule>
+## EXPIRES CACHING ##

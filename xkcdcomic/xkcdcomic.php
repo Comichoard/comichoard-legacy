@@ -1,0 +1,67 @@
+<?php
+    $all = array();
+    $source = 'xkcd';
+
+    function getfirst() {
+        $url = 'http://www.xkcd.com';
+        $data = array('nothing' => 'blahblah');
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+            ),
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+
+        $first1 = explode('http://xkcd.com/', $result);
+        $first2 =  explode('/', $first1[1]);
+
+        return intval($first2[0]);
+    }
+
+    function getcomic($i)   {
+        global $all;
+        $url = 'http://www.xkcd.com/'.$i.'/';
+        $data = array('nothing' => 'blahblah');
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+            ),
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        $namebig = explode('<div id="ctitle">',$result);
+        $name = explode('</div>',$namebig[1]);
+        $first = explode('"comic">', $result);
+        $second = explode('</div>', $first[1]);
+        preg_match('/alt="(.*?)"/',$second[0], $alttoreplace);
+        $second[0] = str_replace($alttoreplace[0], 'alt="XKCD #'.$i.'"', $second[0]);
+        array_push($all, '<div class="well">'.$second[0].'<br><div class="details"><span>#'.$i.'</span><span>'.$name[0].'</span><span class="s btn btn-default btn-sm" data-share="'.$i.'">Share</span></div></div>');
+        return $i-1;
+    }
+
+    if(isset($_GET['comic'])) {
+        $sendback = getcomic(base64_decode($_GET['comic']));
+        echo base64_encode($sendback).'!znavfu'.$all[0];
+    }
+    else    {
+        $count = 1;
+        if(isset($_GET['strip']))   {
+            getcomic($_GET['strip']);
+            array_push($all,'<div class="jumbotron">More comics from XKCD...</div>');
+            $count--;
+        }
+        $begin = getfirst();
+        $i = getcomic($begin);
+        echo base64_encode($i).'!znavfu';
+        echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>
+              <p>XKCD, is a webcomic created by Randall Munroe.<br>The comic\'s tagline describes it as "a webcomic of romance, sarcasm, math, and language."</p>
+              <p>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$begin.'")"></p>
+              </div>';
+        foreach($all as $item) echo $item;
+    }
+?>

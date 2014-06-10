@@ -1,0 +1,44 @@
+body{font-family:'Open Sans',serif;font-size:18px;overflow-x:hidden;background:url(/images/bg.png) repeat}
+.cdesc{text-align:justify;margin-bottom:0;padding-top:70px}
+.jumbotron{background-color:rgba(22,160,133,0.1);margin-bottom:0}
+#viewer{min-height:100%;width:100%;background-color:transparent;position:absolute;margin:0;padding:0}
+.panel-body{margin-top:0;text-align:center;padding:0}
+.well{background-color:transparent;border:0 solid transparent!important;font-size:20px;margin-bottom:0;text-align:center;width:100%}
+img{margin-top:40px;margin-bottom:0}
+#loadmsg{text-align:center;margin-top:300px;font-size:20px}
+#top{margin:0;padding:0.5% 1%;font-size:25px;font-weight:300;position:fixed;top:0;left:0;background-color:rgba(22,160,133,0.6);width:100%;z-index:10;border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
+.fadeaway{background-color:rgba(22,160,133,0.4)!important}
+a{text-decoration:none!important}
+.btn{border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
+#prompter{font-size:40px;padding-top:8%;margin-top:0;height:100%;width:100%;font-weight:300}
+#footer{padding:0 10px;background-color:rgba(22,160,133,0.2);margin: 0;text-align:left!important;}
+#selcomic{visibility:hidden;width:0;margin:0;padding:0}
+#report{width:60%;margin-left:20%;margin-top:5%}
+.details{font-size:17px;margin-top:10px}
+.details>span{margin-right:10px}
+#resume{position:absolute;right:10px;top:5px}
+#fbpage{position:absolute;right:10px;top:5px}
+span{display:inline-block}
+#gohome{margin-left:10px;}
+.px{opacity:0}
+#footer{position:fixed;bottom:0;width:100%;text-align:center}
+
+@media screen and (max-width:768px) {
+body{font-size:10px!important}
+.cdesc{font-size:15px!important}
+.cdesc>h1{font-size:20px!important}
+.px{opacity:1}
+#top{position:absolute;height:45px;}
+.cdesc{padding:5px;padding-top:80px;}
+#prompter{font-size:20px;padding-top:80px;}
+#gohome{width:17%;display:inline-block;height:35px;padding:5px;text-align:center;}
+.panel-body{margin:0px;width:100%!important}
+.copt{visibility:hidden;width:0}
+.cd-dropdown,.cd-select{width:74%;display:inline-block;margin-left:18%}
+#resume{position:absolute;top:50px;left:5%;width:90%;font-size:14px}
+#footer{visibility:hidden}
+#fbpage{position:absolute;top:70px;left:5%;width:90%;visibility: hidden;}
+.well>img{width:100%}
+.well>iframe{width:100%}
+#report{width:90%;margin-left:5%;margin-top:5%}
+}
