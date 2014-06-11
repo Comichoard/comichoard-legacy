@@ -70,7 +70,7 @@
                     $next_id = $pres_id+1;   
                 makeWell($url_present,$pres_id,$next_id);
                 if($pres_id == 1 || $pres_id == $last)
-                    array_push($all,'<div class="jumbotron">Looks like you read all the comics we had.<br>Here\'s something else to read <a href="http://comichoard.com/?comic=garfield" type="button" class="btn btn-default">Garfield</a></div>');    
+                    array_push($all,'<div class="jumbotron">Looks like you read all the comics we had.<br>Here\'s something else to read <a href="http://comichoard.com/garfield" type="button" class="btn btn-default">Garfield</a></div>');    
             }
             echo base64_encode($next_id).'!znavfu';
             foreach($all as $item) echo $item;
