@@ -45,4 +45,10 @@ body{font-size:10px!important}
 .well>img{width:100%}
 .well>iframe{width:100%}
 #report{width:90%;margin-left:5%;margin-top:5%}
+.thumbup{width:48%;height:0px;display:inline-block;margin-right:0px;margin-bottom:40px;text-align:left}
+.thumb{width:0px;height:0px;overflow:hidden;border:1px solid #000;margin-bottom:0;visibility:hidden;position:absolute;}
+.thumb>img{width:1px!important;margin-top:0px;height:1px!important;}
+.thumbup>a>.btn{width:100%;margin:0;}
+.index-cdesc{height:0;visibility:hidden}
+#prompter{font-size:30px;padding-top:20px;margin-top:0;height:100%;width:100%;font-weight:300}
 }
