@@ -22,10 +22,10 @@ span{display:inline-block}
 #gohome{margin-left:10px;}
 .px{opacity:0}
 #footer{position:fixed;bottom:0;width:100%;text-align:center}
-.thumbup{width:150px;height:170px;display:inline-block;margin-right:29px;margin-bottom:40px;text-align:left}
-.thumb{width:150px;height:150px;overflow:hidden;border:1px solid #000;margin-bottom:0}
+.thumbup{width:150px;height:150px;display:inline-block;margin-right:29px;margin-bottom:20px;text-align:left;overflow:hidden;border:1px solid #000;background-color:#fff;cursor:pointer;}
+.thumb{width:150px;height:150px;overflow:hidden;margin-bottom:0;position:relative;z-index:2;background-color:#fff}
 .thumb>img{width:150px;margin-top:0px;}
-.thumbup>a>.btn{width:100%;margin:0;}
+.thumbname{position:relative;top:-35px;width:100%;text-align:left;padding-left:5px;font-size:14px;font-weight:400}
 
 @media screen and (max-width:768px) {
 body{font-size:10px!important}

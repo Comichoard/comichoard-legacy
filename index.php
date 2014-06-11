@@ -41,27 +41,30 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800" rel="stylesheet" type="text/css">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/cdstyle.css?v=30" />
-        <link rel="stylesheet" type="text/css" href="css/default.css?v=30" />
+        <link rel="stylesheet" type="text/css" href="css/cdstyle.css?v=35" />
+        <link rel="stylesheet" type="text/css" href="css/default.css?v=35" />
         <script type="text/javascript" src="js/jquery.dropdown.js"></script>
         <script src="js/modernizr.custom.63321.js"></script>
-        <style>.cdesc{padding-bottom:20px;padding-top:50px}</style>
     </head>
     <body>
+        <div id="fb-root"></div>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <div id="top" class="panel-heading">
                 <a id="gohome" class="btn btn-default btn-lg" href="http://comichoard.com">
                     Comic Hoard
                 </a>
+                <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
                 <?php include('comicselect.php');?>
-                <a id="fbpage" href="http://facebook.com/comichoard" class="btn btn-default btn-lg" target="_blank">
-                    <i class="fa fa-facebook-square"></i> /comichoard
+                <a id="fbpage" href="contact.php" class="btn btn-default btn-lg" target="_blank">
+                    Contact us
                 </a>
             </div>
             <div class="panel-body">
                 <div class="jumbotron cdesc index-cdesc">
-                    <p><br>Now serving on  Comic Hoard</p>
+                    <p><br>Now serving on Comic Hoard</p>
                     <?php include('thumbs.php');?>
                 </div>
                 <p id="prompter">Scroll Down to read latest from all</p>
