@@ -33,7 +33,7 @@
             </div>
             <div class="panel-body">
                 <div class="jumbotron" style="margin-top:200px">
-                    For Doubts and suggestions : support@comichoard.com<br><br>
+                    For Doubts and suggestions : support@comichoard.tk<br><br>
                     We also hang around our facebook page all the time : 
                     <a href="http://facebook.com/comichoard" class="btn btn-default" target="_blank">
                         Artists go here
