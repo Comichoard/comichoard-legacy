@@ -74,10 +74,6 @@
                 ?>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
-            <div id="footer" class="jumbotron">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com" class="btn btn-default" target="_blank">Share website on facebook</i></a>
-                <a id="fbpage" href="https://www.facebook.com/comichoard" class="btn btn-default" target="_blank"><i class="fa fa-facebook-square"></i>/comichoard</a>
-            </div>
         </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">
