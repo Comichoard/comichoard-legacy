@@ -57,9 +57,6 @@
                 <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
-                    <i class="fa fa-facebook"></i>
-                </a>
                 <?php include('comicselect.php');?>
                 <a id="fbpage" href="contact.php" class="btn btn-default btn-lg" target="_blank">
                     Contact us
