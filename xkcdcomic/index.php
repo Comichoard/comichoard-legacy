@@ -62,6 +62,9 @@
                 <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
                     <i class="fa fa-facebook"></i>
                 </a>
+                <a id="gototwitter" class="btn btn-default btn-lg" href="https://twitter.com/ComicHoard" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
                 <?php include('../comicselect.php');?>
             
                 <?php 
