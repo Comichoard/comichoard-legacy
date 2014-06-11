@@ -27,7 +27,7 @@
         while($row = mysqli_fetch_array($result))   {
             $url_present = $row['url'];
             $cur_id = $row['id'];
-            makeWell($url_present,50,49);
+            makeWell($url_present,$cur_id,49);
         }
     }
     if (mysqli_connect_errno()) {
@@ -54,7 +54,7 @@
                 makeWell($url_present,$pres_id,$next_id);
             }
             echo base64_encode($next_id).'!znavfu';
-            echo $all[0];
+            foreach($all as $item) echo $item;
         }
         else {
             if(isset($_GET['strip']))   
