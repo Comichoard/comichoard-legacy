@@ -161,7 +161,6 @@
                     });
                 }
             });
-
             
             $(".cd-dropdown ul li").click(function () {
                 var scomic = $('input[name=selcomic]').val();

@@ -1,7 +1,7 @@
 <?php
     $mysql_hostname = "localhost";
-    $mysql_user = "comict";
-    $mysql_password = "comichoard";
+    $mysql_user = "root";
+    $mysql_password = "";
     $mysql_database = "comichoard";
     $count = 0;
     $url_present = "";
@@ -43,9 +43,9 @@
         $result = mysqli_query($con,"SELECT MAX(id) as 'max' FROM jl8;");
         $row = mysqli_fetch_array($result);
         $last = $row['max'];
-        if(isset($_GET['comic'])){
+        if(isset($_GET['comic']))   {
             $sort = 'desc';
-            if(isset($_GET['sort']) {
+            if(isset($_GET['sort'])) {
                 if($_GET['sort'] == 'asc')  {
                     $sort='asc';
                 }
@@ -76,7 +76,7 @@
             foreach($all as $item) echo $item;
         }
         else {
-            else if(isset($_GET['strip']))   
+            if(isset($_GET['strip']))   
             {
                 $pres_id = base64_decode($_GET['strip']);
                 if($pres_id == 50)  {
@@ -95,7 +95,7 @@
             else
             {
                 $sort = 'desc';
-                if(isset($_GET['sort']) {
+                if(isset($_GET['sort'])) {
                     if($_GET['sort'] == 'asc')  {
                         $sort='asc';
                     }
