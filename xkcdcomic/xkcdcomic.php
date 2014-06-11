@@ -40,7 +40,7 @@
         $second = explode('</div>', $first[1]);
         preg_match('/alt="(.*?)"/',$second[0], $alttoreplace);
         $second[0] = str_replace($alttoreplace[0], 'alt="XKCD #'.$i.'"', $second[0]);
-        array_push($all, '<div class="well">'.$second[0].'<br><div class="details"><span>#'.$i.'</span><span>'.$name[0].'</span><span class="s btn btn-default btn-sm" data-share="'.$i.'">Share</span></div></div>');
+        array_push($all, '<div class="well">'.$second[0].'<br><div class="details"><span>#'.$i.'</span><span>'.$name[0].'</span><span class="s btn btn-default btn-lg" data-share="'.$i.'">Share</span></div></div>');
         return $i-1;
     }
 

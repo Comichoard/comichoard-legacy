@@ -63,7 +63,7 @@
             $name = explode('/',$namebig[1]);
             $name[0] = ucwords(str_replace('-',' ',$name[1]));
         }
-        array_push($all, '<div class="well">'.$second[0].'<div class="details"><span>#'.$i.'</span><span>'.substr($name[0],-10).'</span><span class="s btn btn-default btn-sm" data-share="'.$i.'">Share</span></div></div>');
+        array_push($all, '<div class="well">'.$second[0].'<div class="details"><span>#'.$i.'</span><span>'.substr($name[0],-10).'</span><span class="s btn btn-default btn-lg" data-share="'.$i.'">Share</span></div></div>');
         return $i-1;
     }
 

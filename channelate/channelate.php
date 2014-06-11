@@ -19,7 +19,7 @@
         $second = explode('</div>', $first[1]);
         $altbig = explode('alt="',$second[0]); 
         $alt = explode('"',$altbig[1]); 
-        $image = '<div class="well">'.'<img src="http://www.channelate.com/comics/'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="s btn btn-default btn-sm" data-share="'.base64_encode($url).'">Share</span></div></div>';
+        $image = '<div class="well">'.'<img src="http://www.channelate.com/comics/'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('alt="','alt="Channelate: ', $image);
         array_push($all, $image);
 

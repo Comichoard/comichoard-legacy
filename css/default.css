@@ -1,9 +1,9 @@
-body{font-family:'Open Sans',serif;font-size:18px;overflow-x:hidden;background:url(/images/bg.png) repeat}
+body{font-family:'Open Sans',serif;font-size:18px;overflow-x:hidden;}
 .cdesc{text-align:justify;margin-bottom:0;padding-top:70px}
 .jumbotron{background-color:rgba(22,160,133,0.1);margin-bottom:0}
 #viewer{min-height:100%;width:100%;background-color:transparent;position:absolute;margin:0;padding:0}
 .panel-body{margin-top:0;text-align:center;padding:0}
-.well{background-color:transparent;border:0 solid transparent!important;font-size:20px;margin-bottom:0;text-align:center;width:100%}
+.well{background-color:transparent;border:0 solid transparent!important;font-size:20px;margin-bottom:60px;text-align:center;width:100%}
 img{margin-top:40px;margin-bottom:0}
 #loadmsg{text-align:center;margin-top:300px;font-size:20px}
 #top{margin:0;padding:0.5% 1%;font-size:25px;font-weight:300;position:fixed;top:0;left:0;background-color:rgba(22,160,133,0.6);width:100%;z-index:10;border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}

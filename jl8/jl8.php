@@ -24,12 +24,12 @@
         if($num == 50)  {
             $cnt = 1;
             while($cnt != 9)    {
-                array_push($all, '<div class="well"><img alt="JL8 #'.$num.'" src="http://www.limbero.org/jl8/comics/'.$num.'_'.$cnt.'.jpeg"><div class="details"><span>#'.$num.'</span>'.'<span class="s btn btn-default btn-sm" data-share="'.base64_encode($num).'">Share</span></div></div>');    
+                array_push($all, '<div class="well"><img alt="JL8 #'.$num.'" src="http://www.limbero.org/jl8/comics/'.$num.'_'.$cnt.'.jpeg"><div class="details"><span>#'.$num.'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($num).'">Share</span></div></div>');    
                 $cnt++;
             }
         }
         else {
-            array_push($all, '<div class="well"><img alt="JL8 #'.$num.'" src="http://www.limbero.org/jl8/comics/'.$num.'.jpeg"><div class="details"><span>#'.$num.'</span>'.'<span class="s btn btn-default btn-sm" data-share="'.base64_encode($num).'">Share</span></div></div>');
+            array_push($all, '<div class="well"><img alt="JL8 #'.$num.'" src="http://www.limbero.org/jl8/comics/'.$num.'.jpeg"><div class="details"><span>#'.$num.'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($num).'">Share</span></div></div>');
         }
         if($sort == 'desc')
             return --$num;
