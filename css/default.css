@@ -26,7 +26,7 @@ span{display:inline-block}
 .thumb{width:150px;height:150px;overflow:hidden;margin-bottom:0;position:relative;z-index:2;background-color:#fff}
 .thumb>img{width:150px;margin-top:0px;}
 .thumbname{position:relative;top:-35px;width:100%;text-align:left;padding-left:5px;font-size:14px;font-weight:400}
-#gotofb, #gototwitter {width:35px;}
+#gotofb, #gototwitter {width:50px;}
 
 @media screen and (max-width:768px) {
 body{font-size:10px!important}
