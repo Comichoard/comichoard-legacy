@@ -40,24 +40,43 @@
     }
     else
     {
+        $result = mysqli_query($con,"SELECT MAX(id) as 'max' FROM jl8;");
+        $row = mysqli_fetch_array($result);
+        $last = $row['max'];
         if(isset($_GET['comic'])){
+            $sort = 'desc';
+            if(isset($_GET['sort']) {
+                if($_GET['sort'] == 'asc')  {
+                    $sort='asc';
+                }
+            }
             $pres_id = base64_decode(($_GET['comic']));
+            if($pres_id == 0 || $pres_id == $last+1)
+                exit();
             if($pres_id == 50)  {
                 dump50();
-                $next_id = 49;
+                if($sort=='desc')
+                    $next_id = 49;
+                else
+                    $next_id = 51;
             }
             else {
                 $result = mysqli_query($con,"SELECT * FROM jl8 where id = '".$pres_id."'");
                 while($row = mysqli_fetch_array($result))
                     $url_present = $row['url'];
-                $next_id = $pres_id-1;       
+                if($sort=='desc')
+                    $next_id = $pres_id-1;       
+                else
+                    $next_id = $pres_id+1;   
                 makeWell($url_present,$pres_id,$next_id);
+                if($pres_id == 1 || $pres_id == $last)
+                    array_push($all,'<div class="jumbotron">Looks like you read all the comics we had.<br>Here\'s something else to read <a href="http://comichoard.com/?comic=garfield" type="button" class="btn btn-default">Garfield</a></div>');    
             }
             echo base64_encode($next_id).'!znavfu';
             foreach($all as $item) echo $item;
         }
         else {
-            if(isset($_GET['strip']))   
+            else if(isset($_GET['strip']))   
             {
                 $pres_id = base64_decode($_GET['strip']);
                 if($pres_id == 50)  {
@@ -75,7 +94,13 @@
             }
             else
             {
-                $result = mysqli_query($con,"SELECT * FROM jl8 order by id desc");
+                $sort = 'desc';
+                if(isset($_GET['sort']) {
+                    if($_GET['sort'] == 'asc')  {
+                        $sort='asc';
+                    }
+                }
+                $result = mysqli_query($con,"SELECT * FROM jl8 order by id ".$sort.";");
                 while($row = mysqli_fetch_array($result)) {
                     if($count==0)   {
                         $url_present = $row['url'];
@@ -93,10 +118,10 @@
             echo '<div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>
               <p>JL8 is a comic strip created by Yale Stewart. It tells tales based on younger versions of DC superheroes.</p>
               <p>
-              <!--span>Sort in order
+              <span>Sort in order
               <a href="http://comichoard.com/jl8/?sort=asc" type="button" class="btn btn-default">From the start</a>
-              <a href="http://comichoard.com/jl8/?sort=desc" type="button" class="btn btn-default">Most recent first</a></span-->
-              <span>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder=""></span>
+              <a href="http://comichoard.com/jl8/?sort=desc" type="button" class="btn btn-default">Most recent first</a></span>
+              <span>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$last.'"></span>
               </p>
               </div>';
             foreach($all as $item) echo $item;
