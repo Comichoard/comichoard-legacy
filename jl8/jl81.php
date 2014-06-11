@@ -43,7 +43,7 @@
         $result = mysqli_query($con,"SELECT MAX(id) as 'max' FROM jl8;");
         $row = mysqli_fetch_array($result);
         $last = $row['max'];
-        if(isset($_GET['comic']))   {
+        if(isset($_GET['comic'])){
             $sort = 'desc';
             if(isset($_GET['sort'])) {
                 if($_GET['sort'] == 'asc')  {
@@ -76,7 +76,7 @@
             foreach($all as $item) echo $item;
         }
         else {
-            if(isset($_GET['strip']))   
+            else if(isset($_GET['strip']))   
             {
                 $pres_id = base64_decode($_GET['strip']);
                 if($pres_id == 50)  {
