@@ -27,7 +27,6 @@
         while($row = mysqli_fetch_array($result))   {
             $url_present = $row['url'];
             $cur_id = $row['id'];
-			echo $url_present."---".$cur_id;
             makeWell($url_present,50,49);
         }
     }
