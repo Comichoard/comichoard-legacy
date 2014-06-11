@@ -27,6 +27,9 @@
                 <a id="gohome" class="btn btn-default btn-lg" href="http://comichoard.com">
                     Comic Hoard
                 </a>
+                <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
                 <a id="fbpage" href="http://facebook.com/comichoard" class="btn btn-default btn-lg" target="_blank">
                     <i class="fa fa-facebook-square"></i> /comichoard
                 </a>
