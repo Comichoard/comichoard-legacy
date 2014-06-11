@@ -10,7 +10,7 @@ img{margin-top:40px;margin-bottom:0}
 .fadeaway{background-color:rgba(22,160,133,0.4)!important}
 a{text-decoration:none!important}
 .btn{border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
-#prompter{font-size:40px;padding-top:8%;margin-top:0;height:100%;width:100%;font-weight:300}
+#prompter{font-size:40px;padding-top:20px;margin-top:0;height:100%;width:100%;font-weight:300}
 #footer{padding:0 10px;background-color:rgba(22,160,133,0.2);margin: 0;text-align:left!important;}
 #selcomic{visibility:hidden;width:0;margin:0;padding:0}
 #report{width:60%;margin-left:20%;margin-top:5%}
@@ -22,6 +22,10 @@ span{display:inline-block}
 #gohome{margin-left:10px;}
 .px{opacity:0}
 #footer{position:fixed;bottom:0;width:100%;text-align:center}
+.thumbup{width:150px;height:170px;display:inline-block;margin-right:29px;margin-bottom:40px;text-align:left}
+.thumb{width:150px;height:150px;overflow:hidden;border:1px solid #000;margin-bottom:0}
+.thumb>img{width:150px;margin-top:0px;}
+.thumbup>a>.btn{width:100%;margin:0;}
 
 @media screen and (max-width:768px) {
 body{font-size:10px!important}

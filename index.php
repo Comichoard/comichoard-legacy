@@ -21,10 +21,18 @@
     <head>
         <meta charset="utf-8" />
         <title>Comic Hoard</title>
+        
         <meta property="og:title" content="Comic Hoard"/>
         <meta property="og:url" content="http://comichoard.com"/>
         <meta property="og:description" content="Comic Hoard is a platform to read webcomics easily. XKCD, Cyanide &amp; Happiness, Garfield, JL8 and many more..."/>
         <meta property="og:image" content="http://comichoard.com/favicon.png"/>
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="comichoard.com">
+        <meta name="twitter:title" content="Comic Hoard">
+        <meta name="twitter:description" content="Comic Hoard is a platform to read webcomics easily. XKCD, Cyanide &amp; Happiness, Garfield, JL8 and many more...">
+        <meta name="twitter:image:src" content="http://comichoard.com/favicon.png">
+        
         <meta name="google-site-verification" content="xlNcZc8ArGnPwoG6k_ttQ7TROqAmNWMahmzX2_DxgsM" />
         <link rel="icon" type="image/png" href="favicon.png">
         <meta name="description" content="Comic Hoard - The Webcomic Library" />
@@ -33,10 +41,11 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800" rel="stylesheet" type="text/css">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/cdstyle.css?v=25" />
-        <link rel="stylesheet" type="text/css" href="css/default.css?v=25" />
+        <link rel="stylesheet" type="text/css" href="css/cdstyle.css?v=30" />
+        <link rel="stylesheet" type="text/css" href="css/default.css?v=30" />
         <script type="text/javascript" src="js/jquery.dropdown.js"></script>
         <script src="js/modernizr.custom.63321.js"></script>
+        <style>.cdesc{padding-bottom:20px;padding-top:50px}</style>
     </head>
     <body>
         <div id="viewer" class="panel panel-default">
@@ -51,18 +60,16 @@
                 </a>
             </div>
             <div class="panel-body">
-                <div id="prompter">
-                    <i class="fa fa-chevron-up"></i> Choose a comic to read <i class="fa fa-chevron-up"></i><br><br><br>
+                <div class="jumbotron cdesc">
+                    <p><br>Now serving on  Comic Hoard</p>
+                    <?php include('thumbs.php');?>
                 </div>
-                <div class="jumbotron" style="font-size:30px">Latest Added</div>
+                <p id="prompter">Scroll Down to read latest from all</p>
+                <br>                    
                 <?php
                     echo $display[1];
                 ?>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
-                <div id="footer" class="jumbotron">
-                    <a id="sharer" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com" class="btn btn-default" target="_blank">Share website on facebook</i></a>
-                    <a id="resume" href="http://comichoard.com/contact.php" class="btn btn-default" target="_blank">Contact Us</a>
-                </div>
             </div>
         </div>
 
