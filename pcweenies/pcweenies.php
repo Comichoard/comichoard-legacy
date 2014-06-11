@@ -19,7 +19,7 @@
         $second = explode('</div>', $first[2]);
         $altbig = explode('pcw.jpg',$first[2]); 
         $alt = substr($altbig[0],8,10); 
-        $image = '<div class="well">'.'<img src="http://pcweenies.com/wp-content/uploads/'.$second[0].'<div class="details"><span>'.$alt.'</span>'.'<span class="s btn btn-default btn-sm" data-share="'.base64_encode($url).'">Share</span></div></div>';
+        $image = '<div class="well">'.'<img src="http://pcweenies.com/wp-content/uploads/'.$second[0].'<div class="details"><span>'.$alt.'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('src=','alt="PC Weenies '.$alt.'" src=', $image);
         array_push($all, $image);
 

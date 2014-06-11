@@ -16,7 +16,7 @@
 		array_push($all, '<div class="well">
 				<img alt="Calvin and Hobbes '.$date.'" src="'.$src.'" width="700">
 				<div class="details">
-					<span>'.$date.'</span>'.'<span class="s btn btn-default btn-sm" data-share="'.base64_encode($date).'">Share</span>
+					<span>'.$date.'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($date).'">Share</span>
 				</div>
 			</div>');
 	}

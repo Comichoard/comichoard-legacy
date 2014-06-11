@@ -5,7 +5,7 @@
 
     function getcomic($date)   {
         global $all;
-        array_push($all, '<div class="well"><img alt="Garfield '.$date.'" src="http://garfield.com/uploads/strips/'.$date.'.jpg" width="900"><div class="details"><span>'.$date.'</span>'.'<span class="s btn btn-default btn-sm" data-share="'.base64_encode($date).'">Share</span></div></div>');
+        array_push($all, '<div class="well"><img alt="Garfield '.$date.'" src="http://garfield.com/uploads/strips/'.$date.'.jpg" width="900"><div class="details"><span>'.$date.'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($date).'">Share</span></div></div>');
         return date('Y-m-d',(strtotime ( '-1 day' , strtotime ($date) ) ));
     }
 
