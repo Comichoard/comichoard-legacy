@@ -21,11 +21,13 @@
             </div>');
     }
 
-    function dump50()   {
-        $result = mysqli_query($con,"SELECT * FROM jl8 where id LIKE '50%';");
+    function dump50(){
+		global $con;
+	    $result = mysqli_query($con,"SELECT * FROM jl8 where id > 50.0 and id < 51.0");
         while($row = mysqli_fetch_array($result))   {
             $url_present = $row['url'];
             $cur_id = $row['id'];
+			echo $url_present."---".$cur_id;
             makeWell($url_present,50,49);
         }
     }
