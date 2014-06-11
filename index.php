@@ -60,7 +60,7 @@
                 </a>
             </div>
             <div class="panel-body">
-                <div class="jumbotron cdesc">
+                <div class="jumbotron cdesc index-cdesc">
                     <p><br>Now serving on  Comic Hoard</p>
                     <?php include('thumbs.php');?>
                 </div>
