@@ -26,7 +26,7 @@
         while($row = mysqli_fetch_array($result))   {
             $url_present = $row['url'];
             $cur_id = $row['id'];
-            makeWell($url_present,$cur_id,49);
+            makeWell($url_present,50,49);
         }
     }
     if (mysqli_connect_errno()) {
@@ -91,12 +91,12 @@
             echo base64_encode($next_id).'!znavfu';
             echo '<div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>
               <p>JL8 is a comic strip created by Yale Stewart. It tells tales based on younger versions of DC superheroes.</p>
-              <!--p>
-              <span>Sort in order
+              <p>
+              <!--span>Sort in order
               <a href="http://comichoard.com/jl8/?sort=asc" type="button" class="btn btn-default">From the start</a>
-              <a href="http://comichoard.com/jl8/?sort=desc" type="button" class="btn btn-default">Most recent first</a></span>
+              <a href="http://comichoard.com/jl8/?sort=desc" type="button" class="btn btn-default">Most recent first</a></span-->
               <span>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder=""></span>
-              </p-->
+              </p>
               </div>';
             foreach($all as $item) echo $item;
         }
