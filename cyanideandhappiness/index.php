@@ -27,7 +27,7 @@
         if(strpos($metadata[1],'alt') === FALSE)    {
             $title = explode('<span>',$metadata[1]);
             $title2 = explode('</span>',$title[2]);
-            $title2[0] = 'XKCD '.$title2[0];
+            $title2[0] = 'Cyanide & Happiness : '.$title2[0];
             $imgsrc2[0] = 'http://'.$_SERVER['HTTP_HOST'].'/cyanideandhappiness/shortimage.jpg';
         }
     }
