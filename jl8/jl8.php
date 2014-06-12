@@ -1,7 +1,7 @@
 <?php
-    $mysql_hostname = "localhost";
-    $mysql_user = "root";
-    $mysql_password = "";
+   $mysql_hostname = "localhost";
+    $mysql_user = "comict";
+    $mysql_password = "comichoard";
     $mysql_database = "comichoard";
     $count = 0;
     $url_present = "";

@@ -153,7 +153,7 @@
                         $(".panel-body").empty();
                         $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
                         $(".panel-body").append('<div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
-                        $.post("jl8.php/?comic=" + next + "&sort="sort, function (e) {
+                        $.post("jl8.php?comic=" + next + "&sort="+sort, function (e) {
                             next = e.split("!znavfu")[0];
                             e = e.split("!znavfu")[1];
                             e = e.split("<!--")[0];
@@ -183,7 +183,7 @@
                     $(".panel-body").empty();
                     $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
                     $(".panel-body").append('<div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
-                    $.post("jl8.php?comic="+btoa($(this).val())+'&sort'+sort, function (e) {
+                    $.post("jl8.php?comic="+btoa($(this).val())+"&sort="+sort, function (e) {
                         next = e.split("!znavfu")[0];
                         e = e.split("!znavfu")[1];
                         e = e.split("<!--")[0];
