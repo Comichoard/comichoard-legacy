@@ -4,6 +4,8 @@
     $strip = $_GET['strip'];
     if(isset($_GET['strip']))
         $url .= 'strip='.$_GET['strip'].'&';
+    if(isset($_GET['sort']))
+        $url .= 'sort='.$_GET['sort'].'&';
     
     $data = array('nothing' => 'blahblah');
     $options = array(
