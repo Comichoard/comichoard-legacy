@@ -28,7 +28,7 @@
         <meta property="og:image" content="http://comichoard.com/favicon.png"/>
 
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="comichoard.com">
+        <meta name="twitter:site" content="@ComicHoard">
         <meta name="twitter:title" content="Comic Hoard">
         <meta name="twitter:description" content="Comic Hoard is a platform to read webcomics easily. XKCD, Cyanide &amp; Happiness, Garfield, JL8 and many more...">
         <meta name="twitter:image:src" content="http://comichoard.com/favicon.png">
