@@ -10,6 +10,7 @@ img{margin-top:40px;margin-bottom:0}
 .fadeaway{background-color:rgba(52,152,219,0.4)!important}
 a{text-decoration:none!important}
 .btn{border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
+.s{background-color:rgba(52,152,219,0.1)}
 #prompter{font-size:40px;padding-top:20px;margin-top:0;height:100%;width:100%;font-weight:300}
 #footer{padding:0 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;}
 #selcomic{visibility:hidden;width:0;margin:0;padding:0}
