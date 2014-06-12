@@ -129,7 +129,7 @@
   width: 100%;
 }
 .cd-active.cd-dropdown > span {
-  color: #1abc9c;
+  color: #3498db;
 }
 .cd-active.cd-dropdown > span,
 .cd-active.cd-dropdown ul li span {
@@ -143,7 +143,7 @@
   transition: all 0.2s linear 0s;
 }
 .cd-active.cd-dropdown ul li span:hover {
-  background: #1abc9c;
+  background: #3498db;
   color: #fff;
 }
 
