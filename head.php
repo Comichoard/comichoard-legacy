@@ -4,8 +4,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800" rel="stylesheet" type="text/css">
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/cdstyle.css?v=75" />
-<link rel="stylesheet" type="text/css" href="/css/default.css?v=75" />
+<link rel="stylesheet" type="text/css" href="/css/cdstyle.css?v=37" />
+<link rel="stylesheet" type="text/css" href="/css/default.css?v=37" />
 <script type="text/javascript" src="/js/jquery.dropdown.js"></script>
 <script src="/js/modernizr.custom.63321.js"></script>
 <meta name="description" content="Comic Hoard - The Webcomic Library" />
