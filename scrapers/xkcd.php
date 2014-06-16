@@ -1,7 +1,7 @@
 <?php
 	$mysql_hostname = "localhost";
-	$mysql_user = "root";
-	$mysql_password = "";
+	$mysql_user = "comict";
+	$mysql_password = "comichoard";
 	$mysql_database = "comichoard";
 
 	$con=mysqli_connect($mysql_hostname,$mysql_user,$mysql_password,$mysql_database);
@@ -21,22 +21,5 @@
 	    echo 'added '.$i.'<br>';
 	    $sql='INSERT INTO xkcd VALUES("'.$i.'","'.$second[0].'");';
 	    mysqli_query($con,$sql);
-
-	}
-	else  {
-		echo '<html>
-			<head><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script></head>
-			<body>
-			<script>
-				var i=1350;
-				while(i<=1350)	{
-					$.post("xkcd.php?comic="+i,function(data) {
-						$("body").append(data);
-					});
-					i++;
-				}
-			</script>
-			</body>
-		</html>';
 	}
 ?>

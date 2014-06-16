@@ -10,6 +10,16 @@
 
     $con=mysqli_connect($mysql_hostname,$mysql_user,$mysql_password,$mysql_database);
 
+    function getfirst() {
+        $ch = curl_init('http://xkcd.com');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+
+        $first1 = explode('http://xkcd.com/', $result);
+        $first2 =  explode('/', $first1[1]);
+        return intval($first2[0]);
+    }
+
     function makeWell($html,$id,$next)
     {
         global $all;
@@ -85,11 +95,18 @@
                         $sort='asc';
                     }
                 }
+                
                 $result = mysqli_query($con,"SELECT * FROM xkcd order by id ".$sort.";");
                 while($row = mysqli_fetch_array($result)) {
                     if($count==0)   {
                         $html_present = $row['html'];
                         $present_id = $row['id'];
+                        $begin = getfirst();
+                        if($sort == 'desc' && $present_id<$begin)    {
+                            $ch = curl_init('http://comichoard.com/scrapers/xkcd.php?comic='.$begin);
+                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                            curl_exec($ch);
+                        }
                     }
                     if($count==1){
                         $next_id = $row['id'];
