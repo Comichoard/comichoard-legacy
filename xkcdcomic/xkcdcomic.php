@@ -12,8 +12,8 @@
 
     function getfirst() {
         $ch = curl_init('http://xkcd.com');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
 
         $first1 = explode('http://xkcd.com/', $result);
         $first2 =  explode('/', $first1[1]);

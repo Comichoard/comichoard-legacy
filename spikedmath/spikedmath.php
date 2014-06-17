@@ -3,16 +3,9 @@
 
     function getfirst() {
         $url = 'http://spikedmath.com';
-        $data = array('nothing' => 'blahblah');
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data),
-            ),
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
+        $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
 
         $first1 = explode('<h1 id="page-title" class="asset-name entry-title">', $result);
         $first2 =  explode('</h1>', $first1[1]);
@@ -23,16 +16,9 @@
     function getcomic($i)   {
         global $all;
         $url = 'http://spikedmath.com/'.$i.'.html';
-        $data = array('nothing' => 'blahblah');
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data),
-            ),
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
+        $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
     
         $first = explode('<img src="http://spikedmath.com/comics', $result);
         $second = explode('</center>', $first[1]);

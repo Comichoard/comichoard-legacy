@@ -3,16 +3,9 @@
 
     function getfirst() {
         $url = 'http://explosm.net';
-        $data = array('nothing' => 'blahblah');
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data),
-            ),
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
+        $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
         
         $first1 = explode('http://www.explosm.net/comics/', $result);
         $first2 =  explode('/', $first1[1]);
@@ -27,16 +20,9 @@
     function getcomic($i)   {
         global $all;
         $url = 'http://explosm.net/comics/'.$i.'/';
-        $data = array('nothing' => 'blahblah');
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data),
-            ),
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
+        $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
         $name = explode('</nobr>',$result);
         $first = explode('overflow: auto; text-align: center;">', $result);
         $second = explode('</div>', $first[1]);

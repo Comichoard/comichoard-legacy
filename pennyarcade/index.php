@@ -1,20 +1,15 @@
 <?php
-    $url = 'http://'.$_SERVER['HTTP_HOST'].'/pennyarcade/pennyarcade.php?';
+    $server = $_SERVER['HTTP_HOST'];
+    if($server=='localhost') $server.='/comichoard';
+    $url = 'http://'.$server.'/pennyarcade/pennyarcade.php?';
     $source = 'pennyarcade';
-    $strip = $_GET['strip'];
+    
     if(isset($_GET['strip']))
         $url .= 'strip='.$_GET['strip'].'&';
     
-    $data = array('nothing' => 'blahblah');
-    $options = array(
-        'http' => array(
-            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-            'method'  => 'POST',
-            'content' => http_build_query($data),
-        ),
-    );
-    $context  = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);    
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
     $display = explode('!znavfu',$result);
 
     if(isset($_GET['strip']))   {
@@ -46,7 +41,7 @@
                 echo '<meta property="og:title" content="Penny Arcade"/>
                     <meta property="og:url" content="http://'.$_SERVER['HTTP_HOST'].'/pennyarcade"/>
                     <meta property="og:description" content="Comic Hoard is a platform to read webcomics easily. XKCD, Cyanide & Happiness, Garfield, JL8 and many more..."/>
-                    <meta property="og:image" content="'.$imgsrc2[0].'"/>';
+                    <meta property="og:image" content="/favicon.png"/>';
             }
         ?>
         <?php include('../head.php');?>

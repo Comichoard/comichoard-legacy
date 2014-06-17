@@ -1,17 +1,12 @@
 <?php
-    $url = 'http://'.$_SERVER['HTTP_HOST'].'/feed.php';
+    $server = $_SERVER['HTTP_HOST'];
+    if($server=='localhost') $server.='/comichoard';
+    $url = 'http://'.$server.'/feed.php';
     $source = 'feed';
     if($source != '')   {
-        $data = array('nothing' => 'blahblah');
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data),
-            ),
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);    
+        $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);    
         $display = explode('!znavfu',$result);
     }
 ?>

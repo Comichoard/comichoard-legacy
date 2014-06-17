@@ -4,16 +4,9 @@
 
     function getcomic($url)   {
         global $all;
-        $data = array('nothing' => 'blahblah');
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data),
-            ),
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
+        $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($ch);
     
         $first = explode('<div id="post">', $result);
         $second = explode('</div>', $first[1]);
