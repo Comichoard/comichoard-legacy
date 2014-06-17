@@ -1,4 +1,4 @@
-<style>.thumb-container{width:40%;text-align:justify;}@media screen and (max-width:768px) {.thumb-container{visibility:hidden;position: absolute;}}</style>
+<style>.thumb-container{width:40%;text-align:justify;}@media screen and (max-width:768px) {.thumb-container{visibility:hidden;position: absolute;opacity: 0}}</style>
 <span class="thumb-container">
 	<div class="btn btn-default btn-lg" data-href="jl8">JL8</div>
 	<div class="btn btn-default" data-href="cyanideandhappiness">Cyanide &amp; Happiness</div>
