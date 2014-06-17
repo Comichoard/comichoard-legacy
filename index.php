@@ -72,7 +72,7 @@
                 ?>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
-s        </div>
+        </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">
         <input id="source" type="hidden" value="<?php echo $source;?>">
