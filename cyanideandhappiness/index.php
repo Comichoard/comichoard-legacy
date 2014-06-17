@@ -79,7 +79,7 @@
                 ?>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
-            <div id="footer" class="footer">Help your friends see how awesome Cyanide &amp; Happiness is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fcyanideandhappiness" class="btn btn-default begsuccess btn-sm" target="_blank">Share Cyanide &amp; Happiness</i></a></div>
+            <div id="footer" class="footer">Help your friends see how awesome Cyanide &amp; Happiness is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fcyanideandhappiness" class="btn btn-default begsuccess btn-sm" target="_blank">Share Cyanide &amp; Happines</i></a></div>
         </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">

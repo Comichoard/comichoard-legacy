@@ -75,7 +75,7 @@
                 ?>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
-            <div id="footer" class="footer">Help your friends see how awesome PC Weenies is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fpcweenies" class="btn btn-default begsuccess btn-sm" target="_blank">Share PC Weenies</i></a></div>
+            <div id="footer" class="footer">Help your friends see how awesome PC Weenies is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fpcweenies" class="btn btn-default begsuccess btn-sm" target="_blank">Share PC Weenie</i></a></div>
         </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">
