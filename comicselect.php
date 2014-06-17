@@ -30,3 +30,18 @@
      <a href="http://comichoard.com/spikedmath"></a>
      <a href="http://comichoard.com/shortpacked"></a>
 </div>
+
+<script>
+     $(document).on('click','.cd-dropdown',function()    {
+          if($('#top').hasClass('movable'))  {
+               $('#top').removeClass('movable');
+               $('#top').css('position','fixed');
+               $('#top').css({bottom:''});
+          }
+          else {
+               $('#top').addClass('movable');
+               $('#top').css('position','absolute');
+               $('#top').css({bottom:'0'});
+          }
+     });
+</script>
