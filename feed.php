@@ -19,7 +19,7 @@
     $url = 'http://'.$server.'/'.$now.'/'.$now.'.php';
         if(isset($goagain[0]))
             $url .= '?comic='.$goagain[0];
-        $ch = curl_init($url);
+    $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
         $goagain = explode('!znavfu',$result);
