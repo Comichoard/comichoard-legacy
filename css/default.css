@@ -11,7 +11,7 @@ img{margin-top:40px;margin-bottom:0}
 a{text-decoration:none!important}
 .btn{border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
 #prompter{font-size:40px;padding-top:20px;margin-top:0;height:100%;width:100%;font-weight:300}
-#footer{padding:0 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;}
+#footer{padding:3px 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;}
 #selcomic{visibility:hidden;width:0;margin:0;padding:0}
 #report{width:60%;margin-left:20%;margin-top:5%}
 .details{font-size:17px;margin-top:10px}

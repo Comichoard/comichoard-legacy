@@ -79,6 +79,7 @@
                 ?>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
+            <div id="footer" class="footer">Help your friends see how awesome JL8 is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fjl8" class="btn btn-default begsuccess btn-sm" target="_blank">Share JL8</i></a></div>
         </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">
@@ -106,8 +107,6 @@
             var source = $("#source").val();
             var website = $("#website").val();
             var flag = 0;
-            var timetobegflag=5;
-            var timetobeg=timetobegflag;
             $(window).scroll(function () {
                 if ($(window).scrollTop() + $(window).height() > $(document).height() - 4000 && flag == 0) {
                     flag = 1;
@@ -118,12 +117,6 @@
                         if (e.split("script").length == 1)
                             $("#loadmsg").before(e);
                         flag = 0;
-                        timetobeg--;
-                        if(!timetobeg)  {
-                            beg();
-                            timetobegflag*=2;
-                            timetobeg+=timetobegflag;
-                        }
                     });
                     savepos(source, next);
                 }
@@ -188,13 +181,9 @@
                 }
             });
 
-            function beg()  {
-                $("#loadmsg").before('<div class="jumbotron plea"><br><br>Help your friends see how awesome JL8 is too.<br><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fjl8" class="btn btn-default begsuccess btn-lg" target="_blank">Share JL8</i></a><br><br></div>')
-            }
-
-            $(document).on('click','.begsuccess',function () {
-                timetobeg=3000;
-            });
+            setTimeout(function(){
+                $('#footer').toggle();    
+            },15000);
 		</script>
         <script type="text/javascript" src="/googleanalytics.js" ></script>
     </body>

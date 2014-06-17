@@ -76,6 +76,7 @@
                 ?>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
+            <div id="footer" class="footer">Help your friends see how awesome Channelate is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fchannelate" class="btn btn-default begsuccess btn-sm" target="_blank">Share Channelate</i></a></div>
         </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">
@@ -174,6 +175,9 @@
                         $("#loadmsg").before(e);
                 });
             });
+            setTimeout(function(){
+                $('#footer').toggle();    
+            },15000);
 		</script>
         <script type="text/javascript" src="/googleanalytics.js" ></script>
     </body>
