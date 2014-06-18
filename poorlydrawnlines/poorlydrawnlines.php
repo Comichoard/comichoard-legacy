@@ -1,13 +1,12 @@
 <?php
     $all = array();
-    $url = 'http://www.poorlydrawnlines.com/';
+    $url = 'http://poorlydrawnlines.com/';
 
     function getcomic($url)   {
         global $all;
         $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
-    
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
         $first = explode('<div id="post">', $result);
         $second = explode('</div>', $first[1]);
         $second[0] = str_replace('<p>','',$second[0]);
@@ -39,9 +38,7 @@
             array_push($all,'<div class="jumbotron">More comics from Poorly Drawn Lines...</div>');
         }
         else    {
-            for($i=0;$i<1;$i++)   {
-                $url = getcomic($url);
-            }
+            $url = getcomic($url);
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Poorly Drawn Lines <a href="http://poorlydrawnlines.com" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>
