@@ -1,16 +1,5 @@
 .cd-dropdown,
-.cd-select {
-  position: absolute;
-  top: 0px;
-  width: 47%;
-  left: 4.5%;
-  margin: 5px auto;
-  margin-bottom: 0;
-  margin-left: 300px;
-  display: block;
-  z-index: 9999;
-  font-weight: 200 !important;
-  font-size: 18px !important;
+.cd-select {position: absolute;top: 0px;width: 47%;left: 4.5%;margin: 5px auto;margin-bottom: 0;margin-left: 300px;display: block;z-index: 9999;font-weight: 200 !important;font-size: 18px !important;
 }
 .cd-dropdown:hover  {
   opacity: 1;  

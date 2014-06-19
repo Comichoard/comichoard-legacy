@@ -16,6 +16,7 @@
         <style>#loadmsg{font-size:60px;margin-top:200px}</style>
     </head>
     <body>
+        <?php include('../modalselect.php');?>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <div id="top" class="panel-heading">

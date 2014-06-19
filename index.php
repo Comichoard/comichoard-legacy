@@ -34,14 +34,16 @@
         <meta name="keywords" content="webcomic,comic,hoard,xkcd,maximumble,cyanide and happiness,channelate,jl8" />
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800" rel="stylesheet" type="text/css">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/cdstyle.css?v=41" />
-        <link rel="stylesheet" type="text/css" href="css/default.css?v=41" />
+        <link rel="stylesheet" type="text/css" href="css/cdstyle.css?v=42" />
+        <link rel="stylesheet" type="text/css" href="css/default.css?v=42" />
         <script type="text/javascript" src="js/jquery.dropdown.js"></script>
         <script src="js/modernizr.custom.63321.js"></script>
     </head>
     <body>
+        <?php include('modalselect.php');?>
         <div id="fb-root"></div>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
@@ -55,7 +57,9 @@
                 <a id="gototwitter" class="btn btn-default btn-lg" href="https://twitter.com/ComicHoard" target="_blank">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <?php include('comicselect.php');?>
+                <button id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
+                    Select Comic To Read
+                </button>
                 <a id="fbpage" href="contact.php" class="btn btn-default btn-lg" target="_blank">
                     Contact us
                 </a>
@@ -81,7 +85,6 @@
             if ($('.px').css('opacity') == '1') {
                 $('#gohome').html('CH');
             }
-            $('#selcomic').dropdown({gutter:0,stack:false});
             var next = $("#next").val();
             var source = $("#source").val();
             var website = $("#website").val();
@@ -105,14 +108,6 @@
                     srclink = $(this).parent().parent().attr('data-comic');
                 }
                 window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://' + $('#website').val() + '/' + srclink + '/?strip=' + $(this).attr('data-share')));
-            });
-            
-            
-            $(".cd-dropdown ul li").click(function () {
-                var scomic = $('input[name=selcomic]').val();
-                if(scomic != '-1') {
-                    window.location.href = 'http://'+website+scomic;
-                }
             });
 		</script>
         <script type="text/javascript" src="googleanalytics.js" ></script>

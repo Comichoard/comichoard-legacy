@@ -50,6 +50,7 @@
         <style>#comicnumselect{width:70px;display:inline-block;}</style>
     </head>
     <body>
+        <?php include('../modalselect.php');?>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <div id="top" class="panel-heading">
@@ -62,8 +63,10 @@
                 <a id="gototwitter" class="btn btn-default btn-lg" href="https://twitter.com/ComicHoard" target="_blank">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <?php include('../comicselect.php');?>
-            
+                <button id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
+                    Select Comic To Read
+                </button>
+
                 <?php 
                     if(isset($_COOKIE[$source]))    {
                         echo '<a id="resume" type="button" class="btn btn-default btn-lg" data-del="yes">Continue From Last Time</a>';

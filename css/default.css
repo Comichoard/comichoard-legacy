@@ -12,7 +12,7 @@ a{text-decoration:none!important}
 .btn{border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
 #prompter{font-size:40px;padding-top:20px;margin-top:0;height:100%;width:100%;font-weight:300}
 #footer{padding:3px 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;}
-#selcomic{visibility:hidden;width:0;margin:0;padding:0}
+#comicselect-btn{position: absolute;top: 0px;width: 47%;left: 4.5%;margin: 5px auto;margin-bottom:0;margin-left:300px;display: block;z-index:9999;font-weight:200;font-size:18px;}
 #report{width:60%;margin-left:20%;margin-top:5%}
 .details{font-size:17px;margin-top:10px}
 .details>span{margin-right:10px}
@@ -39,7 +39,7 @@ body{font-size:10px!important}
 #gohome{width:17%;display:inline-block;height:35px;padding:5px;text-align:center;}
 .panel-body{margin:0px;width:100%!important}
 .copt{visibility:hidden;width:0}
-.cd-dropdown,.cd-select{width:74%;display:inline-block;margin-left:18%}
+#comicselect-btn{width:74%;display:inline-block;margin-left:18%}
 #resume{position:absolute;top:50px;left:5%;width:90%;font-size:14px}
 #footer{visibility:hidden}
 #fbpage{position:absolute;top:70px;left:5%;width:90%;visibility: hidden;}
