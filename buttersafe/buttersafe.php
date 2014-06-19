@@ -1,6 +1,6 @@
 <?php
     $all = array();
-    $url = 'http://www.buttersafe.com/';
+    $url = 'http://buttersafe.com/';
 
     function getcomic($url)   {
         global $all;
