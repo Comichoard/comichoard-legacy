@@ -5,8 +5,8 @@
     function getcomic($url)   {
         global $all;
         $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
     
         $first = explode('<div id="comic">', $result);
         $second = explode('</div>', $first[1]);
@@ -34,9 +34,7 @@
             array_push($all,'<div class="jumbotron">More comics from Buttersafe...</div>');
         }
         else    {
-            for($i=0;$i<1;$i++)   {
-                $url = getcomic($url);
-            }
+            $url = getcomic($url);
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Buttersafe <a href="http://www.buttersafe.com" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>

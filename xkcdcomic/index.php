@@ -15,7 +15,9 @@
     $display = explode('!znavfu',$result);
 
     if(isset($_GET['strip']))   {
+        $strip=$_GET['strip'];
         $metadata = explode('<div class="well">',$display[1]);
+
         $metadata2 = explode('</div>' , $metadata[1]);
         $imgsrc = explode('src="',$metadata2[0]);
         $imgsrc2 = explode('"',$imgsrc[1]);

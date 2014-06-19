@@ -13,15 +13,14 @@
     $display = explode('!znavfu',$result);
 
     if(isset($_GET['strip']))   {
+        $strip=$_GET['strip'];
         $metadata = explode('<div class="well">',$display[1]);
+
         $metadata2 = explode('</div>' , $metadata[1]);
         $imgsrc = explode('src="',$metadata2[0]);
         $imgsrc2 = explode('"',$imgsrc[1]);
         $title = explode('alt="',$metadata[1]);
         $title2 = explode('"',$title[1]);
-        if(strpos($metadata[1],'alt') === FALSE)    {
-            $title2[0] = $source;
-        }
     }
 ?>
 
@@ -125,7 +124,7 @@
                 if (source == 'feed') {
                     srclink = $(this).parent().parent().attr('data-comic');
                 }
-                window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://' + $('#website').val() + '/buttersafe/?strip=' + $(this).attr('data-share')));
+                window.open('https://www.facebook.com/sharer/sharer.php?u='+'http://' + $('#website').val() + '/buttersafe/?strip='+$(this).attr('data-share'));
             });
             $("#resume").click(function () {
                 if ($("#resume").attr('data-del') == 'yes') {
