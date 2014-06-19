@@ -29,6 +29,6 @@
 </div>
 <script>
   $(document).on('click','.modal-body>.btn',function() {
-    window.location.href = $(this).attr('data-href');
+    window.location.href = "http://comichoard.com/"+$(this).attr('data-href');
   });
 </script>
