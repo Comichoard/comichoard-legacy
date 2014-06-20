@@ -54,6 +54,7 @@
                 $('#gohome').html('CH');
             }
 		</script>
+        
         <script type="text/javascript" src="googleanalytics.js" ></script>
     </body>
 </html>

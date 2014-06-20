@@ -1,5 +1,6 @@
 <?php
     $all = array();
+    $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
 
     function getfirst() {
         $url = 'http://spikedmath.com';
@@ -14,7 +15,7 @@
     }
 
     function getcomic($i)   {
-        global $all;
+        global $all,$comic;
         $url = 'http://spikedmath.com/'.$i.'.html';
         $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -43,7 +44,7 @@
             getcomic($i);
         }
         echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Spiked Math <a href="http://spikedmath.com" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>
+        echo '<div class="jumbotron cdesc"><h1>Spiked Math <a href="http://spikedmath.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>Spiked Math Comics, a math comic dedicated to humor, educate and entertain the geek in you.<br>Beware though, there might be some math involved .</p></div>';
         foreach($all as $item) echo $item;
     }

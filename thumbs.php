@@ -7,14 +7,10 @@
 	<div class="btn btn-default" data-href="channelate">Channelate</div>
 	<div class="btn btn-default" data-href="garfield">Garfield</div>
 	<div class="btn btn-default" data-href="cyanideandhappiness">Cyanide &amp; Happiness</div>
-	
-	
-	
 	<div class="btn btn-default" data-href="buttersafe">Buttersafe</div>
 	<div class="btn btn-default" data-href="spikedmath">Spiked Math</div>
 	<div class="btn btn-default" data-href="pcweenies">PC Weenies</div>
 	<div class="btn btn-default" data-href="calvinandhobbes">Calvin and Hobbes</div>
-	
 	<div class="btn btn-default" data-href="poorlydrawnlines">Poorly Drawn Lines</div>
 	<div class="btn btn-default" data-href="pennyarcade">Penny Arcade</div>
 	<div class="btn btn-default" data-href="shortpacked">Shortpacked</div>

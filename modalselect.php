@@ -33,3 +33,28 @@
     window.location.href = "http://comichoard.com/"+$(this).attr('data-href');
   });
 </script>
+
+ <div class="links">
+     <a href="http://comichoard.com/cyanideandhappiness"></a>
+     <a href="http://comichoard.com/calvinandhobbes"></a>
+     <a href="http://comichoard.com/garfield"></a>
+     <a href="http://comichoard.com/xkcdcomic"></a>
+     <a href="http://comichoard.com/jl8"></a>
+     <a href="http://comichoard.com/toonhole"></a>
+     <a href="http://comichoard.com/channelate"></a>
+     <a href="http://comichoard.com/maximumble"></a>
+     <a href="http://comichoard.com/buttersafe"></a>
+     <a href="http://comichoard.com/pcweenies"></a>
+     <a href="http://comichoard.com/poorlydrawnlines"></a>
+     <a href="http://comichoard.com/pennyarcade"></a>
+     <a href="http://comichoard.com/spikedmath"></a>
+     <a href="http://comichoard.com/shortpacked"></a>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=659591854119619&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

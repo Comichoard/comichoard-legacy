@@ -87,91 +87,12 @@
         <input id="website" type="hidden" value="<?php echo $_SERVER['HTTP_HOST'];?>">
         <input id="sort" type="hidden" value="<?php echo $_GET['sort'];?>">
         <script>
-            if ($('.px').css('opacity') == '1') {
-                $('#gohome').html('CH');
-            }
-
-            function savepos(e, t) {
-                $.post("pos.php", {
-                    source: e,
-                    position: t
-                });
-                $(".well").each(function () {
-                    if ($(this).html() == "") {
-                        $(this).remove()
-                    }
-                })
-            }
             var next = $("#next").val();
             var sort = $("#sort").val();
             var source = $("#source").val();
             var website = $("#website").val();
             var flag = 0;
-            $(window).scroll(function () {
-                if ($(window).scrollTop() + $(window).height() > $(document).height() - 4000 && flag == 0) {
-                    flag = 1;
-                    $.post("xkcdcomic.php?comic=" + next, function (e) {
-                        next = e.split("!znavfu")[0];
-                        e = e.split("!znavfu")[1];
-                        e = e.split("<!--")[0];
-                        if (e.split("script").length == 1)
-                            $("#loadmsg").before(e);
-                        flag = 0;
-                    });
-                    savepos(source, next);
-                }
-            });
-            $(document).on('click','.s',function (event) {
-                var srclink = source;
-                if (source == 'feed') {
-                    srclink = $(this).parent().parent().attr('data-comic');
-                }
-                window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://' + $('#website').val() + '/xkcdcomic/?strip=' + $(this).attr('data-share')));
-            });
-            $("#resume").click(function () {
-                if ($("#resume").attr('data-del') == 'yes') {
-                    flag = 1;
-                    $.post("pos.php", {
-                        source: source,
-                        getpos: "1"
-                    }, function (e) {
-                        next = e.split("<!--")[0];
-                        var retain = $(".panel-body div:first-child").html();
-                        $(".panel-body").empty();
-                        $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
-                        $(".panel-body").append('<div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
-                        $.post("xkcdcomic.php/?comic=" + next + "", function (e) {
-                            next = e.split("!znavfu")[0];
-                            e = e.split("!znavfu")[1];
-                            e = e.split("<!--")[0];
-                            if (e.split("script").length == 1)
-                                $("#loadmsg").before(e);
-                        });
-                        flag = 0;
-                    });
-                }
-            });
-
-            
-            $(document).on('keydown','#comicnumselect',function(event) {
-                if(event.which == 13)   {
-                    var retain = $(".panel-body div:first-child").html();
-                    $(".panel-body").empty();
-                    $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
-                    $(".panel-body").append('<div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
-                    $.post("xkcdcomic.php?comic=" + btoa($(this).val()), function (e) {
-                        next = e.split("!znavfu")[0];
-                        e = e.split("!znavfu")[1];
-                        e = e.split("<!--")[0];
-                        if (e.split("script").length == 1)
-                            $("#loadmsg").before(e);
-                    });
-                }
-            });
-            setTimeout(function(){
-                $('#footer').toggle();    
-            },15000);
 		</script>
-        <script type="text/javascript" src="/googleanalytics.js" ></script>
+        <script type="text/javascript" src="../googleanalytics.js" ></script>
     </body>
 </html>

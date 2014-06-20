@@ -1,5 +1,6 @@
 <?php
     $all = array();
+    $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
 
     function getfirst() {
         $url = 'http://www.shortpacked.com/index.php';
@@ -14,7 +15,7 @@
     }
 
     function getcomic($i)   {
-        global $all;
+        global $all,$comic;
         $url = 'http://www.shortpacked.com/index.php?id='.$i;
         $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -37,7 +38,7 @@
             getcomic($i);
         }
         echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Shortpacked <a href="http://shortpacked.com/" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>
+        echo '<div class="jumbotron cdesc"><h1>Shortpacked <a href="http://shortpacked.com/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>Shortpacked! is a webcomic by David Willis set in a toy store.<br></p></div>';
         foreach($all as $item) echo $item;
     }

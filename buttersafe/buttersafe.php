@@ -1,9 +1,10 @@
 <?php
     $all = array();
+    $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
     $url = 'http://buttersafe.com/';
 
     function getcomic($url)   {
-        global $all;
+        global $all,$comic;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
@@ -12,7 +13,7 @@
         $second = explode('</div>', $first[1]);
         $altbig = explode('alt="',$second[0]); 
         $alt = explode('"',$altbig[1]); 
-        $image = '<div class="well">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($url).'">Share</span></div></div>';
+        $image = '<div class="well">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.''.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('alt="','alt="Buttersafe: ', $image);
         array_push($all, $image);
 
@@ -37,7 +38,7 @@
             $url = getcomic($url);
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Buttersafe <a href="http://www.buttersafe.com" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>
+        echo '<div class="jumbotron cdesc"><h1>Buttersafe <a href="http://www.buttersafe.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>"A comic that contains pictures and sometimes words. Nothing else is guaranteed.<br>It is authored by Raynato Castro and Alex Culang."</p></div>';
         foreach($all as $item) echo $item;
     }

@@ -1,9 +1,10 @@
 <?php
     $all = array();
+    $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
     $url = 'http://www.channelate.com/';
 
     function getcomic($url)   {
-        global $all;
+        global $all,$comic;
         $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
@@ -39,7 +40,7 @@
             }
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Channelate <a href="http://www.channelate.com" type="button" class="btn btn-default" target="_blank">Go to site</a></h1>
+        echo '<div class="jumbotron cdesc"><h1>Channelate <a href="http://www.channelate.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>A gag-per-day strip by Ryan Hudson (and sometimes his wife, Vee).<br>This comic makes heavy use of dark humor and is not recommended for the easily offended.</p></div>';
         foreach($all as $item) echo $item;
     }
