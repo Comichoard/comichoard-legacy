@@ -49,7 +49,6 @@
             }
         ?>
         <?php include('../head.php');?>
-        <?php include('../comicselect.php');?>
         <style>#comicnumselect{width:70px;display:inline-block;}.cdesc>p>span{margin-right: 50px;}</style>
     </head>
     <body>
