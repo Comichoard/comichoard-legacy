@@ -70,33 +70,10 @@
         <input id="source" type="hidden" value="<?php echo $source;?>">
         <input id="website" type="hidden" value="<?php echo $_SERVER['HTTP_HOST'];?>">
         <script>
-            if ($('.px').css('opacity') == '1') {
-                $('#gohome').html('CH');
-            }
             var next = $("#next").val();
             var source = $("#source").val();
             var website = $("#website").val();
             var flag = 0;
-            $(window).scroll(function () {
-                if ($(window).scrollTop() + $(window).height() > $(document).height() - 4000 && flag == 0) {
-                    flag = 1;
-                    $.post("feed.php?comic=" + next + "", function (e) {
-                        next = e.split("!znavfu")[0];
-                        e = e.split("!znavfu")[1];
-                        e = e.split("<!--")[0];
-                        if (e.split("script").length == 1)
-                            $("#loadmsg").before(e);
-                        flag = 0;
-                    });
-                }
-            });
-            $(document).on('click','.s',function (event) {
-                var srclink = source;
-                if (source == 'feed') {
-                    srclink = $(this).parent().parent().attr('data-comic');
-                }
-                window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://' + $('#website').val() + '/' + srclink + '/?strip=' + $(this).attr('data-share')));
-            });
 		</script>
         
         <script type="text/javascript" src="googleanalytics.js" ></script>

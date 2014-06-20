@@ -37,10 +37,11 @@ setTimeout(function(){
 
 $(document).on('click','.s',function (event) {
     var srclink = source;
+    console.log(source);
     if (source == 'feed') {
         srclink = $(this).parent().parent().attr('data-comic');
     }
-    window.open('https://www.facebook.com/sharer/sharer.php?u='+'http://' + $('#website').val() + '/'+source+'/?strip='+$(this).attr('data-share'));
+    window.open('https://www.facebook.com/sharer/sharer.php?u='+'http://' + $('#website').val() + '/'+srclink+'/?strip='+$(this).attr('data-share'));
 });
 
 if ($('.px').css('opacity') == '1') {
