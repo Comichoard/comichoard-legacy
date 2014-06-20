@@ -88,7 +88,7 @@
             if ($('.px').css('opacity') == '1') {
                 $('#gohome').html('CH');
             }
-            $('#selcomic').dropdown({gutter:0,stack:false});
+
             function savepos(e, t) {
                 $.post("pos.php", {
                     source: e,
@@ -150,18 +150,6 @@
                 }
             });
 
-            
-            $(".cd-dropdown ul li").click(function () {
-                var scomic = $('input[name=selcomic]').val();
-                if(scomic != '-1') {       
-                    if(scomic.charAt(0) != '/') {
-                        window.location.href = 'http://'+website+'/?comic='+scomic;
-                    }
-                    else  {
-                        window.location.href = 'http://'+website+scomic;
-                    }
-                }
-            });
             
             $(document).on('change','#comicdateselect',function(event) {
                 var retain = $(".panel-body div:first-child").html();
