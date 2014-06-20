@@ -10,6 +10,7 @@
         <div class="btn btn-default btn-lg" data-href="jl8">JL8</div>
         <div class="btn btn-default" data-href="cyanideandhappiness">Cyanide &amp; Happiness</div>
         <div class="btn btn-default" data-href="calvinandhobbes">Calvin and Hobbes</div>
+        <div class="btn btn-default" data-href="toonhole">Toonhole</div>
         <div class="btn btn-default" data-href="maximumble">Maximumble</div>
         <div class="btn btn-default" data-href="garfield">Garfield</div>
         <div class="btn btn-default" data-href="channelate">Channelate</div>

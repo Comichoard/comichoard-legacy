@@ -1,17 +1,22 @@
-<style>.thumb-container{width:40%;text-align:justify;}@media screen and (max-width:768px) {.thumb-container{visibility:hidden;position: absolute;opacity: 0}}</style>
+<style>.thumb-container{width:43%;text-align:justify;}@media screen and (max-width:768px) {.thumb-container{visibility:hidden;position: absolute;opacity: 0}}</style>
 <span class="thumb-container">
-	<div class="btn btn-default btn-lg" data-href="jl8">JL8</div>
-	<div class="btn btn-default" data-href="cyanideandhappiness">Cyanide &amp; Happiness</div>
-	<div class="btn btn-default" data-href="calvinandhobbes">Calvin and Hobbes</div>
+	<div class="btn btn-default" data-href="jl8">JL8</div>
+	<div class="btn btn-default" data-href="xkcdcomic">XKCD</div>
+	<div class="btn btn-default" data-href="toonhole">Toonhole</div>
 	<div class="btn btn-default" data-href="maximumble">Maximumble</div>
-	<div class="btn btn-default" data-href="garfield">Garfield</div>
 	<div class="btn btn-default" data-href="channelate">Channelate</div>
+	<div class="btn btn-default" data-href="garfield">Garfield</div>
+	<div class="btn btn-default" data-href="cyanideandhappiness">Cyanide &amp; Happiness</div>
+	
+	
+	
 	<div class="btn btn-default" data-href="buttersafe">Buttersafe</div>
-	<div class="btn btn-default" data-href="pennyarcade">Penny Arcade</div>
-	<div class="btn btn-default btn-lg" data-href="xkcdcomic">XKCD</div>
-	<div class="btn btn-default" data-href="pcweenies">PC Weenies</div>
-	<div class="btn btn-default" data-href="poorlydrawnlines">Poorly Drawn Lines</div>
 	<div class="btn btn-default" data-href="spikedmath">Spiked Math</div>
+	<div class="btn btn-default" data-href="pcweenies">PC Weenies</div>
+	<div class="btn btn-default" data-href="calvinandhobbes">Calvin and Hobbes</div>
+	
+	<div class="btn btn-default" data-href="poorlydrawnlines">Poorly Drawn Lines</div>
+	<div class="btn btn-default" data-href="pennyarcade">Penny Arcade</div>
 	<div class="btn btn-default" data-href="shortpacked">Shortpacked</div>
 </span>
 <span class="thumb-container pull-right">
