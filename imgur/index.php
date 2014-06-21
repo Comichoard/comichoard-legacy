@@ -44,7 +44,7 @@
             }
         ?>
         <?php include('../head.php');?>
-        <style>img{margin:10px}</style>
+        <style>img{margin:10px}.cdesc{width:58%}.well{width:58%}.preview{position:fixed;left:60%;width:39%;height:88%;top:10%;text-align:middle;overflow-y:scroll;overflow-x:hidden;}.preview>img{width:100%;vertical-align:middle}</style>
     </head>
     <body>
         <?php include('../modalselect.php');?>
@@ -70,6 +70,7 @@
                     }
                 ?>
             </div>
+            <div class="preview"></div>
             <div class="panel-body">
                 <?php
                     if($source != '')
@@ -92,8 +93,9 @@
             var website = $("#website").val();
             var flag = 0;
 
+            $(document).unbind('click');
             $(document).on('click','img',function(event) {
-                event.preventDefault();
+                $('.preview').html('<img src="'+$(this).attr('src').split('b.').join('.')+'">');
             });
 		</script>
         <script type="text/javascript" src="../googleanalytics.js" ></script>
