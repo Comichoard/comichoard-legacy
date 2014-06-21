@@ -26,7 +26,7 @@
         global $all,$comic;
         array_push($all, '<div class="well">'.$html.'
                 <div class="details">
-                    <span>#'.$id.'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($id).'">Share</span>
+                    <span>#'.$id.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'">Share</span>
                 </div>
             </div>');
     }
@@ -35,7 +35,7 @@
         echo base64_encode('1').'!znavfu';
         if(!isset($_GET['comic']))  {
             echo mysqli_connect_errno();
-            echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+            echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>XKCD, is a webcomic created by Randall Munroe.<br>The comic\'s tagline describes it as "a webcomic of romance, sarcasm, math, and language."</p></div>';
             echo '<div class="jumbotron">There was an error while connecting to the library.<br>Here\'s something else to read <a href="http://comichoard.com/garfield" type="button" class="btn btn-default">Garfield</a></div>';
         }
@@ -118,7 +118,7 @@
                 makeWell($html_present,$present_id,$next_id);
             }
             echo base64_encode($next_id).'!znavfu';
-            echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+            echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>XKCD, is a webcomic created by Randall Munroe.<br>The comic\'s tagline describes it as "a webcomic of romance, sarcasm, math, and language."</p>
               <p>
               <span>Sort in order

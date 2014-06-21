@@ -18,7 +18,7 @@
         $alt[0] = str_replace('_','',$alt[0]);
         $second[0] = str_replace('alt="','alt="Poorly Drawn Lines ',$second[0]);
         
-        $image = '<div class="well">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($url).'">Share</span></div></div>';
+        $image = '<div class="well">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
         array_push($all, $image);
 
         $urlfirst = explode('<li class="previous">', $result);
@@ -42,7 +42,7 @@
             $url = getcomic($url);
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Poorly Drawn Lines <a href="http://poorlydrawnlines.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+        echo '<div class="jumbotron cdesc"><h1>Poorly Drawn Lines <a href="http://poorlydrawnlines.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>Poorly Drawn Lines is a webcomic by Reza Farazmand.<br>It is updated every Monday, Wednesday, and Friday.</p></div>';
         foreach($all as $item) echo $item;
     }

@@ -89,8 +89,10 @@ $(window).scroll(function () {
                      if($(this).attr('src')==cursrc)
                         sameflag=0;
                 });
-                if (e.split("script").length == 1 && sameflag==1)
+                if (e.split("script").length == 1 && sameflag==1)   {
                     $("#loadmsg").before(e);
+                    FB.XFBML.parse();
+                }
             }
             flag = 0;
         });

@@ -6,7 +6,7 @@
 
     function getcomic($date)   {
         global $all,$comic;
-        array_push($all, '<div class="well"><img alt="Garfield '.$date.'" src="http://garfield.com/uploads/strips/'.$date.'.jpg" width="900"><div class="details"><span>'.$date.'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($date).'">Share</span></div></div>');
+        array_push($all, '<div class="well"><img alt="Garfield '.$date.'" src="http://garfield.com/uploads/strips/'.$date.'.jpg" width="900"><div class="details"><span>'.$date.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($date).'">Share</span></div></div>');
         return date('Y-m-d',(strtotime ( '-1 day' , strtotime ($date) ) ));
     }
 
@@ -26,7 +26,7 @@
             }
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Garfield <a href="http://www.garfield.com/comic" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+        echo '<div class="jumbotron cdesc"><h1>Garfield <a href="http://www.garfield.com/comic" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>Garfield is a comic strip created by Jim Davis.<br>
               It chronicles the life of the title character, the cat Garfield; his owner, Jon Arbuckle; and Jon\'s dog, Odie.</p>
               <p>Skip to comic from <input id="comicdateselect" type="date" class="form-control"></p>

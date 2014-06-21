@@ -13,7 +13,7 @@
         $second = explode('</div>', $first[1]);
         $altbig = explode('alt="',$second[0]); 
         $alt = explode('"',$altbig[1]); 
-        $image = '<div class="well">'.'<img src="http://www.channelate.com/comics/'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="s btn btn-default btn-lg" data-share="'.base64_encode($url).'">Share</span></div></div>';
+        $image = '<div class="well">'.'<img src="http://www.channelate.com/comics/'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('alt="','alt="Channelate: ', $image);
         array_push($all, $image);
 
@@ -40,7 +40,7 @@
             }
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Channelate <a href="http://www.channelate.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="http://comichoard.com/'.$comic.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+        echo '<div class="jumbotron cdesc"><h1>Channelate <a href="http://www.channelate.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>A gag-per-day strip by Ryan Hudson (and sometimes his wife, Vee).<br>This comic makes heavy use of dark humor and is not recommended for the easily offended.</p></div>';
         foreach($all as $item) echo $item;
     }
