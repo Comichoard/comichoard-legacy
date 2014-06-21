@@ -33,15 +33,23 @@ $(document).on('click','#resume',function() {
 
 setTimeout(function(){
     $('#footer').toggle();    
-},10000);
+},5000);
 
 $(document).on('click','.s',function (event) {
     var srclink = source;
-    console.log(source);
     if (source == 'feed') {
         srclink = $(this).parent().parent().attr('data-comic');
     }
     window.open('https://www.facebook.com/sharer/sharer.php?u='+'http://' + $('#website').val() + '/'+srclink+'/?strip='+$(this).attr('data-share'));
+});
+
+$(document).on('click','.well>img',function (event) {
+    var srclink = source;
+    var strp = $(this).parent().children('.details').children('.s').attr('data-share');
+    if (source == 'feed') {
+        srclink = $(this).parent().attr('data-comic');
+    }
+    window.location.href = 'http://' + $('#website').val() + '/'+srclink+'/?strip='+strp;
 });
 
 if ($('.px').css('opacity') == '1') {
@@ -67,7 +75,13 @@ $(window).scroll(function () {
             next = e.split("!znavfu")[0];
             e = e.split("!znavfu")[1];
             e = e.split("<!--")[0];
-            if (e.split("script").length == 1)
+            var sameflag=1;
+            var cursrc = (e.split('src="')[1]).split('"')[0];
+            $('img').each(function() {
+                 if($(this).attr('src')==cursrc)
+                    sameflag=0;
+            });
+            if (e.split("script").length == 1 && sameflag==1)
                 $("#loadmsg").before(e);
             flag = 0;
         });
