@@ -40,6 +40,7 @@ $(document).on('click','.s',function (event) {
     if (source == 'feed') {
         srclink = $(this).parent().parent().attr('data-comic');
     }
+    $.post('sharer.php?share='+srclink+'/'+$(this).attr('data-share'));
     window.open('https://www.facebook.com/sharer/sharer.php?u='+'http://' + $('#website').val() + '/'+srclink+'/?strip='+$(this).attr('data-share'));
 });
 
