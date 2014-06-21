@@ -41,7 +41,7 @@ $(document).on('click','.well>img',function (event) {
     if (source == 'feed') {
         srclink = $(this).parent().attr('data-comic');
     }
-    window.location.href = 'http://' + $('#website').val() + '/'+srclink+'/?strip='+strp;
+    window.location.href = strp;
 });
 
 if ($('.px').css('opacity') == '1') {
