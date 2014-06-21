@@ -8,4 +8,4 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800" rel="stylesheet" type="text/css">
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../css/default.css?v=44" />
-<script type="text/javascript" src="../js/default.js?v=3" ></script>
+<script type="text/javascript" src="../js/default.js?v=5" ></script>

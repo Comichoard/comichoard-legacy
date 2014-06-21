@@ -77,7 +77,13 @@ $(window).scroll(function () {
             e = e.split("<!--")[0];
             if(e.indexOf('src')>-1) {
                 var sameflag=1;
-                var cursrc = (e.split('src="')[1]).split('"')[0];
+                var cursrc='';
+                try {
+                    cursrc = (e.split('src="')[1]).split('"')[0];
+                }
+                catch(error)   {
+                    cursrc = (e.split("src='")[1]).split("'")[0];    
+                }
                 $('img').each(function() {
                      if($(this).attr('src')==cursrc)
                         sameflag=0;
