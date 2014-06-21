@@ -75,14 +75,16 @@ $(window).scroll(function () {
             next = e.split("!znavfu")[0];
             e = e.split("!znavfu")[1];
             e = e.split("<!--")[0];
-            var sameflag=1;
-            var cursrc = (e.split('src="')[1]).split('"')[0];
-            $('img').each(function() {
-                 if($(this).attr('src')==cursrc)
-                    sameflag=0;
-            });
-            if (e.split("script").length == 1 && sameflag==1)
-                $("#loadmsg").before(e);
+            if(e.indexOf('src')>-1) {
+                var sameflag=1;
+                var cursrc = (e.split('src="')[1]).split('"')[0];
+                $('img').each(function() {
+                     if($(this).attr('src')==cursrc)
+                        sameflag=0;
+                });
+                if (e.split("script").length == 1 && sameflag==1)
+                    $("#loadmsg").before(e);
+            }
             flag = 0;
         });
         savepos(source, next);
