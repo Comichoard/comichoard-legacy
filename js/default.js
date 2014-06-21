@@ -35,18 +35,9 @@ setTimeout(function(){
     $('#footer').toggle();    
 },5000);
 
-$(document).on('click','.s',function (event) {
-    var srclink = source;
-    if (source == 'feed') {
-        srclink = $(this).parent().parent().attr('data-comic');
-    }
-    $.post('sharer.php?share='+srclink+'/'+$(this).attr('data-share'));
-    window.open('https://www.facebook.com/sharer/sharer.php?u='+'http://' + $('#website').val() + '/'+srclink+'/?strip='+$(this).attr('data-share'));
-});
-
 $(document).on('click','.well>img',function (event) {
     var srclink = source;
-    var strp = $(this).parent().children('.details').children('.s').attr('data-share');
+    var strp = $(this).parent().children('.details').children('.fb-like').attr('data-href');
     if (source == 'feed') {
         srclink = $(this).parent().attr('data-comic');
     }
