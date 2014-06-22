@@ -69,12 +69,10 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <p class="modal-title">Use arrow keys to change image</p>
+                    <span><p class="modal-title">Use arrow keys to change image</p></span>
+                    <span class="pull-right"><a type="button" class="" data-dismiss="modal" style="cursor:pointer">Close</a></span>
                   </div>
                   <div class="modal-body">
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
                   </div>
                 </div>
               </div>
