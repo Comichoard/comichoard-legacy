@@ -13,8 +13,8 @@
 
     function getfirst() {
         $ch = curl_init('http://xkcd.com');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
 
         $first1 = explode('http://xkcd.com/', $result);
         $first2 =  explode('/', $first1[1]);
@@ -24,7 +24,7 @@
     function makeWell($html,$id,$next)
     {
         global $all,$comic;
-        array_push($all, '<div class="well">'.$html.'
+        array_push($all, '<div class="well">'.str_replace('alt="','alt="XKCD: '$html).'
                 <div class="details">
                     <span>#'.$id.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'">Share</span>
                 </div>

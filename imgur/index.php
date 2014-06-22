@@ -100,7 +100,7 @@
             var flag = 0;
 
             $(document).unbind('click');
-            $(document).on('click','img',function(event) {
+            $(document).on('click','.well>img',function(event) {
                 $('#preview').modal('show')
                 $('#preview>.modal-dialog>.modal-content>.modal-body').html('<p>'+$(this).attr('title')+'</p><img src="'+$(this).attr('src').split('b.').join('.')+'">');
                 $('.curImg').removeClass('curImg');
