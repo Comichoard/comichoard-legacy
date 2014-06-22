@@ -44,7 +44,7 @@
             }
         ?>
         <?php include('../head.php');?>
-        <style>img{margin:10px}.modal-body{text-align:center}.modal-body>img{max-width:95%}</style>
+        <style>img{margin:10px}.modal-body{text-align:center}.modal-body>img{max-width:95%}.modal-body>p{text-align:left}</style>
     </head>
     <body>
         <?php include('../modalselect.php');?>
@@ -64,7 +64,7 @@
                     Select Comic To Read
                 </button>
             </div>
-            <style>.modal-content{border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}.modal-header{font-size:24px;font-weight:300}.modal-body>{text-align:justify}.modal-body>.btn{padding:2%;margin:1%;margin-bottom:2%;}.modal-body>.btn:hover{background: #3498db;color: #fff;}</style>
+            <style>.modal-content{border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}.modal-header{font-size:12px;font-weight:300}</style>
             <div id="preview" class="modal">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -104,7 +104,7 @@
             $(document).unbind('click');
             $(document).on('click','img',function(event) {
                 $('#preview').modal('show')
-                $('#preview>.modal-dialog>.modal-content>.modal-body').html('<img src="'+$(this).attr('src').split('b.').join('.')+'">');
+                $('#preview>.modal-dialog>.modal-content>.modal-body').html('<p>'+$(this).attr('title')+'</p><img src="'+$(this).attr('src').split('b.').join('.')+'">');
                 $('.curImg').removeClass('curImg');
                 $(this).addClass('curImg');
 
@@ -112,16 +112,20 @@
             $(document).on('keydown',function(event) {
                 if (event.keyCode == 37) { 
                     var changeTo = $('.curImg').prev();        
-                    $('.curImg').removeClass('curImg');
-                    $(changeTo).addClass('curImg');
+                    if(changeTo.length>0)   {
+                        $('.curImg').removeClass('curImg');
+                        $(changeTo).addClass('curImg');
+                    }
                 }
                 if (event.keyCode == 39) { 
                     var changeTo = $('.curImg').next();        
-                    $('.curImg').removeClass('curImg');
-                    $(changeTo).addClass('curImg');
+                    if(changeTo.length>0)   {
+                        $('.curImg').removeClass('curImg');
+                        $(changeTo).addClass('curImg');
+                    }
                 }
                 try  {
-                    $('#preview>.modal-dialog>.modal-content>.modal-body').html('<img src="'+$('.curImg').attr('src').split('b.').join('.')+'">');
+                    $('#preview>.modal-dialog>.modal-content>.modal-body').html('<p>'+$('.curImg').attr('title')+'</p><img src="'+$('.curImg').attr('src').split('b.').join('.')+'">');
                 }
                 catch(error) {
                     ;

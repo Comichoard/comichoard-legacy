@@ -15,9 +15,10 @@
         $second = explode('<div class="clear"></div>', $first[1]);
         $second[0] = strip_tags($second[0],'<img>');
         $second = explode('src="',$second[0]);
+
         $imgstring='';
         for($j=1;$j<sizeof($second);$j+=1) {
-            $src=explode('"', $second[$j]);
+            $src=explode('pspan', $second[$j]);
             $imgstring.='<img src="'.$src[0].'">';
         }
         array_push($all, '<div class="well">'.$imgstring.'<div class="details"><span>'.ucwords($name[0]).'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$url.'">Share</span></div></div>');
