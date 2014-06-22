@@ -15,6 +15,7 @@
         <div class="btn btn-default" data-href="garfield">Garfield</div>
         <div class="btn btn-default" data-href="channelate">Channelate</div>
         <div class="btn btn-default" data-href="buttersafe">Buttersafe</div>
+        <div class="btn btn-default" data-href="smbc">SMBC</div>
         <div class="btn btn-default" data-href="pennyarcade">Penny Arcade</div>
         <div class="btn btn-default btn-lg" data-href="xkcdcomic">XKCD</div>
         <div class="btn btn-default" data-href="pcweenies">PC Weenies</div>

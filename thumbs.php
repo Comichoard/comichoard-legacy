@@ -8,6 +8,7 @@
 	<div class="btn btn-default" data-href="garfield">Garfield</div>
 	<div class="btn btn-default" data-href="cyanideandhappiness">Cyanide &amp; Happiness</div>
 	<div class="btn btn-default" data-href="buttersafe">Buttersafe</div>
+	<div class="btn btn-default" data-href="smbc">SMBC</div>
 	<div class="btn btn-default" data-href="spikedmath">Spiked Math</div>
 	<div class="btn btn-default" data-href="pcweenies">PC Weenies</div>
 	<div class="btn btn-default" data-href="calvinandhobbes">Calvin and Hobbes</div>
