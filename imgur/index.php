@@ -44,7 +44,7 @@
             }
         ?>
         <?php include('../head.php');?>
-        <style>img{margin:10px}.cdesc{width:58%}.well{width:58%}.preview{position:fixed;left:60%;width:39%;height:88%;top:10%;text-align:middle;overflow-y:scroll;overflow-x:hidden;}.preview>img{width:100%;vertical-align:middle}</style>
+        <style>img{margin:10px}.modal-body{text-align:center}.modal-body>img{max-width:95%}</style>
     </head>
     <body>
         <?php include('../modalselect.php');?>
@@ -63,14 +63,22 @@
                 <button id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
                     Select Comic To Read
                 </button>
-
-                <?php 
-                    if(isset($_COOKIE[$source]))    {
-                        echo '<a id="resume" type="button" class="btn btn-default btn-lg" data-del="yes">Continue From Last Time</a>';
-                    }
-                ?>
             </div>
-            <div class="preview"></div>
+            <style>.modal-content{border-radius:0;-o-border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}.modal-header{font-size:24px;font-weight:300}.modal-body>{text-align:justify}.modal-body>.btn{padding:2%;margin:1%;margin-bottom:2%;}.modal-body>.btn:hover{background: #3498db;color: #fff;}</style>
+            <div id="preview" class="modal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <p class="modal-title">Use arrow keys to change image</p>
+                  </div>
+                  <div class="modal-body">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="panel-body">
                 <?php
                     if($source != '')
@@ -95,7 +103,29 @@
 
             $(document).unbind('click');
             $(document).on('click','img',function(event) {
-                $('.preview').html('<img src="'+$(this).attr('src').split('b.').join('.')+'">');
+                $('#preview').modal('show')
+                $('#preview>.modal-dialog>.modal-content>.modal-body').html('<img src="'+$(this).attr('src').split('b.').join('.')+'">');
+                $('.curImg').removeClass('curImg');
+                $(this).addClass('curImg');
+
+            });
+            $(document).on('keydown',function(event) {
+                if (event.keyCode == 37) { 
+                    var changeTo = $('.curImg').prev();        
+                    $('.curImg').removeClass('curImg');
+                    $(changeTo).addClass('curImg');
+                }
+                if (event.keyCode == 39) { 
+                    var changeTo = $('.curImg').next();        
+                    $('.curImg').removeClass('curImg');
+                    $(changeTo).addClass('curImg');
+                }
+                try  {
+                    $('#preview>.modal-dialog>.modal-content>.modal-body').html('<img src="'+$('.curImg').attr('src').split('b.').join('.')+'">');
+                }
+                catch(error) {
+                    ;
+                }
             });
 		</script>
         <script type="text/javascript" src="../googleanalytics.js" ></script>
