@@ -21,7 +21,7 @@
             $src=explode('pspan', $second[$j]);
             $imgstring.='<img src="'.$src[0].'">';
         }
-        array_push($all, '<div class="well">'.$imgstring.'<div class="details"><span>'.ucwords($name[0]).'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$url.'">Share</span></div></div>');
+        array_push($all, '<div class="well">'.$imgstring.'<div class="details"><span>'.ucwords($name[0]).'</span><!--span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$url.'">Share</span--></div></div>');
 
         return $i+1;
     }
