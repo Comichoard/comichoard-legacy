@@ -24,7 +24,7 @@
     function makeWell($html,$id,$next)
     {
         global $all,$comic;
-        array_push($all, '<div class="well">'.str_replace('alt="','alt="XKCD: '$html).'
+        array_push($all, '<div class="well">'.str_replace('alt="','alt="XKCD: ', $html).'
                 <div class="details">
                     <span>#'.$id.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'">Share</span>
                 </div>
