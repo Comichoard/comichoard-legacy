@@ -12,6 +12,10 @@
     $result = curl_exec($ch);
     $display = explode('!znavfu',$result);
 
+    $metadata = explode('<div class="well">',$display[1]);
+    $metadata2 = explode('</div>' , $metadata[1]);
+    $imgsrc = explode('src="',$metadata2[0]);
+    $imgsrc2 = explode('"',$imgsrc[1]);
     if(isset($_GET['strip']))   {
         $strip=$_GET['strip'];
         $metadata = explode('<div class="well">',$display[1]);
@@ -19,6 +23,7 @@
         $metadata2 = explode('</div>' , $metadata[1]);
         $imgsrc = explode('src="',$metadata2[0]);
         $imgsrc2 = explode('"',$imgsrc[1]);
+
         $title = explode('alt="',$metadata[1]);
         $title2 = explode('"',$title[1]);
     }
@@ -40,7 +45,7 @@
                 echo '<meta property="og:title" content="imgur"/>
                     <meta property="og:url" content="http://'.$_SERVER['HTTP_HOST'].'/imgur"/>
                     <meta property="og:description" content="Comic Hoard is a platform to read webcomics easily. XKCD, Cyanide & Happiness, Garfield, Jl8 and many more..."/>
-                    <meta property="og:image" content="/favicon.png"/>';
+                    <meta property="og:image" content="'.$imgsrc2[0].'"/>';
             }
         ?>
         <?php include('../head.php');?>
