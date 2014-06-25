@@ -39,7 +39,7 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Buttersafe <a href="http://www.buttersafe.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>"A comic that contains pictures and sometimes words. Nothing else is guaranteed.<br>It is authored by Raynato Castro and Alex Culang."</p></div>';
+              <p class="cdesc-desc">"A comic that contains pictures and sometimes words. Nothing else is guaranteed.<br>It is authored by Raynato Castro and Alex Culang."</p></div>';
         foreach($all as $item) echo $item;
     }
 ?>

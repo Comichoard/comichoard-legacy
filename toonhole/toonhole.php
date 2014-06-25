@@ -40,7 +40,7 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Toonhole <a href="http://www.toonhole.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>"Cartoons that adults laugh at. Updated with cartoons every Monday, Wednesday, and Friday."</p></div>';
+              <p class="cdesc-desc">"Cartoons that adults laugh at. Updated with cartoons every Monday, Wednesday, and Friday."</p></div>';
         foreach($all as $item) echo $item;
     }
 ?>

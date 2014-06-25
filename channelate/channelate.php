@@ -41,7 +41,7 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Channelate <a href="http://www.channelate.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>A gag-per-day strip by Ryan Hudson (and sometimes his wife, Vee).<br>This comic makes heavy use of dark humor and is not recommended for the easily offended.</p></div>';
+              <p class="cdesc-desc">A gag-per-day strip by Ryan Hudson (and sometimes his wife, Vee).<br>This comic makes heavy use of dark humor and is not recommended for the easily offended.</p></div>';
         foreach($all as $item) echo $item;
     }
 ?>

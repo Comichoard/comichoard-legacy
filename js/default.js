@@ -44,9 +44,11 @@ $(document).on('click','.well>img',function (event) {
     window.location.href = strp;
 });
 
-if ($('.px').css('opacity') == '1') {
-    $('#gohome').html('CH');
-}
+$(document).ready(function()    {
+    if ($('.px').css('opacity') == '1') {
+        $('#gohome').html('CH');
+    }    
+});
 
 function savepos(e, t) {
     $.post("pos.php", {

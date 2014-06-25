@@ -27,7 +27,7 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Garfield <a href="http://www.garfield.com/comic" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>Garfield is a comic strip created by Jim Davis.<br>
+              <p class="cdesc-desc">Garfield is a comic strip created by Jim Davis.<br>
               It chronicles the life of the title character, the cat Garfield; his owner, Jon Arbuckle; and Jon\'s dog, Odie.</p>
               <p>Skip to comic from <input id="comicdateselect" type="date" class="form-control"></p>
               </div>';

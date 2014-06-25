@@ -45,7 +45,7 @@
         }
         echo base64_encode($i).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Spiked Math <a href="http://spikedmath.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>Spiked Math Comics, a math comic dedicated to humor, educate and entertain the geek in you.<br>Beware though, there might be some math involved .</p></div>';
+              <p class="cdesc-desc">Spiked Math Comics, a math comic dedicated to humor, educate and entertain the geek in you.<br>Beware though, there might be some math involved .</p></div>';
         foreach($all as $item) echo $item;
     }
 ?>

@@ -7,5 +7,5 @@
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800" rel="stylesheet" type="text/css">
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../css/default.css?v=44" />
-<script type="text/javascript" src="../js/default.js?v=7" ></script>
+<link rel="stylesheet" type="text/css" href="../css/default.css?v=46" />
+<script type="text/javascript" src="../js/default.js?v=8" ></script>

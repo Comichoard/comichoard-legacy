@@ -43,7 +43,7 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Poorly Drawn Lines <a href="http://poorlydrawnlines.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>Poorly Drawn Lines is a webcomic by Reza Farazmand.<br>It is updated every Monday, Wednesday, and Friday.</p></div>';
+              <p class="cdesc-desc">Poorly Drawn Lines is a webcomic by Reza Farazmand.<br>It is updated every Monday, Wednesday, and Friday.</p></div>';
         foreach($all as $item) echo $item;
     }
 ?>

@@ -41,7 +41,7 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>PC Weenies <a href="http://pcweenies.com/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>The PC Weenies is a webcomic with a focus on technology humor and geek culture.
+              <p class="cdesc-desc">The PC Weenies is a webcomic with a focus on technology humor and geek culture.
               <br>The PC Weenies was created and launched on the web in October 1998 by Krishna M. Sadasivam</p></div>';
         foreach($all as $item) echo $item;
     }

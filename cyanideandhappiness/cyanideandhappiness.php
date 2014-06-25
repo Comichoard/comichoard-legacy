@@ -67,7 +67,7 @@
         $i=getcomic(getfirst());
         echo base64_encode($i).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Cyanide & Happiness <a href="http://explosm.net" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>Cyanide & Happiness is a webcomic written and illustrated by Kris Wilson, Rob DenBleyker, Matt Melvin and Dave McElfatrick.<br>The comic\'s authors attribute its success to its often controversial nature.</p></div>';
+              <p class="cdesc-desc">Cyanide & Happiness is a webcomic written and illustrated by Kris Wilson, Rob DenBleyker, Matt Melvin and Dave McElfatrick.<br>The comic\'s authors attribute its success to its often controversial nature.</p></div>';
         foreach($all as $item) echo $item;
     }
 ?>

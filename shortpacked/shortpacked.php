@@ -39,7 +39,7 @@
         }
         echo base64_encode($i).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Shortpacked <a href="http://shortpacked.com/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>Shortpacked! is a webcomic by David Willis set in a toy store.<br></p></div>';
+              <p class="cdesc-desc">Shortpacked! is a webcomic by David Willis set in a toy store.<br></p></div>';
         foreach($all as $item) echo $item;
     }
 ?>

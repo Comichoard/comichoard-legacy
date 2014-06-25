@@ -15,6 +15,7 @@ a{text-decoration:none!important}
 .cdesc>h1>.btn{margin-right:10px}
 #prompter{font-size:40px;padding-top:20px;margin-top:0;height:100%;width:100%;font-weight:300}
 #footer{padding:3px 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;}
+#gohome{margin-left:10px;}
 #comicselect-btn{position:absolute;top:0px;width:35%;left:10.5%;margin:5px auto;margin-bottom:0;margin-left:300px;display: block;z-index:9999;font-weight:200;font-size:18px;}
 #report{width:60%;margin-left:20%;margin-top:5%}
 .details{font-size:17px;margin-top:10px}
@@ -22,7 +23,6 @@ a{text-decoration:none!important}
 #resume{position:absolute;right:10px;top:5px}
 #fbpage{position:absolute;right:10px;top:5px}
 span{display:inline-block}
-#gohome{margin-left:10px;}
 .px{opacity:0}
 #footer{position:fixed;bottom:0;width:100%;text-align:center}
 #gotofb, #gototwitter {width:50px;}
@@ -34,17 +34,18 @@ span{display:inline-block}
 }
 @media screen and (max-width:768px) {
 body{font-size:10px!important}
-.cdesc{font-size:15px!important}
+.cdesc{font-size:15px!important;padding:5px;padding-top:40px;text-align:left}
 .cdesc>h1{font-size:20px!important}
+.cdesc>p{font-size:15px}
+.cdesc>.cdesc-desc{visibility:hidden;position:absolute;}
 .px{opacity:1}
 #top{position:absolute;height:45px;}
-.cdesc{padding:5px;padding-top:80px;}
 #prompter{font-size:20px;padding-top:80px;}
 #gohome{width:17%;display:inline-block;height:35px;padding:5px;text-align:center;}
 .panel-body{margin:0px;width:100%!important}
 .copt{visibility:hidden;width:0}
-#comicselect-btn{width:74%;display:inline-block;margin-left:18%}
-#resume{position:absolute;top:50px;left:5%;width:90%;font-size:14px}
+#comicselect-btn{width:74%;top:-1px;display:inline-block;margin-left:12%;height:35px;padding:5px}
+#resume{position:absolute;top:50px;left:5%;width:90%;font-size:14px;visibility:hidden}
 #footer{visibility:hidden}
 #fbpage{position:absolute;top:70px;left:5%;width:90%;visibility: hidden;}
 .well>img{width:100%}

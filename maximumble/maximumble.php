@@ -41,7 +41,7 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Maximumble <a href="http://maximumble.thebookofbiff.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>Maximumble is a brilliantly drawn webcomic by Chris Hallbeck.<br>It portrays the author\'s hilarious view on day to day life.</p></div>';
+              <p class="cdesc-desc">Maximumble is a brilliantly drawn webcomic by Chris Hallbeck.<br>It portrays the author\'s hilarious view on day to day life.</p></div>';
         foreach($all as $item) echo $item;
     }
 ?>
