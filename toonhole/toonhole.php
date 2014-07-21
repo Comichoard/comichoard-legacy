@@ -14,7 +14,7 @@
         $second[0] = str_replace('href', 'target="_blank" href', $second[0]);
         $altbig = explode('alt="',$second[0]); 
         $alt = explode('"',$altbig[1]); 
-        $image = '<div class="well">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
+        $image = '<div class="card">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('alt="','alt="Toonhole: ', $image);
         array_push($all, $image);
 
@@ -39,8 +39,8 @@
             $url = getcomic($url);
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Toonhole <a href="http://www.toonhole.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p class="cdesc-desc">"Cartoons that adults laugh at. Updated with cartoons every Monday, Wednesday, and Friday."</p></div>';
+        echo '<div class="jumbotron cdesc"><h1>Toonhole <a href="http://www.toonhole.com" type="button" class="btn btn-default" target="_blank">www.toonhole.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+              </div>';
         foreach($all as $item) echo $item;
     }
 ?>

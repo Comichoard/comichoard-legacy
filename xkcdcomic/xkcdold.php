@@ -27,7 +27,7 @@
         $second = explode('</div>', $first[1]);
         preg_match('/alt="(.*?)"/',$second[0], $alttoreplace);
         $second[0] = str_replace($alttoreplace[0], 'alt="XKCD #'.$i.'"', $second[0]);
-        array_push($all, '<div class="well">'.$second[0].'<br><div class="details"><span>#'.$i.'</span><span>'.$name[0].'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
+        array_push($all, '<div class="card">'.$second[0].'<br><div class="details"><span>#'.$i.'</span><span>'.$name[0].'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
         return $i-1;
     }
 

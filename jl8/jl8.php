@@ -11,10 +11,10 @@
 
     $con=mysqli_connect($mysql_hostname,$mysql_user,$mysql_password,$mysql_database);
 
-    function makeWell($src,$id,$next)
+    function makecard($src,$id,$next)
     {
         global $all,$comic;
-        array_push($all, '<div class="well">
+        array_push($all, '<div class="card">
                 <img alt="JL8 #'.$id.'" src="'.$src.'">
                 <div class="details">
                     <span>#'.$id.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'">Share</span>
@@ -28,7 +28,7 @@
         while($row = mysqli_fetch_array($result))   {
             $url_present = $row['url'];
             $cur_id = $row['id'];
-            makeWell($url_present,$cur_id,49);
+            makecard($url_present,$cur_id,49);
         }
     }
     if (mysqli_connect_errno()) {
@@ -71,7 +71,7 @@
                     $next_id = $pres_id-1;       
                 else
                     $next_id = $pres_id+1;   
-                makeWell($url_present,$pres_id,$next_id);
+                makecard($url_present,$pres_id,$next_id);
                 if($pres_id == 1 || $pres_id == $last)
                     array_push($all,'<div class="jumbotron">Looks like you read all the comics we had.<br>Here\'s something else to read <a href="http://comichoard.com/garfield" type="button" class="btn btn-default">Garfield</a></div>');    
             }
@@ -91,7 +91,7 @@
                     while($row = mysqli_fetch_array($result))
                         $url_present = $row['url'];
                     $next_id = $pres_id-1;       
-                    makeWell($url_present,$pres_id,$next_id);
+                    makecard($url_present,$pres_id,$next_id);
                 }
                 array_push($all,'<div class="jumbotron">More comics from JL8...</div>');
             }
@@ -115,11 +115,10 @@
                     }
                     $count += 1;
                 }
-                makeWell($url_present,$present_id,$next_id);
+                makecard($url_present,$present_id,$next_id);
             }
             echo base64_encode($next_id).'!znavfu';
-            echo '<div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p class="cdesc-desc">JL8 is a comic strip created by Yale Stewart. It tells tales based on younger versions of DC superheroes.</p>
+            echo '<div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">www.jl8comic.tumblr.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>
               <span>Sort in order
               <a href="http://comichoard.com/jl8/?sort=asc" type="button" class="btn btn-default">From the start</a>

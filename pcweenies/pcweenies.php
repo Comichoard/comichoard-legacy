@@ -13,7 +13,7 @@
         $second = explode('</div>', $first[2]);
         $altbig = explode('pcw.jpg',$first[2]); 
         $alt = substr($altbig[0],8,10); 
-        $image = '<div class="well">'.'<img src="http://pcweenies.com/wp-content/uploads/'.$second[0].'<div class="details"><span>'.$alt.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
+        $image = '<div class="card">'.'<img src="http://pcweenies.com/wp-content/uploads/'.$second[0].'<div class="details"><span>'.$alt.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('src=','alt="PC Weenies: '.$alt.'" src=', $image);
         array_push($all, $image);
 
@@ -40,9 +40,9 @@
             }
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>PC Weenies <a href="http://pcweenies.com/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p class="cdesc-desc">The PC Weenies is a webcomic with a focus on technology humor and geek culture.
-              <br>The PC Weenies was created and launched on the web in October 1998 by Krishna M. Sadasivam</p></div>';
+        echo '<div class="jumbotron cdesc"><h1>PC Weenies 
+                <a href="http://pcweenies.com/" type="button" class="btn btn-default" target="_blank">www.pcweenies.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+              </div>';
         foreach($all as $item) echo $item;
     }
 ?>

@@ -14,7 +14,7 @@
 
     if(isset($_GET['strip']))   {
         $strip=$_GET['strip'];
-        $metadata = explode('<div class="well">',$display[1]);
+        $metadata = explode('<div class="card">',$display[1]);
 
         $metadata2 = explode('</div>' , $metadata[1]);
         $imgsrc = explode('src="',$metadata2[0]);
@@ -54,10 +54,10 @@
                     Comic Hoard
                 </a>
                 <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
-                    <i class="fa fa-facebook"></i>
+                    FCBK
                 </a>
                 <a id="gototwitter" class="btn btn-default btn-lg" href="https://twitter.com/ComicHoard" target="_blank">
-                    <i class="fa fa-twitter"></i>
+                    TWTR
                 </a>
                 <button id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
                     Select Comic To Read
@@ -75,7 +75,8 @@
                         echo $display[1];
 
                 ?>
-                <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
+                <div id="scrolldown">NEXT<p class="glyphicon glyphicon-chevron-down"></p></div>
+<div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
             <div id="footer" class="footer">Help your friends see how awesome Buttersafe is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fbuttersafe" class="btn btn-default begsuccess btn-sm" target="_blank">Share Buttersafe</i></a></div>
         </div>

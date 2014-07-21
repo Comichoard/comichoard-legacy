@@ -2,10 +2,18 @@
 <meta name="description" content="Comic Hoard - The Webcomic Library" />
 <meta name="keywords" content="webcomic,comic,hoard,xkcd,maximumble,cyanide and happiness,channelate,jl8" />
 <link rel="icon" type="image/png" href="/favicon.png?v=2">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800" rel="stylesheet" type="text/css">
-<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+<?php 
+	if($_SERVER['HTTP_HOST']=='localhost')	{
+		echo '<link rel="stylesheet" type="text/css" href="css/default.css?v=46" />
+			  <script type="text/javascript" src="js/default.js?v=8" ></script>';
+	}
+?>
+
 <link rel="stylesheet" type="text/css" href="../css/default.css?v=46" />
 <script type="text/javascript" src="../js/default.js?v=8" ></script>

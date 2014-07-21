@@ -40,10 +40,10 @@
                     Comic Hoard
                 </a>
                 <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
-                    <i class="fa fa-facebook"></i>
+                    FCBK
                 </a>
                 <a id="gototwitter" class="btn btn-default btn-lg" href="https://twitter.com/ComicHoard" target="_blank">
-                    <i class="fa fa-twitter"></i>
+                    TWTR
                 </a>
                 <button id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
                     Select Comic To Read
@@ -53,16 +53,15 @@
                 </a>
             </div>
             <div class="panel-body">
-                <div class="jumbotron cdesc index-cdesc">
-                    <p><br>Now serving on Comic Hoard</p>
+                <div class="jumbotron" style="text-align:left">
+                    <br><h4>Now serving on Comic Hoard</h4>
                     <?php include('thumbs.php');?>
                 </div>
-                <p id="prompter">Scroll Down to read latest from all</p>
-                <br>                    
                 <?php
                     echo $display[1];
                 ?>
-                <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
+                <div id="scrolldown">NEXT<p class="glyphicon glyphicon-chevron-down"></p></div>
+<div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
         </div>
 

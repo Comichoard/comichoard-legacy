@@ -1,6 +1,7 @@
 <?php
     $comiclist = array();
-    array_push($comiclist, "cyanideandhappiness","calvinandhobbes","jl8","garfield","xkcdcomic","buttersafe","channelate","maximumble","pcweenies","poorlydrawnlines");
+    array_push($comiclist,"cyanideandhappiness","calvinandhobbes","toonhole","maximumble","garfield","channelate","buttersafe","smbc","xkcdcomic","pcweenies","poorlydrawnlines");
+    shuffle($comiclist);
     $goagain = array();
     $round=1;
     if(isset($_GET['comic']))   {
@@ -33,8 +34,8 @@
 
     preg_match('/alt="(.*?)"/',$result, $title);
     $title[0] = substr($title[0],5,sizeof($title[0])-2);
-    $well = explode('"well">',$result);
+    $card = explode('"card">',$result);
     preg_match('/<span>(.*?)<\/span>/',$result, $altreplace);
-    $well[1] = str_replace($altreplace[0],'<span>'.$title[0].'</span>',$well[1]);
-    echo $next.'!round'.$round.'!znavfu'.'<div class="well" data-comic="'.$now.'">'.$well[1].'</div>';
+    $card[1] = str_replace($altreplace[0],'<span>'.$title[0].'</span>',$card[1]);
+    echo $next.'!round'.$round.'!znavfu'.'<div class="card" data-comic="'.$now.'">'.$card[1].'</div>';
 ?>

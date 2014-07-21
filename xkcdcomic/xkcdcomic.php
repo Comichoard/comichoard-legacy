@@ -21,10 +21,10 @@
         return intval($first2[0]);
     }
 
-    function makeWell($html,$id,$next)
+    function makecard($html,$id,$next)
     {
         global $all,$comic;
-        array_push($all, '<div class="well">'.str_replace('alt="','alt="XKCD: ', $html).'
+        array_push($all, '<div class="card">'.str_replace('alt="','alt="XKCD: ', $html).'
                 <div class="details">
                     <span>#'.$id.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'">Share</span>
                 </div>
@@ -70,7 +70,7 @@
                     $next_id = $pres_id-1;       
                 else
                     $next_id = $pres_id+1;   
-                makeWell($html_present,$pres_id,$next_id);
+                makecard($html_present,$pres_id,$next_id);
                 if($pres_id == 1 || $pres_id == $last)
                     array_push($all,'<div class="jumbotron">Looks like you read all the comics we had.<br>Here\'s something else to read <a href="http://comichoard.com/garfield" type="button" class="btn btn-default">Garfield</a></div>');    
             }
@@ -85,7 +85,7 @@
                 while($row = mysqli_fetch_array($result))
                     $html_present = $row['html'];
                 $next_id = $pres_id-1;       
-                makeWell($html_present,$pres_id,$next_id);
+                makecard($html_present,$pres_id,$next_id);
                 array_push($all,'<div class="jumbotron">More comics from XKCD...</div>');
             }
             else
@@ -115,11 +115,10 @@
                     }
                     $count += 1;
                 }
-                makeWell($html_present,$present_id,$next_id);
+                makecard($html_present,$present_id,$next_id);
             }
             echo base64_encode($next_id).'!znavfu';
-            echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p class="cdesc-desc">XKCD, is a webcomic created by Randall Munroe.<br>The comic\'s tagline describes it as "a webcomic of romance, sarcasm, math, and language."</p>
+            echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">www.xkcd.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>
               <span>Sort in order
               <a href="http://comichoard.com/xkcdcomic/?sort=asc" type="button" class="btn btn-default">From the start</a>

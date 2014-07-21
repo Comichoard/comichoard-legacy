@@ -11,10 +11,10 @@
 
 	$con=mysqli_connect($mysql_hostname,$mysql_user,$mysql_password,$mysql_database);
 
-	function makeWell($src,$date,$next)
+	function makecard($src,$date,$next)
 	{
 		global $all,$comic;
-		array_push($all, '<div class="well">
+		array_push($all, '<div class="card">
 				<img alt="Calvin and Hobbes '.$date.'" src="'.$src.'" width="700">
 				<div class="details">
 					<span>'.$date.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($date).'">Share</span>
@@ -40,7 +40,7 @@
 				$url_present = $row['url'];
 			$date1 = str_replace('-', '/', $pres_date);
 			$next_date = date('Y-m-d',strtotime($date1 . "-1 days"));		
-			makeWell($url_present,$pres_date,$next_date);
+			makecard($url_present,$pres_date,$next_date);
 			echo base64_encode($next_date).'!znavfu';
 	        echo $all[0];
 		}
@@ -53,7 +53,7 @@
 					$url_present = $row['url'];
 				$date1 = str_replace('-', '/', $pres_date);
 				$next_date = date('Y-m-d',strtotime($date1 . "-1 days"));		
-				makeWell($url_present,$pres_date,$next_date);
+				makecard($url_present,$pres_date,$next_date);
 	            array_push($all,'<div class="jumbotron">More comics from Calvin and Hobbes...</div>');
 	        }
 	        else
@@ -70,12 +70,13 @@
 					}
 					$count += 1;
 				}
-				makeWell($url_present,$present_date,$next_date);
+				makecard($url_present,$present_date,$next_date);
 			}
 			echo base64_encode($next_date).'!znavfu';
-	        echo '<div class="jumbotron cdesc"><h1>Calvin and Hobbes <a href="http://www.gocomics.com/calvinandhobbes/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-	              <p>Calvin and Hobbes is a daily comic strip that was written and illustrated by American cartoonist Bill Watterson.<br>
-	              It follows the humorous antics of Calvin, a mischievous and adventurous six-year-old boy, and Hobbes, his sardonic stuffed tiger.</p></div>';
+	        echo '<div class="jumbotron cdesc"><h1>Calvin and Hobbes 
+	        		<a href="http://www.gocomics.com/calvinandhobbes/" type="button" class="btn btn-default" target="_blank">www.gocomics.com/calvinandhobbes</a>
+	        		<a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+	              </div>';
 	        foreach($all as $item) echo $item;
 		}
 		mysqli_close($con);

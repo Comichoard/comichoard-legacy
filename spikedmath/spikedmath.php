@@ -25,7 +25,7 @@
         $second = explode('</center>', $first[1]);
         $namebig = explode('alt="Spiked Math Comic - ',$second[0]);
         $name = explode('"',$namebig[1]);
-        array_push($all, '<div class="well">'.'<img src="http://spikedmath.com/comics'.$second[0].'<div class="details"><span>#'.$i.'</span><span>'.$name[0].'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
+        array_push($all, '<div class="card">'.'<img src="http://spikedmath.com/comics'.$second[0].'<div class="details"><span>#'.$i.'</span><span>'.$name[0].'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
         return $i-1;
     }
 
@@ -44,8 +44,8 @@
             getcomic($i);
         }
         echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Spiked Math <a href="http://spikedmath.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p class="cdesc-desc">Spiked Math Comics, a math comic dedicated to humor, educate and entertain the geek in you.<br>Beware though, there might be some math involved .</p></div>';
+        echo '<div class="jumbotron cdesc"><h1>Spiked Math <a href="http://spikedmath.com" type="button" class="btn btn-default" target="_blank">www.spikedmath.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+              </div>';
         foreach($all as $item) echo $item;
     }
 ?>

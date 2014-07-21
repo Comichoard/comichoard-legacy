@@ -24,7 +24,7 @@
         $first = explode('<div id="comicbody">', $result);
         $second = explode('</div>', $first[1]);
         if(strip_tags($second[0],'<img>') != 'There is no comic with this ID.')
-            array_push($all, '<div class="well">'.strip_tags($second[0],'<img>').'</div>');
+            array_push($all, '<div class="card">'.strip_tags($second[0],'<img>').'</div>');
         return $i-1;
     }
 
@@ -38,8 +38,9 @@
             getcomic($i);
         }
         echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Shortpacked <a href="http://shortpacked.com/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p class="cdesc-desc">Shortpacked! is a webcomic by David Willis set in a toy store.<br></p></div>';
+        echo '<div class="jumbotron cdesc"><h1>Shortpacked 
+                <a href="http://shortpacked.com/" type="button" class="btn btn-default" target="_blank">www.shortpacked.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+              </div>';
         foreach($all as $item) echo $item;
     }
 ?>

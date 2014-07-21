@@ -13,7 +13,7 @@
         $second = explode('</div>', $first[1]);
         $altbig = explode('alt="',$second[0]); 
         $alt = explode('"',$altbig[1]); 
-        $image = '<div class="well">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.''.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
+        $image = '<div class="card">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.''.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('alt="','alt="Buttersafe: ', $image);
         array_push($all, $image);
 

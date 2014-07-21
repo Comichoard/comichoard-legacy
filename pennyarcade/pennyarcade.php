@@ -12,7 +12,7 @@
         $first = explode('<img src="http://art.penny-arcade.com', $result);
         $second = explode('</a>', $first[1]);
         
-        array_push($all, '<div class="well">'.'<img src="http://art.penny-arcade.com'.$second[0].'</div>');
+        array_push($all, '<div class="card">'.'<img src="http://art.penny-arcade.com'.$second[0].'</div>');
 
         $urlfirst = explode('<a class="btn btnPrev" href="', $result);
         $urlsecond = explode('"', $urlfirst[1]);
@@ -30,9 +30,8 @@
             $url = getcomic($url);
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Penny Arcade <a href="http://www.penny-arcade.com/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p class="cdesc-desc">Penny Arcade is a webcomic focused on video games and video game culture, written by Jerry Holkins and illustrated by Mike Krahulik.<br>
-              It is among the most popular and longest running gaming webcomics currently online.</p></div>';
+        echo '<div class="jumbotron cdesc"><h1>Penny Arcade <a href="http://www.penny-arcade.com/" type="button" class="btn btn-default" target="_blank">www.penny-arcade.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+              </div>';
         foreach($all as $item) echo $item;
     }
 ?>

@@ -50,7 +50,7 @@
             $name = explode('/',$namebig[1]);
             $name[0] = ucwords(str_replace('-',' ',$name[1]));
         }
-        array_push($all, '<div class="well">'.$second[0].'<div class="details"><span>#'.$i.'</span><span>'.substr($name[0],-10).'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
+        array_push($all, '<div class="card">'.$second[0].'<div class="details"><span>#'.$i.'</span><span>'.substr($name[0],-10).'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
         return $i-1;
     }
 
@@ -66,8 +66,9 @@
         }
         $i=getcomic(getfirst());
         echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Cyanide & Happiness <a href="http://explosm.net" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p class="cdesc-desc">Cyanide & Happiness is a webcomic written and illustrated by Kris Wilson, Rob DenBleyker, Matt Melvin and Dave McElfatrick.<br>The comic\'s authors attribute its success to its often controversial nature.</p></div>';
+        echo '<div class="jumbotron cdesc"><h1>Cyanide & Happiness <a href="http://explosm.net" type="button" class="btn btn-default" target="_blank">www.explosm.net</a>
+                <a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+            </div>';
         foreach($all as $item) echo $item;
     }
 ?>
