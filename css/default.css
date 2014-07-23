@@ -9,19 +9,18 @@ a{text-decoration:none!important}
 #viewer>.panel-body>.cdesc{text-align:left;margin-bottom:0;padding-top:70px;padding-bottom:20px}
 #viewer>.panel-body>.cdesc>h1{font-size:45px}
 #viewer>.panel-body>.cdesc>h1>.btn{margin-left:10px}
-#viewer>.panel-body>.card{font-size:20px;margin-bottom:60px;text-align:center;width:100%}
-#viewer>.panel-body>.card>img{margin-bottom:0;cursor:pointer;}
-#viewer>.panel-body>#scrolldown{position:fixed;right:0px;bottom:-10px;text-align:center;width:100px;cursor:pointer;}
-#viewer>.panel-body>#scrolldown:hover{color:#333;}
-#viewer>.panel-body>#scrolldown>p{display:block;font-size:60px;position:relative;left:-2px;}
-#viewer>.panel-body>#loadmsg{text-align:center;margin-top:300px;font-size:20px}
+.card{font-size:20px;margin-bottom:60px;text-align:center;width:100%}
+.card>img{margin-bottom:0;cursor:pointer;margin-top:20px}
+#scrolldown{position:fixed;right:0px;bottom:-10px;text-align:center;width:100px;cursor:pointer;}
+#scrolldown:hover{color:#333;}
+#scrolldown>p{display:block;font-size:60px;position:relative;left:-2px;}
+#loadmsg{text-align:center;margin-top:300px;font-size:20px}
 
 .thumb-container>.btn{margin-bottom:7px}
 
 #prompter{font-size:40px;padding-top:20px;margin-top:0;height:100%;width:100%;font-weight:300}
 #footer{padding:3px 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;}
 #gohome{margin-left:10px;}
-#gotofb,#gototwitter{font-size:16px}
 #comicselect-btn{position:absolute;top:0px;width:35%;left:10.5%;margin:5px auto;margin-bottom:0;margin-left:300px;display: block;z-index:9999;font-weight:200;font-size:18px;}
 #report{width:60%;margin-left:20%;margin-top:5%}
 .details{font-size:17px;margin-top:10px}

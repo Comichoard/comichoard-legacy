@@ -5,8 +5,8 @@
     function getfirst() {
         $url = 'http://explosm.net';
         $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
         
         $first1 = explode('http://www.explosm.net/comics/', $result);
         $first2 =  explode('/', $first1[1]);
@@ -22,8 +22,8 @@
         global $all,$comic;
         $url = 'http://explosm.net/comics/'.$i.'/';
         $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
         $name = explode('</nobr>',$result);
         $first = explode('overflow: auto; text-align: center;">', $result);
         $second = explode('</div>', $first[1]);

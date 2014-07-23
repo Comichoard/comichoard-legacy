@@ -61,7 +61,7 @@
                     echo $display[1];
                 ?>
                 <div id="scrolldown">NEXT<p class="glyphicon glyphicon-chevron-down"></p></div>
-<div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
+                <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
         </div>
 

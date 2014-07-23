@@ -37,5 +37,5 @@
     $card = explode('"card">',$result);
     preg_match('/<span>(.*?)<\/span>/',$result, $altreplace);
     $card[1] = str_replace($altreplace[0],'<span>'.$title[0].'</span>',$card[1]);
-    echo $next.'!round'.$round.'!znavfu'.'<div class="card" data-comic="'.$now.'">'.$card[1].'</div>';
+    echo $next.'!round'.$round.'!znavfu'.'<div class="card" data-comic="'.$now.'">'.$card[1];
 ?>

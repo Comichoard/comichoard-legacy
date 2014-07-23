@@ -24,7 +24,7 @@ $(document).on('click','#resume',function() {
                 e = e.split("!znavfu")[1];
                 e = e.split("<!--")[0];
                 if (e.split("script").length == 1)
-                    $("#loadmsg").before(e);
+                    $("#scrolldown").before(e);
             });
             flag = 0;
         });
@@ -87,12 +87,11 @@ function addnext()  {
                     sameflag=0;
             });
             if (e.split("script").length == 1 && sameflag==1)   {
-                $("#loadmsg").before(e);
+                $("#scrolldown").before(e);
                 FB.XFBML.parse();
             }
         }
         flag = 0;
-        console.log($('.card').css('top'));
     });
     savepos(source, next);
 }
@@ -113,7 +112,7 @@ $(document).on('change','#comicdateselect',function(event) {
         e = e.split("!znavfu")[1];
         e = e.split("<!--")[0];
         if (e.split("script").length == 1)
-            $("#loadmsg").before(e);
+            $("#scrolldown").before(e);
     });
 });
 
@@ -128,7 +127,7 @@ $(document).on('keydown','#comicnumselect',function(event) {
             e = e.split("!znavfu")[1];
             e = e.split("<!--")[0];
             if (e.split("script").length == 1)
-                $("#loadmsg").before(e);
+                $("#scrolldown").before(e);
         });
     }
 });
