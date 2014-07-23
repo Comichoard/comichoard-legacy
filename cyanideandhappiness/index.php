@@ -61,10 +61,10 @@
                     Comic Hoard
                 </a>
                 <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
-                    FCBK
+                    <i class="fa fa-facebook"></i>
                 </a>
                 <a id="gototwitter" class="btn btn-default btn-lg" href="https://twitter.com/ComicHoard" target="_blank">
-                    TWTR
+                    <i class="fa fa-twitter"></i>
                 </a>
                 <button id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
                     Select Comic To Read
