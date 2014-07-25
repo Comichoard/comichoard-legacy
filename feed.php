@@ -16,7 +16,7 @@
     while($count)   {
         $server = $_SERVER['HTTP_HOST'];
     if($server=='localhost') $server.='/comichoard';
-    $url = 'http://'.$server.'/'.$now.'/'.$now.'.php';
+    $url = 'http://'.$server.'/equinox/'.$now.'/'.$now.'.php';
         if(isset($goagain[0]))
             $url .= '?comic='.$goagain[0];
     $ch = curl_init($url);

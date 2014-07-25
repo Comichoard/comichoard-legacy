@@ -17,7 +17,7 @@ $(document).on('click','#resume',function() {
             var retain = $(".panel-body div:first-child").html();
             $(".panel-body").empty();
             $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
-            $(".panel-body").append('<div id="scrolldown">NEXT<p class="glyphicon glyphicon-chevron-down"></p></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
+            $(".panel-body").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
             
             $.post(source+".php/?comic=" + next, function (e) {
                 next = e.split("!znavfu")[0];
@@ -50,6 +50,9 @@ $(document).ready(function()    {
     if ($('.px').css('opacity') == '1') {
         $('#gohome').html('CH');
     }    
+    if ($('.px').css('opacity') == '0.5') {
+        $('#fbpage,#resume').html('Continue');
+    }
 });
 
 function savepos(e, t) {
@@ -66,9 +69,6 @@ function savepos(e, t) {
 
 function addnext()  {
     flag = 1;
-    if(!scrollFlag) {
-        setTimeout(addnext,1000);
-    }
     $.post(source+".php?comic=" + next, function (e) {
         next = e.split("!znavfu")[0];
         e = e.split("!znavfu")[1];
@@ -106,7 +106,7 @@ $(document).on('change','#comicdateselect',function(event) {
     var retain = $(".panel-body div:first-child").html();
     $(".panel-body").empty();
     $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
-    $(".panel-body").append('<div id="scrolldown">NEXT<p class="glyphicon glyphicon-chevron-down"></p></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
+    $(".panel-body").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
     $.post(source+".php?comic=" + btoa($(this).val()), function (e) {
         next = e.split("!znavfu")[0];
         e = e.split("!znavfu")[1];
@@ -121,7 +121,7 @@ $(document).on('keydown','#comicnumselect',function(event) {
         var retain = $(".panel-body div:first-child").html();
         $(".panel-body").empty();
         $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
-        $(".panel-body").append('<div id="scrolldown">NEXT<p class="glyphicon glyphicon-chevron-down"></p></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
+        $(".panel-body").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
         $.post(source+".php?comic="+btoa($(this).val())+"&sort="+sort, function (e) {
             next = e.split("!znavfu")[0];
             e = e.split("!znavfu")[1];
@@ -132,19 +132,50 @@ $(document).on('keydown','#comicnumselect',function(event) {
     }
 });
 
-var scrollFlag=1;
-$(document).on('click','#scrolldown',function()   {
-    if(scrollFlag)    {
-        scrollFlag=0;
-        var currentScroll='';
-        try {
-            currentScroll=$("body").scrollTop();
-        }
-        catch(error)    {
-            currentScroll=$("html").scrollTop();
-        }
-        $("body,html").animate({ scrollTop: currentScroll+400 }, 500,function() {
-            scrollFlag=1;
-        });
-    }
+var dig;
+var howMuchDig=3000;
+$(document).on('click','#scrolldown>.fa-play',function()   {
+    $(this).animate({opacity:0},300,function()  {
+        $(this).replaceWith('<i class="fa fa-pause"></i>');
+        $(this).animate({opacity:1},300);
+    });
+    dig=setInterval(digDown,90000);
+    digDown();
 });
+
+$(document).on('click','#scrolldown>.fa-pause',function()   {
+    $(this).animate({opacity:0},300,function()  {
+        $(this).replaceWith('<i class="fa fa-play"></i>');
+        $(this).animate({opacity:1},300);
+    });
+    $("body,html").stop();
+    clearInterval(dig);
+});
+
+$(document).on('click','#scrolldown>.fa-backward',function()   {
+    $("body,html").stop();
+    clearInterval(dig);
+    if(howMuchDig>1000)
+        howMuchDig-=500;
+    dig=setInterval(digDown,90000);
+    digDown();
+});
+
+$(document).on('click','#scrolldown>.fa-forward',function()   {
+    $("body,html").stop();
+    clearInterval(dig);
+    if(howMuchDig<5000)
+        howMuchDig+=500;
+    dig=setInterval(digDown,90000);
+    digDown();
+});
+function digDown()  {
+    var currentScroll='';
+    try {
+        currentScroll=$("body").scrollTop();
+    }
+    catch(error)    {
+        currentScroll=$("html").scrollTop();
+    }
+    $("body,html").animate({ scrollTop: currentScroll+howMuchDig }, 90000);
+}

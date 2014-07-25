@@ -10,8 +10,6 @@
         $display = explode('!znavfu',$result);
     }
 ?>
-
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -53,14 +51,31 @@
                 </a>
             </div>
             <div class="panel-body">
-                <div class="jumbotron" style="text-align:left">
+                <div class="jumbotron" style="text-align:left;padding-bottom:30px">
                     <br><h4>Now serving on Comic Hoard</h4>
-                    <?php include('thumbs.php');?>
+                    <div class="thumb-container">
+                        <a class="btn btn-default" href="http://comichoard.com/jl8">JL8</a>
+                        <a class="btn btn-default" href="http://comichoard.com/xkcdcomic">XKCD</a>
+                        <a class="btn btn-default" href="http://comichoard.com/toonhole">Toonhole</a>
+                        <a class="btn btn-default" href="http://comichoard.com/maximumble">Maximumble</a>
+                        <a class="btn btn-default" href="http://comichoard.com/spikedmath">Spiked Math</a>
+                        <a class="btn btn-default" href="http://comichoard.com/garfield">Garfield</a>
+                        <a class="btn btn-default" href="http://comichoard.com/pennyarcade">Penny Arcade</a>
+                        <a class="btn btn-default" href="http://comichoard.com/shortpacked">Shortpacked</a>
+                        <a class="btn btn-default" href="http://comichoard.com/pcweenies">PC Weenies</a>
+                        <a class="btn btn-default" href="http://comichoard.com/buttersafe">Buttersafe</a>
+                        <a class="btn btn-default" href="http://comichoard.com/calvinandhobbes">Calvin and Hobbes</a>
+                        <a class="btn btn-default" href="http://comichoard.com/cyanideandhappiness">Cyanide &amp; Happiness</a>
+                        <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
+                        <a class="btn btn-default" href="http://comichoard.com/smbc">SMBC</a>
+                        <a class="btn btn-default" href="http://comichoard.com/poorlydrawnlines">Poorly Drawn Lines</a>
+                    </div>
                 </div>
                 <?php
-                    echo $display[1];
+                    if(isset($display[1]))
+                        echo $display[1];
                 ?>
-                <div id="scrolldown">NEXT<p class="glyphicon glyphicon-chevron-down"></p></div>
+                <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
         </div>

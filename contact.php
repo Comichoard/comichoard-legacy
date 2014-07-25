@@ -21,7 +21,7 @@
         <script src="js/modernizr.custom.63321.js"></script>
     </head>
     <body>
-        <?php include('../modalselect.php');?>
+        <?php include('../../modalselect.php');?>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <div id="top" class="panel-heading">
