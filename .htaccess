@@ -1,5 +1,6 @@
 Options -Indexes
 
+
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive on

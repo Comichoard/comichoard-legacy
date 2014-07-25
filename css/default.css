@@ -81,6 +81,6 @@ body{font-size:10px!important}
 #viewer>.panel-body>#scrolldown>i.fa-play{color:#2ecc71}
 #viewer>.panel-body>#scrolldown>i.fa-pause{color:#c0392b}
 #viewer>.panel-body>#loadmsg{text-align:center;margin-top:300px;font-size:20px}
-.thumb-container>.btn{margin-bottom:7px}
+.thumb-container>.btn{visibility:hidden}
 #footer{padding:3px 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;position:fixed;bottom:0;width:100%;text-align:center}
 }

@@ -156,7 +156,7 @@ $(document).on('click','#scrolldown>.fa-backward',function()   {
     $("body,html").stop();
     clearInterval(dig);
     if(howMuchDig>1000)
-        howMuchDig-=500;
+        howMuchDig-=1000;
     dig=setInterval(digDown,90000);
     digDown();
 });
@@ -164,8 +164,8 @@ $(document).on('click','#scrolldown>.fa-backward',function()   {
 $(document).on('click','#scrolldown>.fa-forward',function()   {
     $("body,html").stop();
     clearInterval(dig);
-    if(howMuchDig<5000)
-        howMuchDig+=500;
+    if(howMuchDig<15000)
+        howMuchDig+=1000;
     dig=setInterval(digDown,90000);
     digDown();
 });
@@ -177,5 +177,5 @@ function digDown()  {
     catch(error)    {
         currentScroll=$("html").scrollTop();
     }
-    $("body,html").animate({ scrollTop: currentScroll+howMuchDig }, 90000);
+    $("body,html").animate({ scrollTop: currentScroll+howMuchDig }, 90000, "linear");
 }
