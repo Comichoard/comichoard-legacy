@@ -1,6 +1,6 @@
 <?php
     $comiclist = array();
-    array_push($comiclist,"cyanideandhappiness","calvinandhobbes","toonhole","maximumble","garfield","channelate","buttersafe","smbc","xkcdcomic","pcweenies","poorlydrawnlines");
+    array_push($comiclist,"cyanideandhappiness","mercworks","toonhole","maximumble","garfield","channelate","buttersafe","xkcdcomic","pcweenies","smbc","threewordphrase","poorlydrawnlines");
     $goagain = array();
     $round=1;
     if(isset($_GET['comic']))   {
@@ -16,7 +16,7 @@
     while($count)   {
         $server = $_SERVER['HTTP_HOST'];
     if($server=='localhost') $server.='/comichoard';
-    $url = 'http://'.$server.'/equinox/'.$now.'/'.$now.'.php';
+    $url = 'http://'.$server.'/'.$now.'/'.$now.'.php';
         if(isset($goagain[0]))
             $url .= '?comic='.$goagain[0];
     $ch = curl_init($url);

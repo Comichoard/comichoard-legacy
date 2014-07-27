@@ -1,3 +1,13 @@
+$(document).ready(function()    {
+    if ($('.px').css('opacity') == '1') {
+        $('#gohome').html('CH');
+    }    
+    if ($('.px').css('opacity') == '0.5') {
+        $('#fbpage,#resume').html('Continue');
+    }
+    addnext();
+});
+
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -46,14 +56,7 @@ $(document).on('click','.card>img',function (event) {
     window.location.href = strp;
 });
 
-$(document).ready(function()    {
-    if ($('.px').css('opacity') == '1') {
-        $('#gohome').html('CH');
-    }    
-    if ($('.px').css('opacity') == '0.5') {
-        $('#fbpage,#resume').html('Continue');
-    }
-});
+
 
 function savepos(e, t) {
     $.post("pos.php", {
@@ -164,7 +167,7 @@ $(document).on('click','#scrolldown>.fa-backward',function()   {
 $(document).on('click','#scrolldown>.fa-forward',function()   {
     $("body,html").stop();
     clearInterval(dig);
-    if(howMuchDig<15000)
+    if(howMuchDig<30000)
         howMuchDig+=1000;
     dig=setInterval(digDown,90000);
     digDown();

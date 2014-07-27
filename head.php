@@ -1,7 +1,7 @@
 <meta name="google-site-verification" content="xlNcZc8ArGnPwoG6k_ttQ7TROqAmNWMahmzX2_DxgsM" />
 <meta name="description" content="Comic Hoard - The Webcomic Library" />
-<meta name="keywords" content="webcomic,comic,hoard,xkcd,maximumble,cyanide and happiness,channelate,jl8" />
-<link rel="icon" type="image/png" href="../../favicon.png?v=2">
+<meta name="keywords" content="webcomic,comic,hoard,cyanide and happiness,mercworks,toonhole,maximumble,garfield,channelate,buttersafe,xkcd,pc weenies,smbc,three word phrase,poorly drawn lines />
+<link rel="icon" type="image/png" href="../favicon.png?v=2">
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -16,5 +16,5 @@
 	}
 ?>
 
-<link rel="stylesheet" type="text/css" href="../../css/default.css?v=50" />
-<script type="text/javascript" src="../../js/default.js?v=11" ></script>
+<link rel="stylesheet" type="text/css" href="../css/default.css?v=51" />
+<script type="text/javascript" src="../js/default.js?v=12" ></script>

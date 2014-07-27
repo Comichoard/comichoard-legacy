@@ -1,5 +1,7 @@
 Options -Indexes
 
+RewriteEngine on
+# RewriteRule ^comxa\.com/(\w+)/?$ comxa\.com/$1/\?%{QUERY_STRING} [L,NC]
 
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>

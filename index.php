@@ -57,6 +57,7 @@
                         <a class="btn btn-default" href="http://comichoard.com/jl8">JL8</a>
                         <a class="btn btn-default" href="http://comichoard.com/xkcdcomic">XKCD</a>
                         <a class="btn btn-default" href="http://comichoard.com/toonhole">Toonhole</a>
+                        <a class="btn btn-default" href="http://comichoard.com/mercworks">MercWorks</a>
                         <a class="btn btn-default" href="http://comichoard.com/maximumble">Maximumble</a>
                         <a class="btn btn-default" href="http://comichoard.com/spikedmath">Spiked Math</a>
                         <a class="btn btn-default" href="http://comichoard.com/garfield">Garfield</a>
@@ -64,6 +65,7 @@
                         <a class="btn btn-default" href="http://comichoard.com/shortpacked">Shortpacked</a>
                         <a class="btn btn-default" href="http://comichoard.com/pcweenies">PC Weenies</a>
                         <a class="btn btn-default" href="http://comichoard.com/buttersafe">Buttersafe</a>
+                        <a class="btn btn-default" href="http://comichoard.com/threewordphrase">Three Word Phrase</a>
                         <a class="btn btn-default" href="http://comichoard.com/calvinandhobbes">Calvin and Hobbes</a>
                         <a class="btn btn-default" href="http://comichoard.com/cyanideandhappiness">Cyanide &amp; Happiness</a>
                         <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
