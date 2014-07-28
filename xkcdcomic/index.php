@@ -52,7 +52,7 @@
         <style>#comicnumselect{width:70px;display:inline-block;}</style>
     </head>
     <body>
-            
+        <?php include('../modalselect.php');?>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <div id="top" class="panel-heading">
