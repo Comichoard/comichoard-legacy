@@ -72,7 +72,7 @@ function savepos(e, t) {
 
 function addnext()  {
     flag = 1;
-    $.post(source+".php?comic=" + next, function (e) {
+    $.post(source+".php?comic=" + next + '&sort='+ sort, function (e) {
         next = e.split("!znavfu")[0];
         e = e.split("!znavfu")[1];
         e = e.split("<!--")[0];

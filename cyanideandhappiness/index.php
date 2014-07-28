@@ -6,6 +6,8 @@
     
     if(isset($_GET['strip']))
         $url .= 'strip='.$_GET['strip'].'&';
+    if(isset($_GET['sort']))
+        $url .= 'sort='.$_GET['sort'].'&';
  
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -50,7 +52,7 @@
             }
         ?>
         <?php include('../head.php');?>
-        <style>#comicdateselect{width:170px;display:inline-block;}</style>
+        <style>#comicnumselect{width:80px;display:inline-block;}</style>
     </head>
     <body>
         <?php include('../modalselect.php');?>
