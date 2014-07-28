@@ -50,7 +50,7 @@
             $name = explode('/',$namebig[1]);
             $name[0] = ucwords(str_replace('-',' ',$name[1]));
         }
-        array_push($all, '<div class="card">'.$second[0].'<div class="details"><span>#'.$i.'</span><span>'.substr($name[0],-10).'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
+        array_push($all, '<div class="card">'.$second[0].'<div class="details"><span>#'.$i.'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
         return $i-1;
     }
 
