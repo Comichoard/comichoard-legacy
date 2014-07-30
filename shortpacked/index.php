@@ -89,6 +89,7 @@
         <input id="website" type="hidden" value="<?php echo $_SERVER['HTTP_HOST'];?>">
         <script>
             var next = $("#next").val();
+            var sort = $("#sort").val();
             var source = $("#source").val();
             var website = $("#website").val();
             var flag = 0;

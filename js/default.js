@@ -1,4 +1,9 @@
 $(document).ready(function()    {
+    var next = $("#next").val();
+    var sort = $("#sort").val();
+    var source = $("#source").val();
+    var website = $("#website").val();
+    var flag = 0;
     if ($('.px').css('opacity') == '1') {
         $('#gohome').html('CH');
     }    

@@ -17,4 +17,4 @@
 ?>
 
 <link rel="stylesheet" type="text/css" href="../css/default.css?v=51" />
-<script type="text/javascript" src="../js/default.js?v=12" ></script>
+<script type="text/javascript" src="../js/default.js?v=13" ></script>
