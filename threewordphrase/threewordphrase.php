@@ -61,7 +61,9 @@
             $url = getcomic($url);
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Three Word Phrase <a href="http://www.threewordphrase.com" type="button" class="btn btn-default" target="_blank">www.threewordphrase.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1></div>';
+        echo '<div class="jumbotron cdesc"><h1>Three Word Phrase <a href="http://www.threewordphrase.com" type="button" class="btn btn-default" target="_blank">www.threewordphrase.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                <p>Get official Three Word Phrase merchandise at <a href="http://www.topatoco.com/merchant.mvc?Screen=CTGY&Store_Code=TO&Category_Code=WELCOME" class="btn btn-default" target="_blank">TWP Store</a></p>
+              </div>';
         foreach($all as $item) echo $item;
     }
 ?>

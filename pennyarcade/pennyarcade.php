@@ -42,6 +42,7 @@
         $url = getcomic($url);
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Penny Arcade <a href="http://www.penny-arcade.com/" type="button" class="btn btn-default" target="_blank">www.penny-arcade.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                <p>Get official Penny Arcade merchandise at <a href="http://store.penny-arcade.com/" class="btn btn-default" target="_blank">www.store.penny-arcade.com</a></p>
               </div>';
         foreach($all as $item) echo $item;
     }

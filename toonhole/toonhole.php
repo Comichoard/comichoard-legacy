@@ -54,6 +54,7 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Toonhole <a href="http://www.toonhole.com" type="button" class="btn btn-default" target="_blank">www.toonhole.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+              <p>Get official Toonhole merchandise at <a href="http://www.toonhole.com/store/" class="btn btn-default" target="_blank">www.toonhole.com/store</a></p>
               </div>';
         foreach($all as $item) echo $item;
     }

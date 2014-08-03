@@ -55,6 +55,7 @@
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>PC Weenies 
                 <a href="http://pcweenies.com/" type="button" class="btn btn-default" target="_blank">www.pcweenies.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                <p>Get official PCWeenies merchandise at <a href="http://pcweenies.bigcartel.com/" class="btn btn-default" target="_blank">www.pcweenies.bigcartel.com</a></p>
               </div>';
         foreach($all as $item) echo $item;
     }

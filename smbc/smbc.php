@@ -44,6 +44,7 @@
         echo base64_encode($i).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>SMBC <a href="http://www.smbc-comics.com/" type="button" class="btn btn-default" target="_blank">www.smbc-comics.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$begin.'")"></p>
+                <p>Get official SMBC merchandise at <a href="http://smbc.myshopify.com/" class="btn btn-default" target="_blank">www.smbc.myshopify.com</a></p>
               </div>';
         foreach($all as $item) echo $item;
     }

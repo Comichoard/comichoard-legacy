@@ -51,7 +51,9 @@
             $url = getcomic($url);
         }
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Buttersafe <a href="http://www.buttersafe.com" type="button" class="btn btn-default" target="_blank">www.buttersafe.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1></div>';
+        echo '<div class="jumbotron cdesc"><h1>Buttersafe <a href="http://www.buttersafe.com" type="button" class="btn btn-default" target="_blank">www.buttersafe.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                <p>Get official Buttersafe merchandise at <a href="http://buttersafe.com/store/" class="btn btn-default" target="_blank">www.buttersafe.com/store</a></p>
+              </div>';
         foreach($all as $item) echo $item;
     }
 ?>

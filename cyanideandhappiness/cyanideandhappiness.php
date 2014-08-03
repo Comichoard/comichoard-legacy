@@ -84,6 +84,7 @@
                   </span>
                   <span>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="39-'.$last.'"></span>
                 </p>                
+                <p>Get official Cyanide and Happiness merchandise at <a href="http://store.explosm.net/" class="btn btn-default" target="_blank">www.store.explosm.net</a></p>
             </div>';
         foreach($all as $item) echo $item;
     }

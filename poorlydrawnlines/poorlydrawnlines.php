@@ -55,7 +55,8 @@
         }
         echo base64_encode($url).'!znavfu';
         echo '<div class="jumbotron cdesc"><h1>Poorly Drawn Lines 
-        <a href="http://poorlydrawnlines.com" type="button" class="btn btn-default" target="_blank">www.poorlydrawnlines.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                <a href="http://poorlydrawnlines.com" type="button" class="btn btn-default" target="_blank">www.poorlydrawnlines.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                <p>Get official Poorly Drawn Lines merchandise at <a href="http://poorlydrawnlines.storenvy.com/" class="btn btn-default" target="_blank">www.poorlydrawnlines.storenvy.com</a></p>
               </div>';
         foreach($all as $item) echo $item;
     }

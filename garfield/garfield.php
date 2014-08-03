@@ -27,6 +27,7 @@
                 <h1>Garfield <a href="http://www.garfield.com/comic" type="button" class="btn btn-default" target="_blank">www.garfield.com</a>
                 <a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
                 <h4>Skip to comic from <input id="comicdateselect" type="date" class="form-control"></h4>
+                <p>Get official Garfield merchandise at <a href="http://garfield.com/shop" class="btn btn-default" target="_blank">www.garfield.com/shop</a></p>
               </div>';
         foreach($all as $item) echo $item;
     }
