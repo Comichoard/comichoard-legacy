@@ -15,6 +15,7 @@
         <a class="btn btn-default" href="http://comichoard.com/maximumble">Maximumble</a>
         <a class="btn btn-default" href="http://comichoard.com/garfield">Garfield</a>
         <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
+        <a class="btn btn-default" href="http://comichoard.com/doghousediaries">Doghouse Diaries</a>
         <a class="btn btn-default" href="http://comichoard.com/buttersafe">Buttersafe</a>
         <a class="btn btn-default" href="http://comichoard.com/threewordphrase">Three Word Phrase</a>
         <a class="btn btn-default" href="http://comichoard.com/smbc">SMBC</a>

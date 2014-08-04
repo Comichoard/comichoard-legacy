@@ -1,6 +1,6 @@
 <?php
     $comiclist = array();
-    array_push($comiclist,"cyanideandhappiness","mercworks","toonhole","maximumble","garfield","channelate","buttersafe","xkcdcomic","pcweenies","smbc","threewordphrase","poorlydrawnlines");
+    array_push($comiclist,"cyanideandhappiness","mercworks","toonhole","maximumble","garfield","channelate","buttersafe","xkcdcomic","doghousediaries","pcweenies","smbc","threewordphrase","poorlydrawnlines");
     $goagain = array();
     $round=1;
     if(isset($_GET['comic']))   {

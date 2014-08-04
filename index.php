@@ -71,6 +71,7 @@
                         <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
                         <a class="btn btn-default" href="http://comichoard.com/smbc">SMBC</a>
                         <a class="btn btn-default" href="http://comichoard.com/poorlydrawnlines">Poorly Drawn Lines</a>
+                        <a class="btn btn-default" href="http://comichoard.com/doghousediaries">Doghouse Diaries</a>
                     </div>
                 </div>
                 <?php
