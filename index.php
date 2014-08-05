@@ -33,25 +33,9 @@
         <div id="fb-root"></div>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
-            <div id="top" class="panel-heading">
-                <a id="gohome" class="btn btn-default btn-lg" href="http://comichoard.com">
-                    Comic Hoard
-                </a>
-                <a id="gotofb" class="btn btn-default btn-lg" href="https://facebook.com/comichoard" target="_blank">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a id="gototwitter" class="btn btn-default btn-lg" href="https://twitter.com/ComicHoard" target="_blank">
-                    <i class="fa fa-twitter"></i>
-                </a>
-                <button id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
-                    Select Comic To Read
-                </button>
-                <a id="fbpage" href="contact.php" class="btn btn-default btn-lg" target="_blank">
-                    Contact us
-                </a>
-            </div>
+            <?php include('top.php');?>
             <div class="panel-body">
-                <div class="jumbotron" style="text-align:left;padding-bottom:30px">
+                <div class="jumbotron" style="text-align:left;padding-bottom:30px;">
                     <br><h4>Now serving on Comic Hoard</h4>
                     <div class="thumb-container">
                         <a class="btn btn-default" href="http://comichoard.com/jl8">JL8</a>
@@ -66,10 +50,10 @@
                         <a class="btn btn-default" href="http://comichoard.com/pcweenies">PC Weenies</a>
                         <a class="btn btn-default" href="http://comichoard.com/buttersafe">Buttersafe</a>
                         <a class="btn btn-default" href="http://comichoard.com/threewordphrase">Three Word Phrase</a>
+                        <a class="btn btn-default" href="http://comichoard.com/smbc">SMBC</a>
                         <a class="btn btn-default" href="http://comichoard.com/calvinandhobbes">Calvin and Hobbes</a>
                         <a class="btn btn-default" href="http://comichoard.com/cyanideandhappiness">Cyanide &amp; Happiness</a>
                         <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
-                        <a class="btn btn-default" href="http://comichoard.com/smbc">SMBC</a>
                         <a class="btn btn-default" href="http://comichoard.com/poorlydrawnlines">Poorly Drawn Lines</a>
                         <a class="btn btn-default" href="http://comichoard.com/doghousediaries">Doghouse Diaries</a>
                     </div>
