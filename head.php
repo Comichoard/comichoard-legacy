@@ -16,5 +16,5 @@
 	}
 ?>
 
-<link rel="stylesheet" type="text/css" href="../css/default.css?v=52" />
-<script type="text/javascript" src="../js/default.js?v=14" ></script>
+<link rel="stylesheet" type="text/css" href="../css/default.css?v=53" />
+<script type="text/javascript" src="../js/default.js?v=15" ></script>

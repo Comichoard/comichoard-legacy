@@ -8,7 +8,8 @@ $(document).ready(function()    {
         $('#gohome').html('CH');
     }    
     if ($('.px').css('opacity') == '0.5') {
-        $('#fbpage,#resume').html('Continue');
+        if(source!='feed')
+            $('#fbpage,#resume').html('Continue');
     }
     addnext();
 });
@@ -60,8 +61,6 @@ $(document).on('click','.card>img',function (event) {
     }
     window.location.href = strp;
 });
-
-
 
 function savepos(e, t) {
     $.post("pos.php", {

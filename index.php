@@ -35,7 +35,7 @@
             <div class="px"></div>
             <?php include('top.php');?>
             <div class="panel-body">
-                <div class="jumbotron" style="text-align:left;padding-bottom:30px;">
+                <div class="jumbotron thumb-main">
                     <br><h4>Now serving on Comic Hoard</h4>
                     <div class="thumb-container">
                         <a class="btn btn-default" href="http://comichoard.com/jl8">JL8</a>
