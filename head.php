@@ -6,7 +6,6 @@
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 
@@ -17,5 +16,5 @@
 	}
 ?>
 
-<link rel="stylesheet" type="text/css" href="../css/default.css?v=53" />
-<script type="text/javascript" src="../js/default.js?v=15" ></script>
+<link rel="stylesheet" type="text/css" href="../css/default.css?v=54" />
+<script type="text/javascript" src="../js/default.js?v=16" ></script>
