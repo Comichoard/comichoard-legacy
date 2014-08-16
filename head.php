@@ -9,12 +9,5 @@
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 
-<?php 
-	if($_SERVER['HTTP_HOST']=='localhost')	{
-		echo '<link rel="stylesheet" type="text/css" href="css/default.css?v=46" />
-			  <script type="text/javascript" src="js/default.js?v=8" ></script>';
-	}
-?>
-
 <link rel="stylesheet" type="text/css" href="../css/default.css?v=54" />
 <script type="text/javascript" src="../js/default.js?v=16" ></script>

@@ -6,7 +6,7 @@
     $count = 0;
     $html_present = "";
     $next_id = "";
-    $all = array();
+    $sendback = '';
     $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
 
     $con=mysqli_connect($mysql_hostname,$mysql_user,$mysql_password,$mysql_database);
@@ -23,8 +23,8 @@
 
     function makecard($html,$id,$next)
     {
-        global $all,$comic;
-        array_push($all, '<div class="card">'.str_replace('alt="','alt="XKCD: ', $html).'
+        global $sendback,$comic;
+        array_push($sendback, '<div class="card">'.str_replace('alt="','alt="XKCD: ', $html).'
                 <div class="details">
                     <span>XKCD #'.$id.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'">Share</span>
                 </div>
@@ -71,10 +71,10 @@
                     $next_id = $pres_id+1;   
                 makecard($html_present,$pres_id,$next_id);
                 if($pres_id == 1 || $pres_id == $last)
-                    array_push($all,'<div class="jumbotron">Looks like you read all the comics we had.<br>Here\'s something else to read <a href="http://comichoard.com/garfield" type="button" class="btn btn-default">Garfield</a></div>');    
+                    array_push($sendback,'<div class="jumbotron">Looks like you read all the comics we had.<br>Here\'s something else to read <a href="http://comichoard.com/garfield" type="button" class="btn btn-default">Garfield</a></div>');    
             }
             echo base64_encode($next_id).'!znavfu';
-            foreach($all as $item) echo $item;
+            echo $sendback;
         }
         else {
             if(isset($_GET['strip']))   
@@ -85,7 +85,7 @@
                     $html_present = $row['html'];
                 $next_id = $pres_id-1;       
                 makecard($html_present,$pres_id,$next_id);
-                array_push($all,'<div class="jumbotron">More comics from XKCD...</div>');
+                array_push($sendback,'<div class="jumbotron">More comics from XKCD...</div>');
             }
             else
             {
@@ -125,7 +125,7 @@
               <span>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$last.'"></span>
               </p>
               </div>';
-            foreach($all as $item) echo $item;
+            echo $sendback;
         }
         mysqli_close($con);
     }   

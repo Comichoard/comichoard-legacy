@@ -6,24 +6,18 @@
 	$count = 0;
 	$url_present = "";
 	$next_date = "";
-	$all = array();
+	$sendback = '';
     $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
 
 	$con=mysqli_connect($mysql_hostname,$mysql_user,$mysql_password,$mysql_database);
 
 	function makecard($src,$date,$next)
 	{
-		global $all,$comic;
-		array_push($all, '<div class="card">
-				<img alt="Calvin and Hobbes '.$date.'" src="'.$src.'" width="700">
-				<div class="details">
-					<span>'.$date.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($date).'">Share</span>
-				</div>
-			</div>');
+		global $sendback,$comic;
+		$sendback='{"comic":"Calvin and Hobbes","image":"'.$src.'","desc":"'.$date.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($date).'","next":"'.base64_encode($next).'"}';
 	}
 
 	if (mysqli_connect_errno()) {
-	  	echo base64_encode('1').'!znavfu';
         if(!isset($_GET['comic']))	{
 	        echo '<div class="jumbotron cdesc"><h1>Calvin and Hobbes <a href="http://www.gocomics.com/calvinandhobbes/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
 	              <p>Calvin and Hobbes is a daily comic strip that was written and illustrated by American cartoonist Bill Watterson.<br>
@@ -41,8 +35,7 @@
 			$date1 = str_replace('-', '/', $pres_date);
 			$next_date = date('Y-m-d',strtotime($date1 . "-1 days"));		
 			makecard($url_present,$pres_date,$next_date);
-			echo base64_encode($next_date).'!znavfu';
-	        echo $all[0];
+	        echo $sendback;
 		}
 		else {
 			if(isset($_GET['strip']))   
@@ -54,7 +47,6 @@
 				$date1 = str_replace('-', '/', $pres_date);
 				$next_date = date('Y-m-d',strtotime($date1 . "-1 days"));		
 				makecard($url_present,$pres_date,$next_date);
-	            array_push($all,'<div class="jumbotron">More comics from Calvin and Hobbes...</div>');
 	        }
 	        else
 	        {
@@ -72,12 +64,7 @@
 				}
 				makecard($url_present,$present_date,$next_date);
 			}
-			echo base64_encode($next_date).'!znavfu';
-	        echo '<div class="jumbotron cdesc"><h1>Calvin and Hobbes 
-	        		<a href="http://www.gocomics.com/calvinandhobbes/" type="button" class="btn btn-default" target="_blank">www.gocomics.com/calvinandhobbes</a>
-	        		<a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-	              </div>';
-	        foreach($all as $item) echo $item;
+	        echo $sendback;
 		}
 		mysqli_close($con);
 	}	

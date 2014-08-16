@@ -13,7 +13,7 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('top.php');?>
-            <div class="panel-body">
+            <div class="page">
                 <div class="jumbotron" style="margin-top:200px">
                     For Doubts and suggestions : support@comichoard.tk<br><br>
                     We also hang around our facebook page all the time : 

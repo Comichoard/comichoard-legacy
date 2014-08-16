@@ -1,5 +1,5 @@
 <?php
-    $all = array();
+    $sendback = '';
     $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
     $source = 'smbc';
 
@@ -16,7 +16,7 @@
     }
 
     function getcomic($i)   {
-        global $all,$comic;
+        global $sendback,$comic;
         $url = 'http://www.smbc-comics.com/?id='.$i.'/';
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -24,19 +24,19 @@
         $first = explode('<div id="comicimage">', $result);
         $second = explode('</div>', $first[1]);
         $second[0] = str_replace('src=', 'alt="SMBC #'.$i.'" src=', $second[0]);
-        array_push($all, '<div class="card">'.$second[0].'<br><div class="details"><span>#'.$i.'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
+        array_push($sendback, '<div class="card">'.$second[0].'<br><div class="details"><span>#'.$i.'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
         return $i-1;
     }
 
     if(isset($_GET['comic'])) {
         $sendback = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($sendback).'!znavfu'.$all[0];
+        echo base64_encode($sendback).'!znavfu'.$sendback[0];
     }
     else    {
         $count = 1;
         if(isset($_GET['strip']))   {
             getcomic($_GET['strip']);
-            array_push($all,'<div class="jumbotron">More comics from SMBC...</div>');
+            array_push($sendback,'<div class="jumbotron">More comics from SMBC...</div>');
             $count--;
         }
         $begin = getfirst();
@@ -46,6 +46,6 @@
               <p>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$begin.'")"></p>
                 <p>Get official SMBC merchandise at <a href="http://smbc.myshopify.com/" class="btn btn-default" target="_blank">www.smbc.myshopify.com</a></p>
               </div>';
-        foreach($all as $item) echo $item;
+        echo $sendback;
     }
 ?>

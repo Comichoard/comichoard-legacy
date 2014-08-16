@@ -3,32 +3,25 @@
     if($server=='localhost') $server.='/comichoard';
     $url = 'http://'.$server.'/cyanideandhappiness/cyanideandhappiness.php?';
     $source = 'cyanideandhappiness';
-    
-    if(isset($_GET['strip']))
-        $url .= 'strip='.$_GET['strip'].'&';
-    if(isset($_GET['sort']))
+    if(isset($_GET['sort']))   {    
+        $sort=$_GET['sort'];
         $url .= 'sort='.$_GET['sort'].'&';
- 
+    }
+    if(isset($_GET['strip']))   {    
+        $strip=$_GET['strip'];
+        $url .= 'strip='.$_GET['strip'].'&';
+    }
+
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec($ch);
-    $display = explode('!znavfu',$result);
+    $firstcomic = explode('}', $result);    
+    $firstcomic[0].='}';
 
-    if(isset($_GET['strip']))   {
-        $strip=$_GET['strip'];
-        $metadata = explode('<div class="card">',$display[1]);
-
-        $metadata2 = explode('</div>' , $metadata[1]);
-        $imgsrc = explode('src="',$metadata2[0]);
-        $imgsrc2 = explode('"',$imgsrc[1]);
-        $title = explode('alt="',$metadata[1]);
-        $title2 = explode('"',$title[1]);
-        if(strpos($metadata[1],'alt') === FALSE)    {
-            $title = explode('<span>',$metadata[1]);
-            $title2 = explode('</span>',$title[2]);
-            $title2[0] = 'Cyanide & Happiness : '.$title2[0];
-            $imgsrc2[0] = 'http://'.$_SERVER['HTTP_HOST'].'/cyanideandhappiness/shortimage.jpg';
-        }
+    if(isset($_GET['strip']))   {    
+        $data=json_decode($result[0].'}');
+        $imgsrc = $data->{"image"};
+        $title = $data->{"comic"}.': '.$data->{'desc'};
     }
 ?>
 
@@ -38,10 +31,10 @@
         <title>Cyanide & Happiness - Comic Hoard</title>
         <?php
             if(isset($_GET['strip']))   {
-                echo '<meta property="og:title" content="'.$title2[0].'"/>
+                echo '<meta property="og:title" content="'.$title.'"/>
                     <meta property="og:url" content="http://'.$_SERVER['HTTP_HOST'].'/cyanideandhappiness/?strip='.$strip.'"/>
                     <meta property="og:description" content="Comic Hoard is a platform to read webcomics easily. XKCD, Cyanide & Happiness, Garfield, JL8 and many more..."/>
-                    <meta property="og:image" content="'.$imgsrc2[0].'"/>';
+                    <meta property="og:image" content="'.$imgsrc.'"/>';
             }
             else   {
                 echo '<meta property="og:title" content="Cyanide & Happiness"/>
@@ -58,16 +51,21 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('../top.php');?>
-            <div class="panel-body">
-                <?php
-                    if(isset($display[1]))
-                        echo $display[1];
-
-                ?>
+            <div class="page">
+                <div class="jumbotron cdesc"><h1>Cyanide &amp; Happiness <a href="http://explosm.net" type="button" class="btn btn-default" target="_blank">www.explosm.net</a>
+                    <a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                    <p>
+                      <span>Sort in order
+                          <a href="http://comichoard.com/cyanideandhappiness/?sort=asc" type="button" class="btn btn-default">From the start</a>
+                          <a href="http://comichoard.com/cyanideandhappiness/?sort=desc" type="button" class="btn btn-default">Most recent first</a>
+                      </span>
+                      <span>Skip to comic <input id="comicnumselect" type="text" class="form-control" placeholder="####"></span>
+                      <span>Get official Cyanide and Happiness merchandise at <a href="http://store.explosm.net/" class="btn btn-default" target="_blank">www.store.explosm.net</a></span>
+                    </p>                
+                </div>
                 <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
-            <div id="footer" class="footer">Help your friends see how awesome Cyanide &amp; Happiness is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fcyanideandhappiness" class="btn btn-default begsuccess btn-sm" target="_blank">Share Cyanide &amp; Happines</i></a></div>
         </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">
@@ -75,7 +73,7 @@
         <input id="website" type="hidden" value="<?php echo $_SERVER['HTTP_HOST'];?>">
         <input id="sort" type="hidden" value="<?php echo $_GET['sort'];?>">
         <script>
-            var next = $("#next").val();
+            var firstcomic = $('#firstcomic').val();
             var sort = $("#sort").val();
             var source = $("#source").val();
             var website = $("#website").val();

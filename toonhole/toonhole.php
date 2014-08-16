@@ -1,5 +1,5 @@
 <?php
-    $all = array();
+    $sendback = '';
     $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
     $url = 'http://www.toonhole.com/';
 
@@ -16,7 +16,7 @@
     }
 
     function getcomic($url)   {
-        global $all,$comic;
+        global $sendback,$comic;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
@@ -29,7 +29,7 @@
         $second[0]=strip_tags($second[0],'<img>');
         $image = '<div class="card">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('alt="','alt="Toonhole: ', $image);
-        array_push($all, $image);
+        array_push($sendback, $image);
 
         $urlfirst = explode('<div id="mini_nav">', $result);
         $urlsecond = explode('<a href="', $urlfirst[1]);
@@ -41,12 +41,12 @@
     if(isset($_GET['comic'])) {
         $url = getcomic(base64_decode($_GET['comic']));
         echo base64_encode($url).'!znavfu';
-        echo $all[0];
+        echo $sendback[0];
     }
     else    {
         if(isset($_GET['strip']))   {
             getcomic(base64_decode($_GET['strip']));
-            array_push($all,'<div class="jumbotron">More comics from Toonhole...</div>');
+            array_push($sendback,'<div class="jumbotron">More comics from Toonhole...</div>');
         }
         else    {
             getfirst();
@@ -56,6 +56,6 @@
         echo '<div class="jumbotron cdesc"><h1>Toonhole <a href="http://www.toonhole.com" type="button" class="btn btn-default" target="_blank">www.toonhole.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
               <p>Get official Toonhole merchandise at <a href="http://www.toonhole.com/store/" class="btn btn-default" target="_blank">www.toonhole.com/store</a></p>
               </div>';
-        foreach($all as $item) echo $item;
+        echo $sendback;
     }
 ?>

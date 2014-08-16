@@ -15,20 +15,20 @@ p{padding-bottom:5px}
 #viewer>#top>#comicselect-btn{position:absolute;top:0%;width:35%;left:10.5%;margin:4px auto;margin-bottom:0;margin-left:300px;display: block;z-index:9999;font-weight:200;font-size:18px;}
 #viewer>#top>#resume{position:absolute;right:1%;top:10%}
 #viewer>#top>#fbpage{position:absolute;right:1%;top:10%}
-#viewer>.panel-body{margin-top:0;text-align:center;padding:0}
-#viewer>.panel-body>.cdesc{text-align:left;margin-bottom:0;padding:50px 30px 5px 30px;}
-#viewer>.panel-body>.cdesc>h1{font-size:40px;}
-#viewer>.panel-body>.cdesc>h1>.btn{margin-left:10px;margin-bottom:10px}
-#viewer>.panel-body>.cdesc>p{margin-left:5px;font-size:16px;}
-#viewer>.panel-body>.cdesc>p>input{margin-right:10px;}
-#viewer>.panel-body>.card{position:relative;font-size:20px;margin-bottom:20px;text-align:center;width:100%}
-#viewer>.panel-body>.card>img{margin-bottom:0;cursor:pointer;margin-top:10px;max-width:100%}
-#viewer>.panel-body>.card>.details{font-size:17px;margin-top:5px;overflow-y:hidden!important;}
-#viewer>.panel-body>.card>.details>span{margin-right:10px}
-#viewer>.panel-body>.card>.details>.fb-like{position:relative;top:3px;}
-#viewer>.panel-body>#scrolldown{position:fixed;right:1%;bottom:1%;height:4.5%;text-align:center;color:#555;font-size:18px;padding:0.5%}
-#viewer>.panel-body>#scrolldown>i{cursor:pointer;margin:auto 6px}
-#viewer>.panel-body>#loadmsg{text-align:center;margin-top:300px;font-size:20px}
+#viewer>.page{margin:0;text-align:center;padding:0;width:100%}
+#viewer>.page>.cdesc{text-align:left;margin-bottom:0;padding:50px 30px 5px 30px;}
+#viewer>.page>.cdesc>h1{font-size:40px;}
+#viewer>.page>.cdesc>h1>.btn{margin-left:10px;margin-bottom:10px}
+#viewer>.page>.cdesc>p{margin-left:5px;font-size:16px;}
+#viewer>.page>.cdesc>p>input{margin-right:10px;}
+#viewer>.page>.card{position:relative;font-size:20px;margin-bottom:20px;text-align:center;width:100%}
+#viewer>.page>.card>img{margin-bottom:0;cursor:pointer;margin-top:10px;max-width:100%}
+#viewer>.page>.card>.details{font-size:17px;margin-top:5px;overflow-y:hidden!important;}
+#viewer>.page>.card>.details>span{margin-right:10px}
+#viewer>.page>.card>.details>.fb-like{position:relative;top:4px;}
+#viewer>.page>#scrolldown{position:fixed;right:1%;bottom:1%;height:4.5%;text-align:center;color:#555;font-size:18px;padding:0.5%}
+#viewer>.page>#scrolldown>i{cursor:pointer;margin:auto 6px}
+#viewer>.page>#loadmsg{text-align:center;margin-top:340px;font-size:20px;margin-bottom:0;padding:3%}
 .thumb-main{padding:30px 30px 20px 30px;text-align:left;}
 .thumb-container>.btn{margin-bottom:7px}
 #footer{padding:3px 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;position:fixed;bottom:0;width:100%;text-align:center}
@@ -44,20 +44,20 @@ p{padding-bottom:5px}
 #viewer>#top>#comicselect-btn{position:absolute;top:7%;width:35%;left:40%;margin-bottom:0;display: block;z-index:9999;font-weight:200;font-size:18px;}
 #viewer>#top>#resume{position:absolute;right:2%;top:7%}
 #viewer>#top>#fbpage{position:absolute;right:2%;top:7%}
-#viewer>.panel-body{margin-top:0;text-align:center;padding:0}
-#viewer>.panel-body>.cdesc{text-align:left;margin-bottom:0;padding:40px 2% 1% 2%;%}
-#viewer>.panel-body>.cdesc>h1{font-size:30px;}
-#viewer>.panel-body>.cdesc>h1>.btn{margin-left:10px;margin-bottom:10px}
-#viewer>.panel-body>.cdesc>p{margin-left:10px;font-size:14px}
-#viewer>.panel-body>.cdesc>p>input{margin-right:10px;}
-#viewer>.panel-body>.card{position:relative;font-size:20px;margin-bottom:60px;text-align:center;width:100%}
-#viewer>.panel-body>.card>img{margin-bottom:0;cursor:pointer;margin-top:20px;max-width:100%}
-#viewer>.panel-body>.card>.details{font-size:17px;margin-top:10px;overflow-y:hidden!important;}
-#viewer>.panel-body>.card>.details>.fb-like{position:relative;top:3px;}
-#viewer>.panel-body>.card>.details>span{margin-right:10px}
-#viewer>.panel-body>#scrolldown{position:fixed;right:2%;bottom:0.5%;text-align:right;color:#555;font-size:20px;}
-#viewer>.panel-body>#scrolldown>i{cursor:pointer;margin-left:10px}
-#viewer>.panel-body>#loadmsg{text-align:center;margin-top:300px;font-size:20px}
+#viewer>.page{margin:0;text-align:center;padding:0;width:100%}
+#viewer>.page>.cdesc{text-align:left;margin-bottom:0;padding:40px 2% 1% 2%;%}
+#viewer>.page>.cdesc>h1{font-size:30px;}
+#viewer>.page>.cdesc>h1>.btn{margin-left:10px;margin-bottom:10px}
+#viewer>.page>.cdesc>p{margin-left:10px;font-size:14px}
+#viewer>.page>.cdesc>p>input{margin-right:10px;}
+#viewer>.page>.card{position:relative;font-size:20px;margin-bottom:60px;text-align:center;width:100%}
+#viewer>.page>.card>img{margin-bottom:0;cursor:pointer;margin-top:20px;max-width:100%}
+#viewer>.page>.card>.details{font-size:17px;margin-top:10px;overflow-y:hidden!important;}
+#viewer>.page>.card>.details>.fb-like{position:relative;top:4px;}
+#viewer>.page>.card>.details>span{margin-right:10px}
+#viewer>.page>#scrolldown{position:fixed;right:2%;bottom:0.5%;text-align:right;color:#555;font-size:20px;}
+#viewer>.page>#scrolldown>i{cursor:pointer;margin-left:10px}
+#viewer>.page>#loadmsg{text-align:center;margin-top:300px;font-size:20px}
 .thumb-main{padding:30px 2% 3% 2%;text-align:justify;}
 .thumb-container>.btn{margin-bottom:7px}
 #footer{padding:3px 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;position:fixed;bottom:0;width:100%;text-align:center}
@@ -75,20 +75,20 @@ body{font-size:10px!important}
 #viewer>#top>#comicselect-btn{position:absolute;top:3px;width:74%;left:25%;display: block;z-index:9999;font-weight:200;font-size:18px;}
 #viewer>#top>#resume{position:absolute;top:0;visibility:hidden}
 #viewer>#top>#fbpage{position:absolute;top:0;visibility:hidden}
-#viewer>.panel-body{margin-top:0;text-align:center;padding:0}
-#viewer>.panel-body>.cdesc{text-align:left;margin-bottom:0;padding:40px 2% 1% 2%;overflow:hidden;}
-#viewer>.panel-body>.cdesc>h1{font-size:25px;}
-#viewer>.panel-body>.cdesc>h1>.btn{margin-left:5px;margin-bottom:5px}
-#viewer>.panel-body>.cdesc>h1>.fb-like{visibility:hidden;position:absolute;top:100%;height:0;overflow:hidden;}
-#viewer>.panel-body>.cdesc>p{font-size:12px}
-#viewer>.panel-body>.cdesc>p>input{margin-right:10px;}
-#viewer>.panel-body>.card{position:relative;font-size:20px;margin-bottom:20px;text-align:center;width:100%}
-#viewer>.panel-body>.card>img{margin-bottom:0;cursor:pointer;margin-top:10px;max-width:100%}
-#viewer>.panel-body>.card>.details{font-size:15px;margin-top:10px;overflow-y:hidden!important;}
-#viewer>.panel-body>.card>.details>span{margin-right:10px}
-#viewer>.panel-body>#scrolldown{position:fixed;right:2%;bottom:0.5%;text-align:right;color:#555;font-size:20px;}
-#viewer>.panel-body>#scrolldown>i{cursor:pointer;margin-left:10px}
-#viewer>.panel-body>#loadmsg{text-align:center;margin-top:300px;font-size:20px}
+#viewer>.page{margin:0;text-align:center;padding:0;width:100%}
+#viewer>.page>.cdesc{text-align:left;margin-bottom:0;padding:40px 2% 1% 2%;overflow:hidden;}
+#viewer>.page>.cdesc>h1{font-size:25px;}
+#viewer>.page>.cdesc>h1>.btn{margin-left:5px;margin-bottom:5px}
+#viewer>.page>.cdesc>h1>.fb-like{visibility:hidden;position:absolute;top:100%;height:0;overflow:hidden;}
+#viewer>.page>.cdesc>p{font-size:12px}
+#viewer>.page>.cdesc>p>input{margin-right:10px;}
+#viewer>.page>.card{position:relative;font-size:20px;margin-bottom:20px;text-align:center;width:100%}
+#viewer>.page>.card>img{margin-bottom:0;cursor:pointer;margin-top:10px;max-width:100%}
+#viewer>.page>.card>.details{font-size:15px;margin-top:10px;overflow-y:hidden!important;}
+#viewer>.page>.card>.details>span{margin-right:10px}
+#viewer>.page>#scrolldown{position:fixed;right:2%;bottom:0.5%;text-align:right;color:#555;font-size:20px;}
+#viewer>.page>#scrolldown>i{cursor:pointer;margin-left:10px}
+#viewer>.page>#loadmsg{text-align:center;margin-top:300px;font-size:20px}
 .thumb-main{padding:35px 2% 3% 2%;text-align:justify;}
 .thumb-container>.btn{margin-bottom:7px;font-size:12px;}
 #footer{padding:3px 10px;background-color:rgba(52,152,219,0.2);margin: 0;text-align:left!important;position:fixed;bottom:0;width:100%;text-align:center}

@@ -34,7 +34,7 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('top.php');?>
-            <div class="panel-body">
+            <div class="page">
                 <div class="jumbotron thumb-main">
                     <br><h4>Now serving on Comic Hoard</h4>
                     <div class="thumb-container">

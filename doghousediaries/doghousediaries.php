@@ -1,5 +1,5 @@
 <?php
-    $all = array();
+    $sendback = '';
     $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
     $url = 'http://thedoghousediaries.com/';
 
@@ -15,7 +15,7 @@
     }
 
     function getcomic($url)   {
-        global $all,$comic;
+        global $sendback,$comic;
         $ch = curl_init('http://thedoghousediaries.com/'.$url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
@@ -27,7 +27,7 @@
         $second[0]=strip_tags($second[0],'<img>');
         $image = '<div class="card">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.''.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
         $image = str_replace('alt="','alt="Doghouse Diaries: ', $image);
-        array_push($all, $image);
+        array_push($sendback, $image);
 
         $urlfirst = explode('<div class="navi navi-comic navi-comic-above">', $result);
         $urlsecond = explode('<a href="http://thedoghousediaries.com/', $urlfirst[1]);
@@ -39,12 +39,12 @@
     if(isset($_GET['comic'])) {
         $url = getcomic(base64_decode($_GET['comic']));
         echo base64_encode($url).'!znavfu';
-        echo $all[0];
+        echo $sendback[0];
     }
     else    {
         if(isset($_GET['strip']))   {
             getcomic(base64_decode($_GET['strip']));
-            array_push($all,'<div class="jumbotron">More comics from Doghouse Diaries...</div>');
+            array_push($sendback,'<div class="jumbotron">More comics from Doghouse Diaries...</div>');
         }
         else    {
             getfirst();
@@ -55,6 +55,6 @@
                 <h1>Doghouse Diaries <a href="http://thedoghousediaries.com" type="button" class="btn btn-default" target="_blank">www.thedoghousediaries.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
                 <p>Get official Doghouse Diaries merchandise at <a href="http://www.cafepress.com/adventurefactory" class="btn btn-default" target="_blank">www.cafepress.com/adventurefactory</a></p>
               </div>';
-        foreach($all as $item) echo $item;
+        echo $sendback;
     }
 ?>

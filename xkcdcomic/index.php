@@ -22,9 +22,9 @@
         $imgsrc = explode('src="',$metadata2[0]);
         $imgsrc2 = explode('"',$imgsrc[1]);
         $title = explode('alt="',$metadata[1]);
-        $title2 = explode('"',$title[1]);
+        $title = explode('"',$title[1]);
         if(strpos($metadata[1],'alt') === FALSE)    {
-            $title2[0] = $source;
+            $title = $source;
         }
     }
 ?>
@@ -35,10 +35,10 @@
         <title>XKCD - Comic Hoard</title>
         <?php
             if(isset($_GET['strip']))   {
-                echo '<meta property="og:title" content="'.$title2[0].'"/>
+                echo '<meta property="og:title" content="'.$title.'"/>
                     <meta property="og:url" content="http://'.$_SERVER['HTTP_HOST'].'/xkcdcomic/?strip='.$strip.'"/>
                     <meta property="og:description" content="Comic Hoard is a platform to read webcomics easily. XKCD, Cyanide & Happiness, Garfield, JL8 and many more..."/>
-                    <meta property="og:image" content="'.$imgsrc2[0].'"/>';
+                    <meta property="og:image" content="'.$imgsrc.'"/>';
             }
             else   {
                 echo '<meta property="og:title" content="XKCD"/>
@@ -55,7 +55,7 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('../top.php');?>
-            <div class="panel-body">
+            <div class="page">
                 <?php echo $display[1];?>
                 <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
                 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>

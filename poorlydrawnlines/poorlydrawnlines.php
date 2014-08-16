@@ -1,5 +1,5 @@
 <?php
-    $all = array();
+    $sendback = '';
     $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
     $url = 'http://poorlydrawnlines.com/';
 
@@ -15,7 +15,7 @@
     }
 
     function getcomic($url)   {
-        global $all,$comic;
+        global $sendback,$comic;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
@@ -30,7 +30,7 @@
         $second[0] = str_replace('alt="','alt="Poorly Drawn Lines ',$second[0]);
         
         $image = '<div class="card">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
-        array_push($all, $image);
+        array_push($sendback, $image);
 
         $urlfirst = explode('<li class="previous">', $result);
         $urlsecond = explode('<a href="', $urlfirst[1]);
@@ -42,12 +42,12 @@
     if(isset($_GET['comic'])) {
         $url = getcomic(base64_decode($_GET['comic']));
         echo base64_encode($url).'!znavfu';
-        echo $all[0];
+        echo $sendback[0];
     }
     else    {
         if(isset($_GET['strip']))   {
             getcomic(base64_decode($_GET['strip']));
-            array_push($all,'<div class="jumbotron">More comics from Poorly Drawn Lines...</div>');
+            array_push($sendback,'<div class="jumbotron">More comics from Poorly Drawn Lines...</div>');
         }
         else    {
             getfirst();
@@ -58,6 +58,6 @@
                 <a href="http://poorlydrawnlines.com" type="button" class="btn btn-default" target="_blank">www.poorlydrawnlines.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
                 <p>Get official Poorly Drawn Lines merchandise at <a href="http://poorlydrawnlines.storenvy.com/" class="btn btn-default" target="_blank">www.poorlydrawnlines.storenvy.com</a></p>
               </div>';
-        foreach($all as $item) echo $item;
+        echo $sendback;
     }
 ?>

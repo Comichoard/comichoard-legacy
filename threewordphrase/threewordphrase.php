@@ -1,5 +1,5 @@
 <?php
-    $all = array();
+    $sendback = '';
     $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
     $url = '1';
 
@@ -29,7 +29,7 @@
     function getcomic($url)   {
         if(intval($url)<1)
             return '0';
-        global $all,$comic;
+        global $sendback,$comic;
         $list = file_get_contents('data.xml');
         $first = explode('">'.$url, $list);
         $second = explode('href="', $first[0]);
@@ -39,7 +39,7 @@
             $imgname=substr($imgname,1);
         $imgname = '<img src="http://threewordphrase.com/'.str_replace('htm','gif',$imgname).'" alt="'.$url.$alt[0].'">';;
         $image = '<div class="card">'.$imgname.'<div class="details"><span>'.$url.$alt[0].'</span>'.''.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$url.'">Share</span></div></div>';
-        array_push($all, $image);
+        array_push($sendback, $image);
 
         if(intval($url)<=10)
             return '0'.intval($url)-1;
@@ -49,12 +49,12 @@
     if(isset($_GET['comic'])) {
         $url = getcomic(base64_decode($_GET['comic']));
         echo base64_encode($url).'!znavfu';
-        echo $all[0];
+        echo $sendback[0];
     }
     else    {
         if(isset($_GET['strip']))   {
             getcomic(base64_decode($_GET['strip']));
-            array_push($all,'<div class="jumbotron">More comics from Three Word Phrase...</div>');
+            array_push($sendback,'<div class="jumbotron">More comics from Three Word Phrase...</div>');
         }
         else    {
             getfirst();
@@ -64,6 +64,6 @@
         echo '<div class="jumbotron cdesc"><h1>Three Word Phrase <a href="http://www.threewordphrase.com" type="button" class="btn btn-default" target="_blank">www.threewordphrase.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
                 <p>Get official Three Word Phrase merchandise at <a href="http://www.topatoco.com/merchant.mvc?Screen=CTGY&Store_Code=TO&Category_Code=WELCOME" class="btn btn-default" target="_blank">TWP Store</a></p>
               </div>';
-        foreach($all as $item) echo $item;
+        echo $sendback;
     }
 ?>

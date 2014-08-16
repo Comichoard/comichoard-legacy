@@ -1,9 +1,7 @@
 $(document).ready(function()    {
-    var next = $("#next").val();
-    var sort = $("#sort").val();
-    var source = $("#source").val();
-    var website = $("#website").val();
-    var flag = 0;
+    setTimeout(function(){
+        $('#footer').toggle();    
+    },1);
     if ($('.px').css('opacity') == '1') {
         $('#gohome').html('CH');
     }    
@@ -11,8 +9,13 @@ $(document).ready(function()    {
         if(source!='feed')
             $('#fbpage,#resume').html('Continue');
     }
+    if(firstcomic!='' && firstcomic!==undefined)    {
+        loadstrip(JSON.parse(atob(firstcomic)));
+    }
     addnext();
 });
+var next='';
+var first=1;
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -21,37 +24,6 @@ $(document).ready(function()    {
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=659591854119619&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-
-$(document).on('click','#resume',function() {
-    if ($("#resume").attr('data-del') == 'yes') {
-        flag = 1;
-        $.post("pos.php", {
-            source: source,
-            getpos: "1"
-        }, function (e) {
-            next = e.split("<!--")[0];
-            var retain = $(".panel-body div:first-child").html();
-            $(".panel-body").empty();
-            $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
-            $(".panel-body").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
-            
-            $.post(source+".php/?comic=" + next, function (e) {
-                next = e.split("!znavfu")[0];
-                e = e.split("!znavfu")[1];
-                e = e.split("<!--")[0];
-                if (e.split("script").length == 1)
-                    $("#scrolldown").before(e);
-            });
-            flag = 0;
-        });
-    }
-});
-
-$(document).ready(function()    {
-    setTimeout(function(){
-        $('#footer').toggle();    
-    },1);
-});
 
 $(document).on('click','.card>img',function (event) {
     var srclink = source;
@@ -67,53 +39,39 @@ function savepos(e, t) {
         source: e,
         position: t
     });
-    $(".card").each(function () {
-        if ($(this).html() == "") {
-            $(this).remove()
-        }
-    })
+}
+
+function loadstrip(obj)    {
+    var card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'">Share</span></div></div>';
+    next=obj.next;
+    $("#scrolldown").before(card);
+    try {
+        FB.XFBML.parse();
+    }
+    catch(error)    {}
 }
 
 function addnext()  {
     flag = 1;
-    $.post(source+".php?comic=" + next + '&sort='+ sort, function (e) {
-        next = e.split("!znavfu")[0];
-        e = e.split("!znavfu")[1];
-        e = e.split("<!--")[0];
-        if(e.indexOf('src')>-1) {
-            var sameflag=1;
-            var cursrc='';
-            try {
-                cursrc = (e.split('src="')[1]).split('"')[0];
-            }
-            catch(error)   {
-                cursrc = (e.split("src='")[1]).split("'")[0];    
-            }
-            $('img').each(function() {
-                 if($(this).attr('src')==cursrc)
-                    sameflag=0;
-            });
-            if (e.split("script").length == 1 && sameflag==1)   {
-                $("#scrolldown").before(e);
-                FB.XFBML.parse();
-            }
-        }
-        flag = 0;
+    $.post(source+".php?next="+next+'&sort='+sort, function (data) {
+        var obj=JSON.parse(data);
+        loadstrip(obj);
+        flag=0;
     });
     savepos(source, next);
 }
 
 $(window).scroll(function () {
     if ($(window).scrollTop() + $(window).height() > $(document).height() - 1000 && flag == 0) {
-        addnext();        
+        addnext();
     }
 });
 
 $(document).on('change','#comicdateselect',function(event) {
-    var retain = $(".panel-body div:first-child").html();
-    $(".panel-body").empty();
-    $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
-    $(".panel-body").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
+    var retain = $(".page div:first-child").html();
+    $(".page").empty();
+    $(".page").append('<div class="jumbotron cdesc">'+retain+'</div>');
+    $(".page").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
     $.post(source+".php?comic=" + btoa($(this).val()), function (e) {
         next = e.split("!znavfu")[0];
         e = e.split("!znavfu")[1];
@@ -125,10 +83,10 @@ $(document).on('change','#comicdateselect',function(event) {
 
 $(document).on('keydown','#comicnumselect',function(event) {
     if(event.which == 13)   {
-        var retain = $(".panel-body div:first-child").html();
-        $(".panel-body").empty();
-        $(".panel-body").append('<div class="jumbotron cdesc">'+retain+'</div>');
-        $(".panel-body").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
+        var retain = $(".page div:first-child").html();
+        $(".page").empty();
+        $(".page").append('<div class="jumbotron cdesc">'+retain+'</div>');
+        $(".page").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
         $.post(source+".php?comic="+btoa($(this).val())+"&sort="+sort, function (e) {
             next = e.split("!znavfu")[0];
             e = e.split("!znavfu")[1];
@@ -186,3 +144,26 @@ function digDown()  {
     }
     $("body,html").animate({ scrollTop: currentScroll+howMuchDig }, 90000, "linear");
 }
+$(document).on('click','#resume',function() {
+    if ($("#resume").attr('data-del') == 'yes') {
+        flag = 1;
+        $.post("pos.php", {
+            source: source,
+            getpos: "1"
+        }, function (e) {
+            next = e.split("<!--")[0];
+            var retain = $(".page div:first-child").html();
+            $(".page").empty();
+            $(".page").append('<div class="jumbotron cdesc">'+retain+'</div>');
+            $(".page").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
+            $.post(source+".php/?comic=" + next, function (e) {
+                next = e.split("!znavfu")[0];
+                e = e.split("!znavfu")[1];
+                e = e.split("<!--")[0];
+                if (e.split("script").length == 1)
+                    $("#scrolldown").before(e);
+            });
+            flag = 0;
+        });
+    }
+});
