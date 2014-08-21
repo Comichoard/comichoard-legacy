@@ -24,6 +24,7 @@
             }
         }
         $url=$check2[0];
+        return $url;
     }
 
     function getcomic($url)   {
@@ -38,32 +39,26 @@
         if($imgname[0]=='/')
             $imgname=substr($imgname,1);
         $imgname = '<img src="http://threewordphrase.com/'.str_replace('htm','gif',$imgname).'" alt="'.$url.$alt[0].'">';;
-        $image = '<div class="card">'.$imgname.'<div class="details"><span>'.$url.$alt[0].'</span>'.''.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$url.'">Share</span></div></div>';
-        array_push($sendback, $image);
+        $srcbig = explode('src="',$imgname);
+        $src = explode('"',$srcbig[1]);
 
         if(intval($url)<=10)
-            return '0'.intval($url)-1;
-        return intval($url)-1;
+            $next='0'.intval($url)-1;
+        $next=intval($url)-1;
+
+        $jsoncomic = '{"comic":"Three Word Phrase","image":"'.$src[0].'","desc":"'.$url.$alt[0].'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'","next":"'.base64_encode($next).'"}';
+        $sendback=$jsoncomic;
     }
 
-    if(isset($_GET['comic'])) {
-        $url = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($url).'!znavfu';
-        echo $sendback[0];
+    if(isset($_GET['next']) and $_GET['next']!='') {
+        getcomic(base64_decode($_GET['next']));
+    }
+    elseif(isset($_GET['strip']) and $_GET['strip']!='')   {
+        $next=getcomic(base64_decode($_GET['strip']));
     }
     else    {
-        if(isset($_GET['strip']))   {
-            getcomic(base64_decode($_GET['strip']));
-            array_push($sendback,'<div class="jumbotron">More comics from Three Word Phrase...</div>');
-        }
-        else    {
-            getfirst();
-            $url = getcomic($url);
-        }
-        echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Three Word Phrase <a href="http://www.threewordphrase.com" type="button" class="btn btn-default" target="_blank">www.threewordphrase.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-                <p>Get official Three Word Phrase merchandise at <a href="http://www.topatoco.com/merchant.mvc?Screen=CTGY&Store_Code=TO&Category_Code=WELCOME" class="btn btn-default" target="_blank">TWP Store</a></p>
-              </div>';
-        echo $sendback;
+        $url=getfirst();
+        getcomic($url);
     }
+    echo $sendback;
 ?>

@@ -23,22 +23,24 @@
     
         $first = explode('<div id="comicbody">', $result);
         $second = explode('</div>', $first[1]);
+        $second[0]=strip_tags($second[0],'<img>');
+        $srcbig = explode('src="',$second[0]); 
+        $src = explode('"',$srcbig[1]);
+        $next=$i-1;
+
         if(strip_tags($second[0],'<img>') != 'There is no comic with this ID.')
-            array_push($sendback, '<div class="card">'.strip_tags($second[0],'<img>').'</div>');
-        return $i-1;
+            $sendback = '{"comic":"Shortpacked","image":"'.$src[0].'","desc":"# '.$i.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($i).'","next":"'.base64_encode($next).'"}';
     }
 
-    if(isset($_GET['comic'])) {
-        $sendback = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($sendback).'!znavfu'.$sendback[0];
+    if(isset($_GET['next']) and $_GET['next']!='') {
+        getcomic(base64_decode($_GET['next']));
+    }
+    elseif(isset($_GET['strip']) and $_GET['strip']!='')   {
+        $next=getcomic(base64_decode($_GET['strip']));
     }
     else    {
-        $i=getcomic(getfirst());
-        echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Shortpacked 
-                <a href="http://shortpacked.com/" type="button" class="btn btn-default" target="_blank">www.shortpacked.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-                <p>Get official Shortpacked merchandise at <a href="http://shortpacked.bigcartel.com/" class="btn btn-default" target="_blank">www.shortpacked.bigcartel.com</a></p>
-              </div>';
-        echo $sendback;
+        $url=getfirst();
+        getcomic($url);
     }
+    echo $sendback;
 ?>

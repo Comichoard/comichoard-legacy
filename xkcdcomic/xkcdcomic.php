@@ -24,15 +24,12 @@
     function makecard($html,$id,$next)
     {
         global $sendback,$comic;
-        array_push($sendback, '<div class="card">'.str_replace('alt="','alt="XKCD: ', $html).'
-                <div class="details">
-                    <span>XKCD #'.$id.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'">Share</span>
-                </div>
-            </div>');
+        $srcbig = explode('src="',$html); 
+        $src = explode('"',$srcbig[1]);
+        $sendcomic = '{"comic":"XKCD","image":"'.$src[0].'","desc":"# '.$id.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'","next":"'.base64_encode($next).'"}';
     }
 
     if (mysqli_connect_errno()) {
-        echo base64_encode('1').'!znavfu';
         if(!isset($_GET['comic']))  {
             echo mysqli_connect_errno();
             echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1></div>';
@@ -70,10 +67,7 @@
                 else
                     $next_id = $pres_id+1;   
                 makecard($html_present,$pres_id,$next_id);
-                if($pres_id == 1 || $pres_id == $last)
-                    array_push($sendback,'<div class="jumbotron">Looks like you read all the comics we had.<br>Here\'s something else to read <a href="http://comichoard.com/garfield" type="button" class="btn btn-default">Garfield</a></div>');    
             }
-            echo base64_encode($next_id).'!znavfu';
             echo $sendback;
         }
         else {
@@ -85,7 +79,6 @@
                     $html_present = $row['html'];
                 $next_id = $pres_id-1;       
                 makecard($html_present,$pres_id,$next_id);
-                array_push($sendback,'<div class="jumbotron">More comics from XKCD...</div>');
             }
             else
             {
@@ -116,15 +109,6 @@
                 }
                 makecard($html_present,$present_id,$next_id);
             }
-            echo base64_encode($next_id).'!znavfu';
-            echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">www.xkcd.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>
-              <span>Sort in order
-              <a href="http://comichoard.com/xkcdcomic/?sort=asc" type="button" class="btn btn-default">From the start</a>
-              <a href="http://comichoard.com/xkcdcomic/?sort=desc" type="button" class="btn btn-default">Most recent first</a></span>
-              <span>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$last.'"></span>
-              </p>
-              </div>';
             echo $sendback;
         }
         mysqli_close($con);

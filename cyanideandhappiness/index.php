@@ -51,7 +51,6 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('../top.php');?>
-            <div class="page">
                 <div class="jumbotron cdesc"><h1>Cyanide &amp; Happiness <a href="http://explosm.net" type="button" class="btn btn-default" target="_blank">www.explosm.net</a>
                     <a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
                     <p>
@@ -63,9 +62,8 @@
                       <span>Get official Cyanide and Happiness merchandise at <a href="http://store.explosm.net/" class="btn btn-default" target="_blank">www.store.explosm.net</a></span>
                     </p>                
                 </div>
-                <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
-                <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
-            </div>
+            <div class="page"></div>
+            <?php include('../bottom.php');?>
         </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">

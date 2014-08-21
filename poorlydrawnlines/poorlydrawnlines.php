@@ -12,6 +12,7 @@
         $first1 = explode("var disqus_url = '", $result);
         $first2 =  explode("'", $first1[1]);
         $url = $first2[0];
+        return $url;
     }
 
     function getcomic($url)   {
@@ -27,37 +28,26 @@
         $alt = explode('"',$altbig[1]);
         $alt[0] = str_replace('-',' ',$alt[0]);
         $alt[0] = str_replace('_','',$alt[0]);
-        $second[0] = str_replace('alt="','alt="Poorly Drawn Lines ',$second[0]);
+        $srcbig = explode('src="',$second[0]); 
+        $src = explode('"',$srcbig[1]);
         
-        $image = '<div class="card">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
-        array_push($sendback, $image);
-
         $urlfirst = explode('<li class="previous">', $result);
         $urlsecond = explode('<a href="', $urlfirst[1]);
         $urlthird = explode('"', $urlsecond[1]);
 
-        return $urlthird[0];
+        $jsoncomic = '{"comic":"Poorly Drawn Lines","image":"'.$src[0].'","desc":"'.$alt[0].'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'","next":"'.base64_encode($urlthird[0]).'"}';
+        $sendback=$jsoncomic;
     }
 
-    if(isset($_GET['comic'])) {
-        $url = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($url).'!znavfu';
-        echo $sendback[0];
+    if(isset($_GET['next']) and $_GET['next']!='') {
+        getcomic(base64_decode($_GET['next']));
+    }
+    elseif(isset($_GET['strip']) and $_GET['strip']!='')   {
+        $next=getcomic(base64_decode($_GET['strip']));
     }
     else    {
-        if(isset($_GET['strip']))   {
-            getcomic(base64_decode($_GET['strip']));
-            array_push($sendback,'<div class="jumbotron">More comics from Poorly Drawn Lines...</div>');
-        }
-        else    {
-            getfirst();
-        $url = getcomic($url);
-        }
-        echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Poorly Drawn Lines 
-                <a href="http://poorlydrawnlines.com" type="button" class="btn btn-default" target="_blank">www.poorlydrawnlines.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-                <p>Get official Poorly Drawn Lines merchandise at <a href="http://poorlydrawnlines.storenvy.com/" class="btn btn-default" target="_blank">www.poorlydrawnlines.storenvy.com</a></p>
-              </div>';
-        echo $sendback;
+        $url=getfirst();
+        getcomic($url);
     }
+    echo $sendback;
 ?>

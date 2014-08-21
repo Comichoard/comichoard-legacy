@@ -1,8 +1,8 @@
 <?php
     $server = $_SERVER['HTTP_HOST'];
     if($server=='localhost') $server.='/comichoard';
-    $url = 'http://'.$server.'/mercworks/mercworks.php?';
     $source = 'mercworks';
+    $url = 'http://'.$server.'/'.$source.'/'.$source.'.php?';
     if(isset($_GET['strip']))   {    
         $strip=$_GET['strip'];
         $url .= 'strip='.$_GET['strip'].'&';
@@ -46,13 +46,11 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('../top.php');?>
-            <div class="page">
                 <div class="jumbotron cdesc"><h1>MercWorks <a href="http://www.mercworks.net/" type="button" class="btn btn-default" target="_blank">www.mercworks.net</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
                     <p>Get official MercWorks merchandise at <a href="http://www.mercworks.net/store/" class="btn btn-default" target="_blank">www.mercworks.net/store</a></p>
                 </div>
-                <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
-                <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
-            </div>
+            <div class="page"></div>
+            <?php include('../bottom.php');?>
         </div>
 
         <input id="firstcomic" type="hidden" value="<?php echo base64_encode($firstcomic[0]);?>">

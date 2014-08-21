@@ -13,6 +13,7 @@
         $first2 =  explode('<a href="', $first1[1]);
         $first3 =  explode('"', $first2[1]);
         $url = $first3[0];
+        return $url;
     }
 
     function getcomic($url)   {
@@ -25,38 +26,25 @@
         $second = explode('</a>', $first[1]);
         $altbig = explode('alt="',$second[0]); 
         $alt = explode('"',$altbig[1]); 
-        $image = '<div class="card">'.'<img src="http://maximumble.thebookofbiff.com/comics'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
-        $image = str_replace('alt="','alt="Maximumble ', $image);
-        array_push($sendback, $image);
+        $src = explode('"',$second[0]);
 
         $urlfirst = explode('<td class="comic_navi_left">', $result);
         $urlsecond = explode('<a href="', $urlfirst[1]);
         $urlthird = explode('"', $urlsecond[2]);
 
-        return $urlthird[0];
+        $jsoncomic = '{"comic":"Maximumble","image":"http://maximumble.thebookofbiff.com/comics'.$src[0].'","desc":"'.$alt[0].'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'","next":"'.base64_encode($urlthird[0]).'"}';
+        $sendback=$jsoncomic;
     }
 
-    if(isset($_GET['comic'])) {
-        $url = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($url).'!znavfu';
-        echo $sendback[0];
+    if(isset($_GET['next']) and $_GET['next']!='') {
+        getcomic(base64_decode($_GET['next']));
+    }
+    elseif(isset($_GET['strip']) and $_GET['strip']!='')   {
+        $next=getcomic(base64_decode($_GET['strip']));
     }
     else    {
-        if(isset($_GET['strip']))   {
-            getcomic(base64_decode($_GET['strip']));
-            array_push($sendback,'<div class="jumbotron">More comics from Maximumble...</div>');
-        }
-        else    {
-            for($i=0;$i<1;$i++)   {
-                getfirst();
-        $url = getcomic($url);
-            }
-        }
-        echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Maximumble <a href="http://maximumble.thebookofbiff.com" type="button" class="btn btn-default" target="_blank">www.maximumble.thebookofbiff.com</a>
-                  <a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-                  <p>Get official Maximumble merchandise at <a href="http://bumblemumble.bigcartel.com/" class="btn btn-default" target="_blank">www.bumblemumble.bigcartel.com</a></p>
-              </div>';
-        echo $sendback;
+        $url=getfirst();
+        getcomic($url);
     }
+    echo $sendback;
 ?>

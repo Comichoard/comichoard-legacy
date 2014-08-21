@@ -13,6 +13,7 @@
         $first2 =  explode('<a href=\'', $first1[1]);
         $first3 =  explode('\'', $first2[1]);
         $url = $first3[0];
+        return $url;
     }
 
     function getcomic($url)   {
@@ -25,25 +26,24 @@
         $second = explode('</a>', $first[1]);
         $alt=explode('penny-arcade.com/comic/',$url);
         $alt[1]=str_replace('/','-',substr($alt[1],0,10));
-        array_push($sendback, '<div class="card">'.'<img src="http://art.penny-arcade.com'.$second[0].'<div class="details"><span>'.$alt[1].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>');
+        $src = explode('"',$second[0]);
 
         $urlfirst = explode('<a class="btn btnPrev" href="', $result);
         $urlsecond = explode('"', $urlfirst[1]);
-        return $urlsecond[0];
+        
+        $jsoncomic = '{"comic":"Penny Arcade","image":"http://art.penny-arcade.com'.$src[0].'","desc":"'.$alt[1].'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'","next":"'.base64_encode($urlsecond[0]).'"}';
+        $sendback=$jsoncomic;
     }
 
-    if(isset($_GET['comic'])) {
-        $url = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($url).'!znavfu';
-        echo $sendback[0];
+    if(isset($_GET['next']) and $_GET['next']!='') {
+        getcomic(base64_decode($_GET['next']));
+    }
+    elseif(isset($_GET['strip']) and $_GET['strip']!='')   {
+        $next=getcomic(base64_decode($_GET['strip']));
     }
     else    {
-        getfirst();
-        $url = getcomic($url);
-        echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Penny Arcade <a href="http://www.penny-arcade.com/" type="button" class="btn btn-default" target="_blank">www.penny-arcade.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-                <p>Get official Penny Arcade merchandise at <a href="http://store.penny-arcade.com/" class="btn btn-default" target="_blank">www.store.penny-arcade.com</a></p>
-              </div>';
-        echo $sendback;
+        $url=getfirst();
+        getcomic($url);
     }
+    echo $sendback;
 ?>

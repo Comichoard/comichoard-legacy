@@ -87,10 +87,8 @@
                         echo $display[1];
 
                 ?>
-                <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
-                <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
-            </div>
-            <div id="footer" class="footer">Help your friends see how awesome imgur is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fimgur" class="btn btn-default begsuccess btn-sm" target="_blank">Share imgur</i></a></div>
+            <div class="page"></div>
+            <?php include('../bottom.php');?>
         </div>
 
         <input id="next" type="hidden" value="<?php echo $display[0];?>">

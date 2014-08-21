@@ -4,10 +4,6 @@ $(document).ready(function()    {
     },1);
     if ($('.px').css('opacity') == '1') {
         $('#gohome').html('CH');
-    }    
-    if ($('.px').css('opacity') == '0.5') {
-        if(source!='feed')
-            $('#fbpage,#resume').html('Continue');
     }
     if(firstcomic!='' && firstcomic!==undefined)    {
         loadstrip(JSON.parse(atob(firstcomic)));
@@ -42,9 +38,13 @@ function savepos(e, t) {
 }
 
 function loadstrip(obj)    {
-    var card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'">Share</span></div></div>';
+    var card='';
+    if(source!='feed')
+        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span></div></div>';
+    else
+        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.comic+' : '+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span></div></div>';        
     next=obj.next;
-    $("#scrolldown").before(card);
+    $(".page").append(card);
     try {
         FB.XFBML.parse();
     }
@@ -68,31 +68,21 @@ $(window).scroll(function () {
 });
 
 $(document).on('change','#comicdateselect',function(event) {
-    var retain = $(".page div:first-child").html();
-    $(".page").empty();
-    $(".page").append('<div class="jumbotron cdesc">'+retain+'</div>');
-    $(".page").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
-    $.post(source+".php?comic=" + btoa($(this).val()), function (e) {
-        next = e.split("!znavfu")[0];
-        e = e.split("!znavfu")[1];
-        e = e.split("<!--")[0];
-        if (e.split("script").length == 1)
-            $("#scrolldown").before(e);
+    $(".page").empty();flag=1;
+    $.post(source+".php?next="+btoa($(this).val())+'&sort='+sort, function (data) {
+        var obj=JSON.parse(data);
+        loadstrip(obj);
+        flag=0;
     });
 });
 
 $(document).on('keydown','#comicnumselect',function(event) {
     if(event.which == 13)   {
-        var retain = $(".page div:first-child").html();
-        $(".page").empty();
-        $(".page").append('<div class="jumbotron cdesc">'+retain+'</div>');
-        $(".page").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
-        $.post(source+".php?comic="+btoa($(this).val())+"&sort="+sort, function (e) {
-            next = e.split("!znavfu")[0];
-            e = e.split("!znavfu")[1];
-            e = e.split("<!--")[0];
-            if (e.split("script").length == 1)
-                $("#scrolldown").before(e);
+        $(".page").empty();flag=1;
+        $.post(source+".php?next="+btoa($(this).val())+'&sort='+sort, function (data) {
+            var obj=JSON.parse(data);
+            loadstrip(obj);
+            flag=0;
         });
     }
 });
@@ -134,6 +124,7 @@ $(document).on('click','#scrolldown>.fa-forward',function()   {
     dig=setInterval(digDown,90000);
     digDown();
 });
+
 function digDown()  {
     var currentScroll='';
     try {
@@ -144,26 +135,18 @@ function digDown()  {
     }
     $("body,html").animate({ scrollTop: currentScroll+howMuchDig }, 90000, "linear");
 }
+
 $(document).on('click','#resume',function() {
     if ($("#resume").attr('data-del') == 'yes') {
         flag = 1;
-        $.post("pos.php", {
-            source: source,
-            getpos: "1"
-        }, function (e) {
+        $.post("pos.php", {source: source, getpos: "1"}, function (e) {
             next = e.split("<!--")[0];
-            var retain = $(".page div:first-child").html();
             $(".page").empty();
-            $(".page").append('<div class="jumbotron cdesc">'+retain+'</div>');
-            $(".page").append('<div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div><div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>');
-            $.post(source+".php/?comic=" + next, function (e) {
-                next = e.split("!znavfu")[0];
-                e = e.split("!znavfu")[1];
-                e = e.split("<!--")[0];
-                if (e.split("script").length == 1)
-                    $("#scrolldown").before(e);
+            $.post(source+".php?next="+next+'&sort='+sort, function (data) {
+                var obj=JSON.parse(data);
+                loadstrip(obj);
+                flag=0;
             });
-            flag = 0;
         });
     }
 });

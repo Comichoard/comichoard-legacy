@@ -47,16 +47,13 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('../top.php');?>
-            <div class="page">
                 <div class="jumbotron cdesc">
                     <h1>Channelate <a href="http://www.channelate.com" type="button" class="btn btn-default" target="_blank">www.channelate.com</a>
                     <a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
                     <p>Get official Channelate merchandise at <a href="http://channelate.bigcartel.com/" class="btn btn-default" target="_blank">www.channelate.bigcartel.com</a></p>
                 </div>
-                <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
-                <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
-            </div>
-            <div id="footer" class="footer">Help your friends see how awesome Channelate is too. <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcomichoard.com%2Fchannelate" class="btn btn-default begsuccess btn-sm" target="_blank">Share Channelate</i></a></div>
+            <div class="page"></div>
+            <?php include('../bottom.php');?>
         </div>
 
         <input id="firstcomic" type="hidden" value="<?php echo base64_encode($firstcomic[0]);?>">

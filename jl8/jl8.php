@@ -1,5 +1,5 @@
 <?php
-   $mysql_hostname = "localhost";
+    $mysql_hostname = "localhost";
     $mysql_user = "comict";
     $mysql_password = "comichoard";
     $mysql_database = "comichoard";
@@ -14,12 +14,7 @@
     function makecard($src,$id,$next)
     {
         global $sendback,$comic;
-        array_push($sendback, '<div class="card">
-                <img alt="JL8 #'.$id.'" src="'.$src.'">
-                <div class="details">
-                    <span>#'.$id.'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'">Share</span>
-                </div>
-            </div>');
+        $sendback = '{"comic":"JL8","image":"'.$src.'","desc":"# '.$id.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'","next":"'.base64_encode($next).'"}';
     }
 
     function dump50(){
@@ -32,8 +27,6 @@
         }
     }
     if (mysqli_connect_errno()) {
-
-        echo base64_encode('1').'!znavfu';
         if(!isset($_GET['comic']))  {
             echo mysqli_connect_errno();
             echo '<div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
@@ -93,7 +86,6 @@
                     $next_id = $pres_id-1;       
                     makecard($url_present,$pres_id,$next_id);
                 }
-                array_push($sendback,'<div class="jumbotron">More comics from JL8...</div>');
             }
             else
             {
@@ -117,15 +109,6 @@
                 }
                 makecard($url_present,$present_id,$next_id);
             }
-            echo base64_encode($next_id).'!znavfu';
-            echo '<div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">www.jl8comic.tumblr.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>
-              <span>Sort in order
-              <a href="http://comichoard.com/jl8/?sort=asc" type="button" class="btn btn-default">From the start</a>
-              <a href="http://comichoard.com/jl8/?sort=desc" type="button" class="btn btn-default">Most recent first</a></span>
-              <span>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$last.'"></span>
-              </p>
-              </div>';
             echo $sendback;
         }
         mysqli_close($con);

@@ -1,15 +1,16 @@
 <?php
     $server = $_SERVER['HTTP_HOST'];
     if($server=='localhost') $server.='/comichoard';
-    $url = 'http://'.$server.'/feed.php';
     $source = 'feed';
-    if($source != '')   {
-        $ch = curl_init($url);
+    $url = 'http://'.$server.'/'.$source.'.php?';
+
+    $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);    
-        $display = explode('!znavfu',$result);
-    }
+    $result = curl_exec($ch);
+    $firstcomic = explode('}', $result);    
+    $firstcomic[0].='}';
 ?>
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -34,47 +35,41 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('top.php');?>
-            <div class="page">
-                <div class="jumbotron thumb-main">
-                    <br><h4>Now serving on Comic Hoard</h4>
-                    <div class="thumb-container">
-                        <a class="btn btn-default" href="http://comichoard.com/jl8">JL8</a>
-                        <a class="btn btn-default" href="http://comichoard.com/xkcdcomic">XKCD</a>
-                        <a class="btn btn-default" href="http://comichoard.com/toonhole">Toonhole</a>
-                        <a class="btn btn-default" href="http://comichoard.com/mercworks">MercWorks</a>
-                        <a class="btn btn-default" href="http://comichoard.com/maximumble">Maximumble</a>
-                        <a class="btn btn-default" href="http://comichoard.com/spikedmath">Spiked Math</a>
-                        <a class="btn btn-default" href="http://comichoard.com/garfield">Garfield</a>
-                        <a class="btn btn-default" href="http://comichoard.com/pennyarcade">Penny Arcade</a>
-                        <a class="btn btn-default" href="http://comichoard.com/shortpacked">Shortpacked</a>
-                        <a class="btn btn-default" href="http://comichoard.com/pcweenies">PC Weenies</a>
-                        <a class="btn btn-default" href="http://comichoard.com/buttersafe">Buttersafe</a>
-                        <a class="btn btn-default" href="http://comichoard.com/threewordphrase">Three Word Phrase</a>
-                        <a class="btn btn-default" href="http://comichoard.com/smbc">SMBC</a>
-                        <a class="btn btn-default" href="http://comichoard.com/calvinandhobbes">Calvin and Hobbes</a>
-                        <a class="btn btn-default" href="http://comichoard.com/cyanideandhappiness">Cyanide &amp; Happiness</a>
-                        <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
-                        <a class="btn btn-default" href="http://comichoard.com/poorlydrawnlines">Poorly Drawn Lines</a>
-                        <a class="btn btn-default" href="http://comichoard.com/doghousediaries">Doghouse Diaries</a>
-                    </div>
+            <div class="jumbotron thumb-main">
+                <br><h4>Now serving on Comic Hoard</h4>
+                <div class="thumb-container">
+                    <a class="btn btn-default" href="http://comichoard.com/jl8">JL8</a>
+                    <a class="btn btn-default" href="http://comichoard.com/xkcdcomic">XKCD</a>
+                    <a class="btn btn-default" href="http://comichoard.com/toonhole">Toonhole</a>
+                    <a class="btn btn-default" href="http://comichoard.com/mercworks">MercWorks</a>
+                    <a class="btn btn-default" href="http://comichoard.com/maximumble">Maximumble</a>
+                    <a class="btn btn-default" href="http://comichoard.com/spikedmath">Spiked Math</a>
+                    <a class="btn btn-default" href="http://comichoard.com/garfield">Garfield</a>
+                    <a class="btn btn-default" href="http://comichoard.com/pennyarcade">Penny Arcade</a>
+                    <a class="btn btn-default" href="http://comichoard.com/shortpacked">Shortpacked</a>
+                    <a class="btn btn-default" href="http://comichoard.com/pcweenies">PC Weenies</a>
+                    <a class="btn btn-default" href="http://comichoard.com/buttersafe">Buttersafe</a>
+                    <a class="btn btn-default" href="http://comichoard.com/threewordphrase">Three Word Phrase</a>
+                    <a class="btn btn-default" href="http://comichoard.com/smbc">SMBC</a>
+                    <a class="btn btn-default" href="http://comichoard.com/calvinandhobbes">Calvin and Hobbes</a>
+                    <a class="btn btn-default" href="http://comichoard.com/cyanideandhappiness">Cyanide &amp; Happiness</a>
+                    <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
+                    <a class="btn btn-default" href="http://comichoard.com/poorlydrawnlines">Poorly Drawn Lines</a>
+                    <a class="btn btn-default" href="http://comichoard.com/doghousediaries">Doghouse Diaries</a>
                 </div>
-                <?php
-                    if(isset($display[1]))
-                        echo $display[1];
-                ?>
-                <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
-                <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
             </div>
+            <div class="page"></div>
+            <?php include('bottom.php');?>
         </div>
 
-        <input id="next" type="hidden" value="<?php echo $display[0];?>">
+        <input id="firstcomic" type="hidden" value="<?php echo base64_encode($firstcomic[0]);?>">
         <input id="source" type="hidden" value="<?php echo $source;?>">
         <input id="website" type="hidden" value="<?php echo $_SERVER['HTTP_HOST'];?>">
         <script>
-            var next = $("#next").val();
             var sort = $("#sort").val();
             var source = $("#source").val();
             var website = $("#website").val();
+            var firstcomic = $('#firstcomic').val();
             var flag = 0;
 		</script>
         

@@ -23,29 +23,21 @@
         $result = curl_exec($ch);
         $first = explode('<div id="comicimage">', $result);
         $second = explode('</div>', $first[1]);
-        $second[0] = str_replace('src=', 'alt="SMBC #'.$i.'" src=', $second[0]);
-        array_push($sendback, '<div class="card">'.$second[0].'<br><div class="details"><span>#'.$i.'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
-        return $i-1;
+        $srcbig = explode("src='",$second[0]); 
+        $src = explode("'",$srcbig[1]);
+        $jsoncomic = '{"comic":"Saturday Morning Breakfast Cereal","image":"'.$src[0].'","desc":"# '.$i.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($i).'","next":"'.base64_encode($i-1).'"}';
+        $sendback=$jsoncomic;
     }
 
-    if(isset($_GET['comic'])) {
-        $sendback = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($sendback).'!znavfu'.$sendback[0];
+    if(isset($_GET['next']) and $_GET['next']!='') {
+        getcomic(base64_decode($_GET['next']));
+    }
+    elseif(isset($_GET['strip']) and $_GET['strip']!='')   {
+        $next=getcomic(base64_decode($_GET['strip']));
     }
     else    {
-        $count = 1;
-        if(isset($_GET['strip']))   {
-            getcomic($_GET['strip']);
-            array_push($sendback,'<div class="jumbotron">More comics from SMBC...</div>');
-            $count--;
-        }
-        $begin = getfirst();
-        $i = getcomic($begin);
-        echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>SMBC <a href="http://www.smbc-comics.com/" type="button" class="btn btn-default" target="_blank">www.smbc-comics.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$begin.'")"></p>
-                <p>Get official SMBC merchandise at <a href="http://smbc.myshopify.com/" class="btn btn-default" target="_blank">www.smbc.myshopify.com</a></p>
-              </div>';
-        echo $sendback;
+        $url=getfirst();
+        getcomic($url);
     }
+    echo $sendback;
 ?>

@@ -3,6 +3,7 @@
     $comic = str_replace('.php','',substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1));
 
     function getfirst() {
+        return 560;
         $url = 'http://spikedmath.com';
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -25,25 +26,21 @@
         $second = explode('</center>', $first[1]);
         $namebig = explode('alt="Spiked Math Comic - ',$second[0]);
         $name = explode('"',$namebig[1]);
-        array_push($sendback, '<div class="card">'.'<img src="http://spikedmath.com/comics'.$second[0].'<div class="details"><span>#'.$i.'</span><span>'.$name[0].'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.$i.'">Share</span></div></div>');
-        return $i-1;
+        $src = explode('"',$second[0]);
+        
+        $jsoncomic = '{"comic":"Spiked Math","image":"http://spikedmath.com/comics'.$src[0].'","desc":"# '.$i.' '.$name[0].'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($i).'","next":"'.base64_encode($i-1).'"}';
+        $sendback=$jsoncomic;
     }
 
-    if(isset($_GET['comic'])) {
-        $sendback = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($sendback).'!znavfu'.$sendback[0];
+    if(isset($_GET['next']) and $_GET['next']!='') {
+        getcomic(base64_decode($_GET['next']));
+    }
+    elseif(isset($_GET['strip']) and $_GET['strip']!='')   {
+        $next=getcomic(base64_decode($_GET['strip']));
     }
     else    {
-        if(isset($_GET['strip']))   {
-            getcomic($_GET['strip']);
-            array_push($sendback,'<div class="jumbotron">More comics from Spiked Math...</div>');
-            $count--;
-        }
-        getcomic(getfirst());
-        echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Spiked Math <a href="http://spikedmath.com" type="button" class="btn btn-default" target="_blank">www.spikedmath.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              
-              </div>';
-        echo $sendback;
+        $url=getfirst();
+        getcomic($url);
     }
+    echo $sendback;
 ?>

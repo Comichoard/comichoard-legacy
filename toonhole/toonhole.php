@@ -13,6 +13,7 @@
         $first2 =  explode('<a href="', $first1[1]);
         $first3 =  explode('"', $first2[1]);
         $url = $first3[0];
+        return $url;
     }
 
     function getcomic($url)   {
@@ -27,35 +28,26 @@
         $altbig = explode('alt="',$second[0]); 
         $alt = explode('"',$altbig[1]); 
         $second[0]=strip_tags($second[0],'<img>');
-        $image = '<div class="card">'.$second[0].'<div class="details"><span>'.$alt[0].'</span>'.'<span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'">Share</span></div></div>';
-        $image = str_replace('alt="','alt="Toonhole: ', $image);
-        array_push($sendback, $image);
+        $srcbig = explode('src="',$second[0]); 
+        $src = explode('"',$srcbig[1]);
 
         $urlfirst = explode('<div id="mini_nav">', $result);
         $urlsecond = explode('<a href="', $urlfirst[1]);
         $urlthird = explode('"', $urlsecond[1]);
 
-        return $urlthird[0];
+        $jsoncomic = '{"comic":"Toonhole","image":"'.$src[0].'","desc":"'.$alt[0].'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($url).'","next":"'.base64_encode($urlthird[0]).'"}';
+        $sendback=$jsoncomic;
     }
 
-    if(isset($_GET['comic'])) {
-        $url = getcomic(base64_decode($_GET['comic']));
-        echo base64_encode($url).'!znavfu';
-        echo $sendback[0];
+    if(isset($_GET['next']) and $_GET['next']!='') {
+        getcomic(base64_decode($_GET['next']));
+    }
+    elseif(isset($_GET['strip']) and $_GET['strip']!='')   {
+        $next=getcomic(base64_decode($_GET['strip']));
     }
     else    {
-        if(isset($_GET['strip']))   {
-            getcomic(base64_decode($_GET['strip']));
-            array_push($sendback,'<div class="jumbotron">More comics from Toonhole...</div>');
-        }
-        else    {
-            getfirst();
-            $url = getcomic($url);
-        }
-        echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Toonhole <a href="http://www.toonhole.com" type="button" class="btn btn-default" target="_blank">www.toonhole.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
-              <p>Get official Toonhole merchandise at <a href="http://www.toonhole.com/store/" class="btn btn-default" target="_blank">www.toonhole.com/store</a></p>
-              </div>';
-        echo $sendback;
+        $url=getfirst();
+        getcomic($url);
     }
+    echo $sendback;
 ?>
