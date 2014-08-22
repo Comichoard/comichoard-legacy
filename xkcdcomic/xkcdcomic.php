@@ -26,7 +26,7 @@
         global $sendback,$comic;
         $srcbig = explode('src="',$html); 
         $src = explode('"',$srcbig[1]);
-        $sendcomic = '{"comic":"XKCD","image":"'.$src[0].'","desc":"# '.$id.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'","next":"'.base64_encode($next).'"}';
+        $sendback = '{"comic":"XKCD","image":"'.$src[0].'","desc":"# '.$id.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'","next":"'.base64_encode($next).'"}';
     }
 
     if (mysqli_connect_errno()) {

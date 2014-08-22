@@ -56,7 +56,7 @@
                         <span>Sort in order
                             <a href="http://comichoard.com/jl8/?sort=asc" type="button" class="btn btn-default">From the start</a>
                             <a href="http://comichoard.com/jl8/?sort=desc" type="button" class="btn btn-default">Most recent first</a></span>
-                        <span>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$last.'"></span>
+                        <span>Skip to comic <input id="comicnumselect" type="text" class="form-control" placeholder="####"></span>
                     </p>
                 </div>
             <div class="page"></div>
