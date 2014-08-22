@@ -15,7 +15,7 @@
     $firstcomic[0].='}';
     
     if(isset($_GET['strip']))   {    
-        $data=json_decode($result[0].'}');
+        $data=json_decode($firstcomic[0]);
         $imgsrc = $data->{"image"};
         $title = $data->{"comic"}.': '.$data->{'desc'};
     }
