@@ -24,8 +24,8 @@
     function makecard($html,$id,$next)
     {
         global $sendback,$comic;
-        $srcbig = explode('src="',$html); 
-        $src = explode('"',$srcbig[1]);
+        $srcbig = explode("src='",$html); 
+        $src = explode("'",$srcbig[1]);
         $sendback = '{"comic":"XKCD","image":"'.$src[0].'","desc":"# '.$id.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($id).'","next":"'.base64_encode($next).'"}';
     }
 
