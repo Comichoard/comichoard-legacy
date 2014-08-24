@@ -18,7 +18,7 @@
 	}
 
 	if (mysqli_connect_errno()) {
-        if(!isset($_GET['comic']))	{
+        if(!isset($_GET['next']))	{
 	        echo '<div class="jumbotron cdesc"><h1>Calvin and Hobbes <a href="http://www.gocomics.com/calvinandhobbes/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
 	              <p>Calvin and Hobbes is a daily comic strip that was written and illustrated by American cartoonist Bill Watterson.<br>
 	              It follows the humorous antics of Calvin, a mischievous and adventurous six-year-old boy, and Hobbes, his sardonic stuffed tiger.</p></div><br><br><br>';
@@ -27,8 +27,8 @@
 	}
 	else
 	{
-		if(isset($_GET['comic'])){
-			$pres_date = base64_decode(($_GET['comic']));
+		if(isset($_GET['next'])){
+			$pres_date = base64_decode(($_GET['next']));
 			$result = mysqli_query($con,"SELECT * FROM calvin where date = '".$pres_date."'");
 			while($row = mysqli_fetch_array($result))
 				$url_present = $row['url'];
