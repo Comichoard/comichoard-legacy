@@ -30,7 +30,7 @@
     }
 
     if (mysqli_connect_errno()) {
-        if(!isset($_GET['comic']))  {
+        if(!isset($_GET['next']))  {
             echo mysqli_connect_errno();
             echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1></div>';
             echo '<br><br><div class="jumbotron">There was an error while connecting to the library.<br>Here\'s something else to read <a href="http://comichoard.com/garfield" type="button" class="btn btn-default">Garfield</a></div>';
@@ -41,14 +41,14 @@
         $result = mysqli_query($con,"SELECT MAX(id) as 'max' FROM xkcd;");
         $row = mysqli_fetch_array($result);
         $last = $row['max'];
-        if(isset($_GET['comic']))   {
+        if(isset($_GET['next']))   {
             $sort = 'desc';
             if(isset($_GET['sort'])) {
                 if($_GET['sort'] == 'asc')  {
                     $sort='asc';
                 }
             }
-            $pres_id = base64_decode(($_GET['comic']));
+            $pres_id = base64_decode(($_GET['next']));
             if($pres_id == 0 || $pres_id == $last+1)
                 exit();
             else {
