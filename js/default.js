@@ -1,9 +1,6 @@
 $(document).ready(function()    {
-    setTimeout(function(){
-        $('#footer').toggle();    
-    },1);
     if ($('.px').css('opacity') == '1') {
-        $('#gohome').html('CH');
+        $('#gohome').html('C H');
     }
     if(firstcomic!='' && firstcomic!==undefined)    {
         loadstrip(JSON.parse(atob(firstcomic)));

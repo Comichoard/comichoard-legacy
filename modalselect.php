@@ -24,6 +24,7 @@
         <a class="btn btn-default" href="http://comichoard.com/poorlydrawnlines">Poorly Drawn Lines</a>
         <a class="btn btn-default" href="http://comichoard.com/spikedmath">Spiked Math</a>
         <a class="btn btn-default" href="http://comichoard.com/shortpacked">Shortpacked</a>
+        <a class="btn btn-default" href="http://comichoard.com/pearlsbeforeswine">Pearls Before Swine</a>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

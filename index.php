@@ -56,6 +56,7 @@
                     <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
                     <a class="btn btn-default" href="http://comichoard.com/poorlydrawnlines">Poorly Drawn Lines</a>
                     <a class="btn btn-default" href="http://comichoard.com/doghousediaries">Doghouse Diaries</a>
+                    <a class="btn btn-default" href="http://comichoard.com/pearlsbeforeswine">Pearls Before Swine</a>
                 </div>
             </div>
             <div class="page"></div>

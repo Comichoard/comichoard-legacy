@@ -1,6 +1,6 @@
 <div id="top" class="panel-heading">
     <a id="gohome" class="btn btn-default btn-lg" href="http://comichoard.com">
-        Comic Hoard
+        <span>Comic</span> Hoard
     </a>
     <a id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
         Select Comic To Read

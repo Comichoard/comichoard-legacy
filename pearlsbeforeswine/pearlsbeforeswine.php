@@ -6,8 +6,15 @@
 
     function getcomic($date)   {
         global $sendback,$comic;
+        $date=str_replace('-', '/', $date);
+        $ch = curl_init('http://www.gocomics.com/pearlsbeforeswine/'.$date);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        $meta=explode('<meta property="og:image"', $result);
+        $imagebig=explode('content="', $meta[1]);
+        $image=explode('"', $imagebig[1]);
         $next=date('Y-m-d',(strtotime ( '-1 day' , strtotime ($date) ) ));
-        $sendback = '{"comic":"Garfield","image":"http://garfield.com/uploads/strips/'.$date.'.jpg","desc":"'.$date.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($date).'","next":"'.base64_encode($next).'"}';
+        $sendback = '{"comic":"Pearls Before Swine","image":"'.$image[0].'","desc":"'.$date.'","link":"http://comichoard.com/'.$comic.'/?strip='.base64_encode($date).'","next":"'.base64_encode($next).'"}';
     }
 
     if(isset($_GET['next']) and $_GET['next']!='') {
