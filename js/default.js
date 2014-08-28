@@ -54,7 +54,7 @@ function savepos(e, t) {
 function loadstrip(obj)    {
     var card='';
     if(source!='feed')
-        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><a href="'+obj.link+'" class="twitter-share-button" data-lang="en">Tweet</a></div></div>';
+        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><!--a href="'+obj.link+'" class="twitter-share-button" data-lang="en">Tweet</a--></div></div>';
     else
         card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.comic+' : '+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><!--a href="'+obj.link+'" class="twitter-share-button" data-lang="en">Tweet</a></div--></div>';        
     next=obj.next;
