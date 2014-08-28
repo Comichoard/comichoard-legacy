@@ -45,7 +45,7 @@
         $begin = getfirst();
         $i = getcomic($begin);
         echo base64_encode($i).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+        echo '<div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a><span class="btn btn-default"><a href="https://twitter.com/ComicHoard" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ComicHoard</a></span></h1>
               <p class="cdesc-desc">XKCD, is a webcomic created by Randall Munroe.<br>The comic\'s tagline describes it as "a webcomic of romance, sarcasm, math, and language."</p>
               <p>Skip to comic # <input id="comicnumselect" type="text" class="form-control" placeholder="1-'.$begin.'")"></p>
               </div>';

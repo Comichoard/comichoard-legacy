@@ -35,30 +35,7 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('top.php');?>
-            <div class="jumbotron thumb-main">
-                <br><h4>Now serving on Comic Hoard</h4>
-                <div class="thumb-container">
-                    <a class="btn btn-default" href="http://comichoard.com/jl8">JL8</a>
-                    <a class="btn btn-default" href="http://comichoard.com/xkcdcomic">XKCD</a>
-                    <a class="btn btn-default" href="http://comichoard.com/toonhole">Toonhole</a>
-                    <a class="btn btn-default" href="http://comichoard.com/mercworks">MercWorks</a>
-                    <a class="btn btn-default" href="http://comichoard.com/maximumble">Maximumble</a>
-                    <a class="btn btn-default" href="http://comichoard.com/spikedmath">Spiked Math</a>
-                    <a class="btn btn-default" href="http://comichoard.com/garfield">Garfield</a>
-                    <a class="btn btn-default" href="http://comichoard.com/pennyarcade">Penny Arcade</a>
-                    <a class="btn btn-default" href="http://comichoard.com/shortpacked">Shortpacked</a>
-                    <a class="btn btn-default" href="http://comichoard.com/pcweenies">PC Weenies</a>
-                    <a class="btn btn-default" href="http://comichoard.com/buttersafe">Buttersafe</a>
-                    <a class="btn btn-default" href="http://comichoard.com/threewordphrase">Three Word Phrase</a>
-                    <a class="btn btn-default" href="http://comichoard.com/smbc">SMBC</a>
-                    <a class="btn btn-default" href="http://comichoard.com/calvinandhobbes">Calvin and Hobbes</a>
-                    <a class="btn btn-default" href="http://comichoard.com/cyanideandhappiness">Cyanide &amp; Happiness</a>
-                    <a class="btn btn-default" href="http://comichoard.com/channelate">Channelate</a>
-                    <a class="btn btn-default" href="http://comichoard.com/poorlydrawnlines">Poorly Drawn Lines</a>
-                    <a class="btn btn-default" href="http://comichoard.com/doghousediaries">Doghouse Diaries</a>
-                    <a class="btn btn-default" href="http://comichoard.com/pearlsbeforeswine">Pearls Before Swine</a>
-                </div>
-            </div>
+            <div class="jumbotron thumb-main"></div>
             <div class="page"></div>
             <?php include('bottom.php');?>
         </div>

@@ -11,4 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../css/gotham.css" />
 
 <link rel="stylesheet" type="text/css" href="../css/default.css?v=57" />
-<script type="text/javascript" src="../js/default.js?v=19"></script>
+<link rel="stylesheet" type="text/css" href="../css/bigscreen.css" />
+<link rel="stylesheet" type="text/css" href="../css/mediumscreen.css" />
+<link rel="stylesheet" type="text/css" href="../css/smallscreen.css" />
+<script type="text/javascript" src="../js/default.js?v=19"></script>	

@@ -1,7 +1,7 @@
+var comiclist= new Array();
+
 $(document).ready(function()    {
-    if ($('.px').css('opacity') == '1') {
-        $('#gohome').html('C H');
-    }
+    loadlist();
     if(firstcomic!='' && firstcomic!==undefined)    {
         loadstrip(JSON.parse(atob(firstcomic)));
     }
@@ -10,6 +10,21 @@ $(document).ready(function()    {
 var next='';
 var first=1;
 
+function loadlist() {
+    $('.thumb-main').append('<br><h4>Now serving on Comic Hoard</h4><div class="thumb-container"></div>');
+    $.post('/api/comiclist', function (data) {
+        comiclist=JSON.parse(data);
+        for(var key in comiclist)    {
+            if(source=='feed')  {
+                addToList(key,comiclist[key]);
+            }
+        }
+    });
+    function addToList(code,name)  {
+        $('.thumb-container').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
+    }
+}
+
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -17,6 +32,8 @@ var first=1;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=659591854119619&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
 $(document).on('click','.card>img',function (event) {
     var srclink = source;
@@ -37,13 +54,14 @@ function savepos(e, t) {
 function loadstrip(obj)    {
     var card='';
     if(source!='feed')
-        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span></div></div>';
+        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><a href="'+obj.link+'" class="twitter-share-button" data-lang="en">Tweet</a></div></div>';
     else
-        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.comic+' : '+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span></div></div>';        
+        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.comic+' : '+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><a href="'+obj.link+'" class="twitter-share-button" data-lang="en">Tweet</a></div></div>';        
     next=obj.next;
     $(".page").append(card);
     try {
         FB.XFBML.parse();
+        twttr.widgets.load();
     }
     catch(error)    {}
 }

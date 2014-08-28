@@ -51,7 +51,7 @@
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('../top.php');?>
-                <div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">www.jl8comic.tumblr.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                <div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">www.jl8comic.tumblr.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a><span class="btn btn-default"><a href="https://twitter.com/ComicHoard" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ComicHoard</a></span></h1>
                     <p>
                         <span>Sort in order
                             <a href="http://comichoard.com/jl8/?sort=asc" type="button" class="btn btn-default">From the start</a>

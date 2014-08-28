@@ -47,7 +47,7 @@
             <div class="px"></div>
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc"><h1>PC Weenies 
-                    <a href="http://pcweenies.com/" type="button" class="btn btn-default" target="_blank">www.pcweenies.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                    <a href="http://pcweenies.com/" type="button" class="btn btn-default" target="_blank">www.pcweenies.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a><span class="btn btn-default"><a href="https://twitter.com/ComicHoard" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ComicHoard</a></span></h1>
                     <p>Get official PC Weenies merchandise at <a href="http://pcweenies.bigcartel.com/" class="btn btn-default" target="_blank">www.pcweenies.bigcartel.com</a></p>
                 </div>
             <div class="page"></div>

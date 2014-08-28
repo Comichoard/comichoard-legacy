@@ -49,7 +49,7 @@
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc">
                     <h1>Channelate <a href="http://www.channelate.com" type="button" class="btn btn-default" target="_blank">www.channelate.com</a>
-                    <a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+                    <a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a><span class="btn btn-default"><a href="https://twitter.com/ComicHoard" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ComicHoard</a></span></h1>
                     <p>Get official Channelate merchandise at <a href="http://channelate.bigcartel.com/" class="btn btn-default" target="_blank">www.channelate.bigcartel.com</a></p>
                 </div>
             <div class="page"></div>

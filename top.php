@@ -5,6 +5,7 @@
     <a id="comicselect-btn" class="btn btn-default btn-lg" data-toggle="modal" data-target="#comicselect">
         Select Comic To Read
     </a>
+    <a id="comictap-btn" class="fa fa-bars" data-toggle="modal" data-target="#comicselect"></a>
     <?php
         if($source=='feed')   {
             echo '<a id="fbpage" href="contact.php" class="btn btn-default btn-lg" target="_blank">Contact us</a>';

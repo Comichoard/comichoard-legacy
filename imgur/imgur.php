@@ -38,7 +38,7 @@
         }
         $url=getcomic(0);
         echo base64_encode($url).'!znavfu';
-        echo '<div class="jumbotron cdesc"><h1>Best of Imgur <a href="http://imgur.com/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a></h1>
+        echo '<div class="jumbotron cdesc"><h1>Best of Imgur <a href="http://imgur.com/" type="button" class="btn btn-default" target="_blank">Go to site</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a><span class="btn btn-default"><a href="https://twitter.com/ComicHoard" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ComicHoard</a></span></h1>
         <p>Click to preview</p></div>';
         echo $sendback;
     }
