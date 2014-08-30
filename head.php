@@ -10,8 +10,8 @@
 <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../css/gotham.css" />
 
-<link rel="stylesheet" type="text/css" href="../css/default.css?v=58" />
-<link rel="stylesheet" type="text/css" href="../css/bigscreen.css" />
-<link rel="stylesheet" type="text/css" href="../css/mediumscreen.css" />
-<link rel="stylesheet" type="text/css" href="../css/smallscreen.css" />
-<script type="text/javascript" src="../js/default.js?v=20"></script>	
+<link rel="stylesheet" type="text/css" href="../css/default.css?v=59" />
+<link rel="stylesheet" type="text/css" href="../css/bigscreen.css?v=2" />
+<link rel="stylesheet" type="text/css" href="../css/mediumscreen.css?v=2" />
+<link rel="stylesheet" type="text/css" href="../css/smallscreen.css?v=2" />
+<script type="text/javascript" src="../js/default.js?v=21"></script>	
