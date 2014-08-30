@@ -15,13 +15,15 @@ function loadlist() {
     $.post('/api/comiclist', function (data) {
         comiclist=JSON.parse(data);
         for(var key in comiclist)    {
-            if(source=='feed')  {
-                addToList(key,comiclist[key]);
-            }
+            addToList(key,comiclist[key]);
         }
     });
     function addToList(code,name)  {
-        $('.thumb-container').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
+        try {
+            $('.thumb-container').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
+        }
+        catch(err)  {}
+        $('.modal-body').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
     }
 }
 
@@ -54,9 +56,9 @@ function savepos(e, t) {
 function loadstrip(obj)    {
     var card='';
     if(source!='feed')
-        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><!--a href="'+obj.link+'" class="twitter-share-button" data-lang="en">Tweet</a--></div></div>';
+        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><a href="https://twitter.com/share" data-url="'+obj.link+'" data-text="Check out '+obj.comic+' : '+obj.desc+' @ComicHoard" class="twitter-share-button" data-lang="en"></a></div></div>';
     else
-        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.comic+' : '+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><!--a href="'+obj.link+'" class="twitter-share-button" data-lang="en">Tweet</a></div--></div>';        
+        card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.comic+' : '+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><a href="https://twitter.com/share" data-url="'+obj.link+'" data-text="Check out '+obj.comic+' : '+obj.desc+' @ComicHoard" class="twitter-share-button" data-lang="en"></a></div></div>';
     next=obj.next;
     $(".page").append(card);
     try {
