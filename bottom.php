@@ -6,7 +6,7 @@
 <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>
 <div id="loadmsg" class="jumbotron">Stay Calm and Wait for More</div>
 
-<!input id="firstcomic" type="hidden" value="<?php if(isset($firstcomic[0])) echo base64_encode($firstcomic[0]);?>">
+<input id="firstcomic" type="hidden" value="<?php if(isset($firstcomic[0])) echo base64_encode($firstcomic[0]);?>">
 <input id="source" type="hidden" value="<?php if(isset($source)) echo $source;?>">
 <input id="sort" type="hidden" value="<?php if(isset($sort)) echo $sort;?>">
 <input id="website" type="hidden" value="<?php echo $_SERVER['HTTP_HOST'];?>">
