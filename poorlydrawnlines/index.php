@@ -53,17 +53,6 @@
             <div class="page"></div>
             <?php include('../bottom.php');?>
         </div>
-
-        <input id="firstcomic" type="hidden" value="<?php echo base64_encode($firstcomic[0]);?>">
-        <input id="source" type="hidden" value="<?php echo $source;?>">
-        <input id="website" type="hidden" value="<?php echo $_SERVER['HTTP_HOST'];?>">
-        <script>
-            var sort = $("#sort").val();
-            var source = $("#source").val();
-            var website = $("#website").val();
-            var firstcomic = $('#firstcomic').val();
-            var flag = 0;
-		</script>
-        <script type="text/javascript" src="../../googleanalytics.js" ></script>
+        <script type="text/javascript" src="../googleanalytics.js" ></script>
     </body>
 </html>
