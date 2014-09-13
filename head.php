@@ -5,10 +5,9 @@
 <link rel="icon" type="image/png" href="../favicon.png?v=2">
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../css/gotham.css" />
 
-<link rel="stylesheet" type="text/css" href="../css/default.css?v=60" />
-<script type="text/javascript" src="../js/default.js?v=21"></script>	
+<link rel="stylesheet" type="text/css" href="../css/default.css?v=61" />
+<script type="text/javascript" src="../js/default.js?v=22"></script>

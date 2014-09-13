@@ -1,5 +1,5 @@
 var comiclist= new Array();
-
+var hideHeader=0,saveHeader=0;
 $(document).ready(function()    {
     loadlist();
     if(firstcomic!='' && firstcomic!==undefined)    {
@@ -11,7 +11,7 @@ var next='';
 var first=1;
 
 function loadlist() {
-    $('.thumb-main').append('<br><h4>Now serving on Comic Hoard</h4><div class="thumb-container"></div>');
+    $('.thumb-main').append('<br><br><div class="thumb-container"></div>');
     $.post('/api/comiclist', function (data) {
         comiclist=JSON.parse(data);
         for(var key in comiclist)    {
@@ -21,11 +21,43 @@ function loadlist() {
     function addToList(code,name)  {
         try {
             $('.thumb-container').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
+            $('#comic-select-menu>.content').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
+            $('#comic-select-menu-mobile>.content').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
         }
         catch(err)  {}
         $('.modal-body').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
     }
 }
+
+$(document).on('click','#comic-select-btn',function()   {
+    if($(this).hasClass('closed'))  {
+        $(this).html('<i class="fa fa-chevron-up"></i>');
+        $('#comic-select-menu').animate({top:'0%'},400);
+        $('#top').animate({top:'12%'},400);
+        $(this).removeClass('closed');
+        $(this).addClass('open');
+    }
+    else if($(this).hasClass('open'))  {
+        $(this).html('Select Comic To Read');
+        $('#comic-select-menu').animate({top:'-12%'},400);
+        $('#top').animate({top:'0%'},400);
+        $(this).removeClass('open');
+        $(this).addClass('closed');
+    }
+});
+
+$(document).on('click','#comic-tap-btn',function()   {
+    if($(this).hasClass('closed'))  {
+        $('#comic-select-menu-mobile').animate({left:'0%'},400);
+        $(this).removeClass('closed');
+        $(this).addClass('open');
+    }
+    else if($(this).hasClass('open'))  {
+        $('#comic-select-menu-mobile').animate({left:'-70%'},400);
+        $(this).removeClass('open');
+        $(this).addClass('closed');
+    }
+});
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -84,6 +116,17 @@ $(window).scroll(function () {
     if ($(window).scrollTop() + $(window).height() > $(document).height() - 1000 && flag == 0) {
         addnext();
     }
+    if($(window).scrollTop()>hideHeader && $(window).scrollTop()>200)    {
+        if(hideHeader-saveHeader>200 && $(window).scrollTop()>200)   {
+            $('#top').animate({top:'-10%'},400);
+            saveHeader=hideHeader;
+        }
+    }
+    else    {
+        $('#top').animate({top:'0%'},400);
+        saveHeader=hideHeader;
+    }
+    hideHeader=$(window).scrollTop();
 });
 
 $(document).on('change','#comicdateselect',function(event) {
