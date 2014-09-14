@@ -203,7 +203,7 @@ $(window).scroll(function () {
         addnext();
     }
     if($(window).scrollTop()>hideHeader && $(window).scrollTop()>200)    {
-        if(hideHeader-saveHeader>200 && $(window).scrollTop()>200)   {
+        if(hideHeader-saveHeader>200 && $(window).scrollTop()>200 && $('#top').css('top')=="0px")   {
             $('#top').animate({top:'-10%'},400);
             saveHeader=hideHeader;
         }
