@@ -47,11 +47,10 @@
         <style>#comicnumselect{width:70px;display:inline-block;}</style>
     </head>
     <body>
-        <?php include('../modalselect.php');?>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('../top.php');?>
-                <div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">www.xkcd.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a><span class="btn btn-default"><a href="https://twitter.com/ComicHoard" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ComicHoard</a></span></h1>
+                <div class="jumbotron cdesc"><h1>XKCD <a href="http://xkcd.com" type="button" class="btn btn-default" target="_blank">www.xkcd.com</a></h1>
                     <p>
                     <span>Sort in order
                     <a href="http://comichoard.com/xkcdcomic/?sort=asc" type="button" class="btn btn-default">From the start</a>

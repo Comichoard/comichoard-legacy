@@ -43,12 +43,11 @@
         <style>#comicnumselect{width:70px;display:inline-block;}</style>
     </head>
     <body>
-        <?php include('../modalselect.php');?>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc">
-                    <h1>SMBC <a href="http://www.smbc-comics.com/" type="button" class="btn btn-default" target="_blank">www.smbc-comics.com</a><a class="fb-like btn btn-default" data-href="https://facebook.com/comichoard" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></a><span class="btn btn-default"><a href="https://twitter.com/ComicHoard" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @ComicHoard</a></span></h1>
+                    <h1>SMBC <a href="http://www.smbc-comics.com/" type="button" class="btn btn-default" target="_blank">www.smbc-comics.com</a></h1>
                     <p><span>Skip to comic <input id="comicnumselect" type="text" class="form-control" placeholder="####"></span>
                     <span>Get official SMBC merchandise at <a href="http://smbc.myshopify.com/" class="btn btn-default" target="_blank">www.smbc.myshopify.com</a></span></p>
                 </div>

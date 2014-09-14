@@ -1,6 +1,6 @@
 <div class="social">
-	<a class="fa fa-facebook" href="https://facebook.com/comichoard" target="_blank"></a>
-    <a class="fa fa-twitter" href="https://twitter.com/ComicHoard" target="_blank"></a>
+	<a class="scl scl-facebook" href="https://facebook.com/comichoard" target="_blank"><img src="../images/facebook.png"></a>
+    <a class="scl scl-twitter" href="https://twitter.com/ComicHoard" target="_blank"><img src="../images/twitter.png"></a>
 </div>
 
 <div id="scrolldown"><i class="fa fa-backward"></i><i class="fa fa-play"></i><i class="fa fa-forward"></i></div>

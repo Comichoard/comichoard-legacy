@@ -10,7 +10,6 @@
     $firstcomic = explode('}', $result);    
     $firstcomic[0].='}';
 ?>
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -30,7 +29,6 @@
         <?php include('head.php');?>
     </head>
     <body>
-        <?php include('modalselect.php');?>
         <div id="fb-root"></div>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>

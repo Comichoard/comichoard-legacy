@@ -29,35 +29,7 @@ function loadlist() {
     }
 }
 
-$(document).on('click','#comic-select-btn',function()   {
-    if($(this).hasClass('closed'))  {
-        $(this).html('<i class="fa fa-chevron-up"></i>');
-        $('#comic-select-menu').animate({top:'0%'},400);
-        $('#top').animate({top:'12%'},400);
-        $(this).removeClass('closed');
-        $(this).addClass('open');
-    }
-    else if($(this).hasClass('open'))  {
-        $(this).html('Select Comic To Read');
-        $('#comic-select-menu').animate({top:'-12%'},400);
-        $('#top').animate({top:'0%'},400);
-        $(this).removeClass('open');
-        $(this).addClass('closed');
-    }
-});
 
-$(document).on('click','#comic-tap-btn',function()   {
-    if($(this).hasClass('closed'))  {
-        $('#comic-select-menu-mobile').animate({left:'0%'},400);
-        $(this).removeClass('closed');
-        $(this).addClass('open');
-    }
-    else if($(this).hasClass('open'))  {
-        $('#comic-select-menu-mobile').animate({left:'-70%'},400);
-        $(this).removeClass('open');
-        $(this).addClass('closed');
-    }
-});
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -112,23 +84,6 @@ function addnext()  {
     savepos(source, next);
 }
 
-$(window).scroll(function () {
-    if ($(window).scrollTop() + $(window).height() > $(document).height() - 1000 && flag == 0) {
-        addnext();
-    }
-    if($(window).scrollTop()>hideHeader && $(window).scrollTop()>200)    {
-        if(hideHeader-saveHeader>200 && $(window).scrollTop()>200)   {
-            $('#top').animate({top:'-10%'},400);
-            saveHeader=hideHeader;
-        }
-    }
-    else    {
-        $('#top').animate({top:'0%'},400);
-        saveHeader=hideHeader;
-    }
-    hideHeader=$(window).scrollTop();
-});
-
 $(document).on('change','#comicdateselect',function(event) {
     $(".page").empty();flag=1;
     $.post(source+".php?next="+btoa($(this).val())+'&sort='+sort, function (data) {
@@ -146,6 +101,36 @@ $(document).on('keydown','#comicnumselect',function(event) {
             loadstrip(obj);
             flag=0;
         });
+    }
+});
+
+$(document).on('click','#comic-select-btn',function()   {
+    if($(this).hasClass('closed'))  {
+        $(this).html('<i class="fa fa-chevron-up"></i>');
+        $('#comic-select-menu').animate({top:'0%'},400);
+        $('#top').animate({top:'12%'},400);
+        $(this).removeClass('closed');
+        $(this).addClass('open');
+    }
+    else if($(this).hasClass('open'))  {
+        $(this).html('Select Comic To Read');
+        $('#comic-select-menu').animate({top:'-12%'},400);
+        $('#top').animate({top:'0%'},400);
+        $(this).removeClass('open');
+        $(this).addClass('closed');
+    }
+});
+
+$(document).on('click','#comic-tap-btn',function()   {
+    if($(this).hasClass('closed'))  {
+        $('#comic-select-menu-mobile').animate({left:'0%'},400);
+        $(this).removeClass('closed');
+        $(this).addClass('open');
+    }
+    else if($(this).hasClass('open'))  {
+        $('#comic-select-menu-mobile').animate({left:'-70%'},400);
+        $(this).removeClass('open');
+        $(this).addClass('closed');
     }
 });
 
@@ -211,4 +196,21 @@ $(document).on('click','#resume',function() {
             });
         });
     }
+});
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() + $(window).height() > $(document).height() - 1000 && flag == 0) {
+        addnext();
+    }
+    if($(window).scrollTop()>hideHeader && $(window).scrollTop()>200)    {
+        if(hideHeader-saveHeader>200 && $(window).scrollTop()>200)   {
+            $('#top').animate({top:'-10%'},400);
+            saveHeader=hideHeader;
+        }
+    }
+    else    {
+        $('#top').animate({top:'0%'},400);
+        saveHeader=hideHeader;
+    }
+    hideHeader=$(window).scrollTop();
 });

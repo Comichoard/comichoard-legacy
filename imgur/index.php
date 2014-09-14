@@ -51,7 +51,6 @@
         <style>img{margin:10px}.modal-body{text-align:center}.modal-body>img{max-width:95%}.modal-body>p{text-align:left}</style>
     </head>
     <body>
-        <?php include('../modalselect.php');?>
         <div id="viewer" class="panel panel-default">
             <div class="px"></div>
             <div id="top" class="panel-heading">
