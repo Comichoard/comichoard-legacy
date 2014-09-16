@@ -42,7 +42,7 @@
         <?php include('../head.php');?>
     </head>
     <body>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc"><h1>MercWorks <a href="http://www.mercworks.net/" type="button" class="btn btn-default" target="_blank">www.mercworks.net</a></h1>

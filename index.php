@@ -29,8 +29,7 @@
         <?php include('head.php');?>
     </head>
     <body>
-        <div id="fb-root"></div>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <?php include('top.php');?>
             <div class="jumbotron thumb-main"></div>

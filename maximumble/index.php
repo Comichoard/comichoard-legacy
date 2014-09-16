@@ -42,7 +42,7 @@
         <?php include('../head.php');?>
     </head>
     <body>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc"><h1>Maximumble <a href="http://maximumble.thebookofbiff.com" type="button" class="btn btn-default" target="_blank">www.maximumble.thebookofbiff.com</a>

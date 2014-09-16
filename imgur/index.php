@@ -51,7 +51,7 @@
         <style>img{margin:10px}.modal-body{text-align:center}.modal-body>img{max-width:95%}.modal-body>p{text-align:left}</style>
     </head>
     <body>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <div id="top" class="panel-heading">
                 <a id="gohome" class="btn btn-default btn-lg" href="http://comichoard.com">

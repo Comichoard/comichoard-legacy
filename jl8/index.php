@@ -47,7 +47,7 @@
         <style>#comicnumselect{width:70px;display:inline-block;}.cdesc>p>span{margin-right: 50px;}</style>
     </head>
     <body>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc"><h1>JL8 <a href="http://jl8comic.tumblr.com" type="button" class="btn btn-default" target="_blank">www.jl8comic.tumblr.com</a></h1>

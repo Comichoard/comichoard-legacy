@@ -47,7 +47,7 @@
         <style>#comicnumselect{width:80px;display:inline-block;}</style>
     </head>
     <body>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc"><h1>Cyanide &amp; Happiness <a href="http://explosm.net" type="button" class="btn btn-default" target="_blank">www.explosm.net</a>

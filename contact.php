@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php include('modalselect.php');?>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <?php include('top.php');?>
             <div class="page">

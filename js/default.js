@@ -29,18 +29,6 @@ function loadlist() {
     }
 }
 
-
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=659591854119619&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-
 $(document).on('click','.card>img',function (event) {
     var srclink = source;
     var strp = $(this).parent().children('.details').children('.fb-like').attr('data-href');
@@ -59,19 +47,17 @@ function savepos(e, t) {
 
 function loadstrip(obj)    {
     var card='';
-    if(obj.desc!==undefined)    {
-        if(source!='feed')
-            card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><a href="https://twitter.com/share" data-url="'+obj.link+'" data-text="Check out '+obj.comic+' : '+obj.desc+' @ComicHoard" class="twitter-share-button" data-lang="en"></a></div></div>';
-        else
-            card='<div class="card"><img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'"><div class="details"><span>'+obj.comic+' : '+obj.desc+'</span><span class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-href="'+obj.link+'"></span><a href="https://twitter.com/share" data-url="'+obj.link+'" data-text="Check out '+obj.comic+' : '+obj.desc+' @ComicHoard" class="twitter-share-button" data-lang="en"></a></div></div>';
-        next=obj.next;
-        $(".page").append(card);
-        try {
-            FB.XFBML.parse();
-            twttr.widgets.load();
-        }
-        catch(error)    {}
-    }
+    if(obj.image!==undefined)
+        card='<div class="card">'+
+             '<img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'">'+
+                '<div class="details">'+
+                    '<span class="name">'+(source=="feed"?obj.comic+' : ':'')+obj.desc+'</span>'+
+                    '<span><a href="https://facebook.com/sharer/sharer.php?u='+obj.link+'" target="_blank"><img src="../images/facebook.png"></a>'+
+                    '<a href="https://twitter.com/intent/tweet?url='+obj.link+'&text='+encodeURIComponent('Check out '+obj.comic+' : '+obj.desc+' @ComicHoard')+'" target="_blank"><img src="../images/twitter.png"></a></span>'+
+                '</div>'+
+              '</div>';
+    next=obj.next;
+    $(".page").append(card);
 }
 
 function addnext()  {
@@ -106,15 +92,15 @@ $(document).on('keydown','#comicnumselect',function(event) {
 
 $(document).on('click','#comic-select-btn',function()   {
     if($(this).hasClass('closed'))  {
-        $(this).html('<i class="fa fa-chevron-up"></i>');
+        $(this).html('<i class="fa fa-caret-up"></i>');
         $('#comic-select-menu').animate({top:'0%'},400);
-        $('#top').animate({top:'12%'},400);
+        $('#top').animate({top:'15%'},400);
         $(this).removeClass('closed');
         $(this).addClass('open');
     }
     else if($(this).hasClass('open'))  {
         $(this).html('Select Comic To Read');
-        $('#comic-select-menu').animate({top:'-12%'},400);
+        $('#comic-select-menu').animate({top:'-15%'},400);
         $('#top').animate({top:'0%'},400);
         $(this).removeClass('open');
         $(this).addClass('closed');

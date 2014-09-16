@@ -5,7 +5,7 @@
     <div class="content"></div><br><br>
 </div>
 
-<div id="top" class="panel-heading">
+<div id="top">
     <a id="gohome" class="btn btn-default btn-lg" href="http://comichoard.com">
         <span>Comic</span> Hoard
     </a>

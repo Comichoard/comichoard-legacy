@@ -42,7 +42,7 @@
         <?php include('../head.php');?>
     </head>
     <body>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc"><h1>Penny Arcade <a href="http://www.penny-arcade.com/" type="button" class="btn btn-default" target="_blank">www.penny-arcade.com</a></h1>

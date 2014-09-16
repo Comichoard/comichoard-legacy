@@ -42,7 +42,7 @@
         <?php include('../head.php');?>
     </head>
     <body>
-        <div id="viewer" class="panel panel-default">
+        <div id="viewer">
             <div class="px"></div>
             <?php include('../top.php');?>
                 <div class="jumbotron cdesc"><h1>Three Word Phrase <a href="http://www.threewordphrase.com" type="button" class="btn btn-default" target="_blank">www.threewordphrase.com</a></h1>
