@@ -28,7 +28,6 @@ function loadlist() {
         $('.modal-body').append('<a class="btn btn-default" href="http://comichoard.com/'+code+'">'+name+'</a>');
     }
 }
-
 $(document).on('click','.card>img',function (event) {
     var srclink = source;
     srclink = $(this).parent().attr('data-link');
