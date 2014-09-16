@@ -31,11 +31,8 @@ function loadlist() {
 
 $(document).on('click','.card>img',function (event) {
     var srclink = source;
-    var strp = $(this).parent().children('.details').children('.fb-like').attr('data-href');
-    if (source == 'feed') {
-        srclink = $(this).parent().attr('data-comic');
-    }
-    window.location.href = strp;
+    srclink = $(this).parent().attr('data-link');
+    window.location.href = srclink;
 });
 
 function savepos(e, t) {
@@ -48,7 +45,7 @@ function savepos(e, t) {
 function loadstrip(obj)    {
     var card='';
     if(obj.image!==undefined)
-        card='<div class="card">'+
+        card='<div class="card" data-link="'+obj.link+'">'+
              '<img src="'+obj.image+'" alt="'+obj.desc+'" title="'+obj.desc+'">'+
                 '<div class="details">'+
                     '<span class="name">'+(source=="feed"?obj.comic+' : ':'')+obj.desc+'</span>'+
