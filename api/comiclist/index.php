@@ -18,6 +18,7 @@
 			"poorlydrawnlines":"Poorly Drawn Lines",
 			"spikedmath":"Spiked Math",
 			"shortpacked":"Shortpacked",
-			"pearlsbeforeswine":"Pearls Before Swine"
+			"pearlsbeforeswine":"Pearls Before Swine",
+			"twoguysandguy":"Two Guys and Guy"
 		}';
 ?>

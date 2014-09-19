@@ -3,6 +3,10 @@
     if($server=='localhost') $server.='/comichoard';
     $source = 'toonhole';
     $url = 'http://'.$server.'/'.$source.'/'.$source.'.php?';
+    if(isset($_GET['sort']))   {    
+        $sort=$_GET['sort'];
+        $url .= 'sort='.$_GET['sort'].'&';
+    }
     if(isset($_GET['strip']))   {    
         $strip=$_GET['strip'];
         $url .= 'strip='.$_GET['strip'].'&';
