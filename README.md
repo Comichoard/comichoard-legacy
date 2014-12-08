@@ -1,7 +1,5 @@
-comichoard
+comichoard - Legacy Code
 ==========
-
-#Legacy Code
 
 Comics for all
 
